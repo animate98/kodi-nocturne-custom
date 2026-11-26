@@ -231,6 +231,9 @@
 		<param name="aspect">scale</param>
 		<param name="title">$INFO[ListItem.Label]</param>
 		<param name="fade">160</param>
+		<!-- custom: when the "no art" title may show; the exhibition passes "this item really has no art", else the title
+		     showed through the picture while it faded in and before it loaded -->
+		<param name="titlevisible">true</param>
 		<definition>
 			<control type="group">
 				<left>$PARAM[left]</left>
@@ -264,6 +267,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$PARAM[title]</label>
+					<visible>$PARAM[titlevisible]</visible>
 				</control>
 				<control type="image">
 					<left>0</left>

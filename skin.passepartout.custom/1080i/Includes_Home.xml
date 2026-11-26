@@ -513,6 +513,7 @@
 					<param name="title" value="$INFO[Container(9101).ListItem.Label]"/>
 					<param name="lift" value="true"/>
 					<param name="fade" value="240"/>
+					<param name="titlevisible" value="String.IsEmpty(Container(9101).ListItem.Art(fanart)) + String.IsEmpty(Container(9101).ListItem.Art(landscape)) + String.IsEmpty(Container(9101).ListItem.Art(poster)) + String.IsEmpty(Container(9101).ListItem.Art(thumb))"/>
 				</include>
 			</control>
 			<!-- square print (music): 612 x 612 centred -->
@@ -526,6 +527,7 @@
 					<param name="title" value="$INFO[Container(9101).ListItem.Label]"/>
 					<param name="lift" value="true"/>
 					<param name="fade" value="240"/>
+					<param name="titlevisible" value="String.IsEmpty(Container(9101).ListItem.Art(fanart)) + String.IsEmpty(Container(9101).ListItem.Art(landscape)) + String.IsEmpty(Container(9101).ListItem.Art(poster)) + String.IsEmpty(Container(9101).ListItem.Art(thumb))"/>
 				</include>
 			</control>
 			<!-- museum caption, centred under the print -->
