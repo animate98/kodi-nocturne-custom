@@ -14,6 +14,8 @@
 -->
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
+	<!-- custom (POV): POV titles start on their own Play (Kodi's 8 / 9 are hidden for them) -->
+	<onload condition="$EXP[VidInfo_IsPov]">SetFocus(9014)</onload>
 	<onload>SetProperty(TMDbHelper.Colors.SourceImage,Art(poster)|Art(tvshow.poster)|Art(thumb)|Art(fanart),home)</onload>
 	<include>Anim_DialogOpenClose</include>
 	<controls>

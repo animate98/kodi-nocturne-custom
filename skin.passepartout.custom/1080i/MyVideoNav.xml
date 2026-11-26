@@ -11,6 +11,8 @@
 	<menucontrol>9000</menucontrol>
 	<backgroundcolor>paper</backgroundcolor>
 	<views>502,500,503,501,50,506,507</views>
+	<!-- custom: the OK router reads pp.inview; never leave it set behind -->
+	<onunload>ClearProperty(pp.inview,home)</onunload>
 	<include>PP_PaperInit</include>
 	<onload>SetProperty(TMDbHelper.Colors.SourceImage,Art(poster)|Art(tvshow.poster)|Art(thumb)|Art(fanart),home)</onload>
 	<!-- empty folder: Kodi can't focus an empty view, so land on the header words instead -->

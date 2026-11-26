@@ -1,8 +1,14 @@
-# Nocturne Custom
+# Nocturne Custom & Passe-partout Custom
 
 A personal Kodi skin for CoreELEC (Kodi 22), forked from
 [Nocturne](https://github.com/KarmaMole/kodi-skins) v0.9.19 by KarmaMole.
 Licensed under GPL-2.0-or-later, same as the original (see `skin.nocturne.custom/LICENSE.txt`).
+
+## Passe-partout Custom
+
+`skin.passepartout.custom/` is Passe-partout 0.9.22 by KarmaMole with POV in place of the Kodi library: Home's
+exhibition / Continue watching / the rest of the room, the Films and Series words (POV menus) and Search all come
+from POV; Music is hidden. OK opens Kodi's info page, its Play runs POV, Back stops playback (same pieces as below).
 
 ## Layout
 

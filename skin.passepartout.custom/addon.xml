@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="skin.passepartout" version="0.9.22" name="Passe-partout" provider-name="KarmaMole">
+<addon id="skin.passepartout.custom" version="1.0.0" name="Passe-partout Custom" provider-name="KarmaMole">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 		<!-- Required: script.skinvariables URL-encodes the search query (get_encoded_string; unencoded_paths since 2.1.21). -->

@@ -26,34 +26,39 @@
 	<!-- 0.9.14: a section hidden in Skin settings (HideMenu.*) is never on show -->
 	<expression name="Home_Films">[String.IsEmpty(Window(Home).Property(passepartout.section)) | String.IsEqual(Window(Home).Property(passepartout.section),films)] + !Skin.HasSetting(HideMenu.Movies)</expression>
 	<expression name="Home_Series">String.IsEqual(Window(Home).Property(passepartout.section),series) + !Skin.HasSetting(HideMenu.TVShows)</expression>
-	<expression name="Home_Music">String.IsEqual(Window(Home).Property(passepartout.section),music) + !Skin.HasSetting(HideMenu.Music)</expression>
+	<expression name="Home_Music">String.IsEqual(Window(Home).Property(passepartout.section),music) + !true</expression>
 	<expression name="Home_AnySection">$EXP[Home_Films] | $EXP[Home_Series] | $EXP[Home_Music]</expression>
 	<expression name="Home_InRoom">Control.HasFocus(9120) | Control.HasFocus(9121) | Control.HasFocus(9130) | Control.HasFocus(9131)</expression>
 	<expression name="Home_MusicPlaying">Player.HasAudio + !Player.HasVideo</expression>
 
 	<!-- ================================================================ content -->
+	<!-- custom (POV): every Home list comes from POV instead of the Kodi library. Kodi 22 RC's Python crashes when
+	     several plugin calls start together, so the lists load in turn: the exhibition first, then the room once the
+	     exhibition holds this section's titles (films / shows), then Continue watching / Next up (it may be empty,
+	     so nothing waits for it). An empty path fetches nothing. -->
+	<expression name="Home_ExhibitionReady">!Container(9101).IsUpdating + [[$EXP[Home_Films] + String.IsEqual(Container(9101).ListItem.DBType,movie)] | [$EXP[Home_Series] + String.IsEqual(Container(9101).ListItem.DBType,tvshow)]]</expression>
+	<expression name="Home_RoomReady">$EXP[Home_ExhibitionReady] + !Container(9121).IsUpdating + [[$EXP[Home_Films] + String.IsEqual(Container(9121).ListItem.DBType,movie)] | [$EXP[Home_Series] + String.IsEqual(Container(9121).ListItem.DBType,tvshow)]]</expression>
 	<variable name="Home_ExhibitionPath">
-		<value condition="String.IsEqual(Window(Home).Property(passepartout.section),series)">special://skin/playlists/pp_exhibition_series.xsp</value>
-		<value condition="String.IsEqual(Window(Home).Property(passepartout.section),music)">musicdb://recentlyaddedalbums/</value>
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">special://skin/playlists/pp_exhibition_recent.xsp</value>
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),random)">special://skin/playlists/pp_exhibition_random.xsp</value>
-		<value>special://skin/playlists/pp_exhibition_best.xsp</value>
+		<value condition="String.IsEqual(Window(Home).Property(passepartout.section),series)">plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_popular</value>
+		<value condition="String.IsEqual(Window(Home).Property(passepartout.section),music)"></value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_latest_releases</value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),random)">plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_oscar_winners</value>
+		<value>plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_trending</value>
 	</variable>
 	<variable name="Home_ExhibitionName">
-		<value condition="$EXP[Home_Series]">Recently visited</value>
+		<value condition="$EXP[Home_Series]">Popular now</value>
 		<value condition="$EXP[Home_Music]">Recently acquired</value>
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">Unwatched, recently acquired</value>
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),random)">Unwatched, drawn at random</value>
-		<value>Unwatched, best rated</value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">Latest releases</value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),random)">Oscar winners</value>
+		<value>Trending this week</value>
 	</variable>
 	<variable name="Home_ContinuePath">
-		<value condition="$EXP[Home_Series] + System.AddonIsEnabled(script.embuary.helper)">plugin://script.embuary.helper/?info=getnextup&amp;reload=$INFO[Window(Home).Property(passepartout.reload)]</value>
-		<value condition="$EXP[Home_Series]">special://skin/playlists/pp_inprogress_tvshows.xsp</value>
-		<value condition="$EXP[Home_Films]">special://skin/playlists/pp_inprogress_movies.xsp</value>
+		<value condition="$EXP[Home_Series] + $EXP[Home_RoomReady]">plugin://plugin.video.pov/?mode=build_next_episode</value>
+		<value condition="$EXP[Home_Films] + $EXP[Home_RoomReady]">plugin://plugin.video.pov/?mode=build_movie_list&amp;action=in_progress_movies</value>
 	</variable>
 	<variable name="Home_RoomPath">
-		<value condition="$EXP[Home_Series]">special://skin/playlists/pp_room_shows.xsp</value>
-		<value condition="$EXP[Home_Films]">special://skin/playlists/pp_room_movies.xsp</value>
+		<value condition="$EXP[Home_Series] + $EXP[Home_ExhibitionReady]">plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_trending</value>
+		<value condition="$EXP[Home_Films] + $EXP[Home_ExhibitionReady]">plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_popular</value>
 	</variable>
 	<variable name="Home_ContinueName">
 		<value condition="$EXP[Home_Series]">Next up</value>
@@ -66,7 +71,7 @@
 		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
 	<variable name="Home_RoomName">
-		<value condition="$EXP[Home_Series]">Recently acquired</value>
+		<value condition="$EXP[Home_Series]">Trending</value>
 		<value>The rest of the room</value>
 	</variable>
 
@@ -355,7 +360,7 @@
 				<param name="uleft" value="120"/><param name="uwidth" value="76"/>
 				<param name="label" value="Films"/><param name="color" value="$VAR[Home_NavFilms]"/><param name="focus_a" value="SetProperty(passepartout.section,films,home)"/><param name="focus_b" value="SetProperty(TMDbHelper.Colors.SourceImage,Art(fanart)|Art(landscape)|Art(poster)|Art(thumb),home)"/>
 				<param name="active" value="$EXP[Home_Films]"/>
-				<param name="onclick" value="ActivateWindow(Videos,videodb://movies/titles/,return)"/>
+				<param name="onclick" value="ActivateWindow(Videos,&quot;plugin://plugin.video.pov/?mode=navigator.main&amp;action=MovieList&quot;,return)"/>
 				<param name="onleft" value="9005"/><param name="onright" value="9002"/>
 			</include>
 			<include content="Home_NavWord">
@@ -363,11 +368,11 @@
 				<param name="uleft" value="248"/><param name="uwidth" value="88"/>
 				<param name="label" value="Series"/><param name="color" value="$VAR[Home_NavSeries]"/><param name="focus_a" value="SetProperty(passepartout.section,series,home)"/><param name="focus_b" value="SetProperty(TMDbHelper.Colors.SourceImage,Art(fanart)|Art(landscape)|Art(poster)|Art(thumb),home)"/>
 				<param name="active" value="$EXP[Home_Series]"/>
-				<param name="onclick" value="ActivateWindow(Videos,videodb://tvshows/titles/,return)"/>
+				<param name="onclick" value="ActivateWindow(Videos,&quot;plugin://plugin.video.pov/?mode=navigator.main&amp;action=TVShowList&quot;,return)"/>
 				<param name="onleft" value="9001"/><param name="onright" value="9003"/>
 			</include>
 			<include content="Home_NavWord">
-				<param name="id" value="9003"/><param name="gid" value="9013"/><param name="shown" value="!Skin.HasSetting(HideMenu.Music)"/><param name="width" value="113"/>
+				<param name="id" value="9003"/><param name="gid" value="9013"/><param name="shown" value="!true"/><param name="width" value="113"/>
 				<param name="uleft" value="388"/><param name="uwidth" value="81"/>
 				<param name="label" value="Music"/><param name="color" value="$VAR[Home_NavMusic]"/><param name="focus_a" value="SetProperty(passepartout.section,music,home)"/><param name="focus_b" value="SetProperty(TMDbHelper.Colors.SourceImage,Art(thumb)|Art(fanart),home)"/>
 				<param name="active" value="$EXP[Home_Music]"/>
@@ -416,7 +421,8 @@
 			<onfocus condition="$EXP[Home_Music]">SetProperty(TMDbHelper.Colors.SourceImage,Art(thumb)|Art(fanart),home)</onfocus>
 			<onfocus condition="!$EXP[Home_Music]">SetProperty(TMDbHelper.Colors.SourceImage,Art(fanart)|Art(landscape)|Art(poster)|Art(thumb),home)</onfocus>
 			<onclick condition="$EXP[Home_Films]">Action(Info)</onclick>
-			<onclick condition="$EXP[Home_Series]">ActivateWindow(Videos,$INFO[ListItem.FolderPath],return)</onclick>
+			<!-- custom (POV): a show opens its info page too (Browse there opens the seasons) -->
+			<onclick condition="$EXP[Home_Series]">Action(Info)</onclick>
 			<onclick condition="$EXP[Home_Music]">ActivateWindow(Music,$INFO[ListItem.FolderPath],return)</onclick>
 			<itemlayout width="1" height="1"/>
 			<focusedlayout width="1" height="1"/>
@@ -696,6 +702,8 @@
 				<ondown condition="!Integer.IsGreater(Container(9121).NumItems,0) + $EXP[CustomRow1On]">9881</ondown>
 				<ondown condition="!Integer.IsGreater(Container(9121).NumItems,0) + !$EXP[CustomRow1On] + $EXP[CustomRow2On]">9882</ondown>
 				<ondown condition="!Integer.IsGreater(Container(9121).NumItems,0) + !$EXP[CustomRow1On] + !$EXP[CustomRow2On] + $EXP[CustomRow3On]">9883</ondown>
+				<!-- custom (POV): OK opens the info page; a POV title is not playable straight from a list -->
+				<onclick>Action(Info)</onclick>
 				<onfocus>SetProperty(TMDbHelper.WidgetContainer,9120,home)</onfocus>
 				<!-- leaving the row returns it to item 1 (Control.Move -n then +1 lands on 1, lists wrap); unfocused,
 				     the selected 232 slot holds its small print at the slot's right (left 112) and the row moves 48
@@ -778,6 +786,8 @@
 					<ondown condition="!$EXP[CustomRow1On] + $EXP[CustomRow2On]">9882</ondown>
 					<ondown condition="!$EXP[CustomRow1On] + !$EXP[CustomRow2On] + $EXP[CustomRow3On]">9883</ondown>
 					<ondown>noop</ondown>
+					<!-- custom (POV): OK opens the info page; a POV title is not playable straight from a list -->
+					<onclick>Action(Info)</onclick>
 					<onfocus>SetProperty(TMDbHelper.WidgetContainer,9121,home)</onfocus>
 					<onunfocus>Control.Move(9121,-$INFO[Container(9121).CurrentItem])</onunfocus>
 					<onunfocus>Control.Move(9121,1)</onunfocus>

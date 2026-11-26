@@ -404,6 +404,9 @@
 			<include>Anim_VisibleFade</include>
 			<!-- item origin = the frame's left edge; picture at +4. list left -60 => item 2 at 516 (picture 520) -->
 			<control type="fixedlist" id="500">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 				<left>-60</left>
 				<top>100</top>
 				<width>2100</width>
@@ -457,6 +460,9 @@
 			<include>Anim_VisibleFade</include>
 			<!-- 9 columns: picture 148x222, pitch 192 x 262; panel 98..1826 x 118..904 -->
 			<control type="panel" id="501">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 				<left>98</left>
 				<top>118</top>
 				<width>1728</width>
@@ -563,6 +569,9 @@
 		<param name="nextup">false</param>
 		<definition>
 			<control type="fixedlist" id="$PARAM[id]">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 				<left>56</left>
 				<top>100</top>
 				<width>1864</width>
@@ -610,6 +619,9 @@
 		<param name="nextup">false</param>
 		<definition>
 			<control type="fixedlist" id="502">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 				<left>56</left>
 				<top>100</top>
 				<width>1864</width>
@@ -1073,6 +1085,9 @@
 			<visible>Control.IsVisible(507)</visible>
 			<include>Anim_VisibleFade</include>
 			<control type="panel" id="507">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 				<left>98</left>
 				<top>118</top>
 				<width>1728</width>

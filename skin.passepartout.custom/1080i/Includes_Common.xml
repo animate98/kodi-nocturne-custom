@@ -422,6 +422,7 @@
 		<param name="ondown">noop</param>
 		<param name="onleft">noop</param>
 		<param name="onright">noop</param>
+		<param name="onclick2">noop</param>
 		<definition>
 			<control type="button" id="$PARAM[id]">
 				<left>$PARAM[left]</left>
@@ -430,6 +431,7 @@
 				<include content="PP_PlacardLook"><param name="pad" value="68"/></include>
 				<label>$PARAM[label]</label>
 				<onclick>$PARAM[onclick]</onclick>
+				<onclick>$PARAM[onclick2]</onclick>
 				<onup>$PARAM[onup]</onup>
 				<ondown>$PARAM[ondown]</ondown>
 				<onleft>$PARAM[onleft]</onleft>

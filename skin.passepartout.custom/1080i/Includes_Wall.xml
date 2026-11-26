@@ -283,6 +283,9 @@
 		</control>
 		</control>
 		<control type="panel" id="506">
+			<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+			<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+			<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 			<left>0</left>
 			<top>0</top>
 			<width>1920</width>

@@ -10,8 +10,14 @@
 <includes>
 	<!-- ================================================================== state -->
 	<expression name="VidInfo_IsFolderType">String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set)</expression>
-	<expression name="VidInfo_ShowResume">Control.IsEnabled(9) + !$EXP[VidInfo_IsFolderType]</expression>
-	<expression name="VidInfo_ShowPlay">!Control.IsEnabled(9) + !$EXP[VidInfo_IsFolderType]</expression>
+	<!-- custom (POV): POV titles are not "playable" items to Kodi, so Kodi's own Play / Resume (8 / 9) show
+	     "Playback failed" while POV plays anyway, and Kodi retries the item when it stops. They get their own Play
+	     (9014) that runs POV directly (POV offers to resume itself) and closes this page, like Kodi's Play does. -->
+	<!-- custom: Versions (14) / Extras (15) open Kodi's video-version manager, which crashes on a film outside the
+	     library (POV titles): library films only (they have a DBID) -->
+	<expression name="VidInfo_IsPov">String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.pov/) + !$EXP[VidInfo_IsFolderType]</expression>
+	<expression name="VidInfo_ShowResume">Control.IsEnabled(9) + !$EXP[VidInfo_IsFolderType] + !$EXP[VidInfo_IsPov]</expression>
+	<expression name="VidInfo_ShowPlay">!Control.IsEnabled(9) + !$EXP[VidInfo_IsFolderType] + !$EXP[VidInfo_IsPov]</expression>
 	<expression name="VidInfo_ShowTrailer">$EXP[ShowTrailerButton] + !String.IsEmpty(ListItem.Trailer)</expression>
 
 	<!-- ================================================================== labels -->
@@ -288,6 +294,15 @@
 				<param name="onclick" value="noop"/>
 				<param name="visible" value="$EXP[VidInfo_ShowPlay]"/>
 			</include>
+			<include content="PP_ButtonPrimary">
+				<param name="id" value="9014"/>
+				<param name="onup" value="SetFocus(9001)"/>
+				<param name="ondown" value="SetFocus(50)"/>
+				<param name="label" value="Play"/>
+				<param name="onclick" value="RunPlugin(&quot;$INFO[ListItem.FileNameAndPath]&quot;)"/>
+				<param name="onclick2" value="Dialog.Close(movieinformation,true)"/>
+				<param name="visible" value="$EXP[VidInfo_IsPov]"/>
+			</include>
 			<include content="PP_ButtonSecondary">
 				<param name="id" value="9013"/>
 				<param name="onup" value="SetFocus(9001)"/>
@@ -381,12 +396,12 @@
 			<include content="VidInfo_MoreWord">
 				<param name="id" value="14"/>
 				<param name="label" value="Versions"/>
-				<param name="visible" value="String.IsEqual(ListItem.DBType,movie)"/>
+				<param name="visible" value="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.DBID)"/>
 			</include>
 			<include content="VidInfo_MoreWord">
 				<param name="id" value="15"/>
 				<param name="label" value="Extras"/>
-				<param name="visible" value="String.IsEqual(ListItem.DBType,movie)"/>
+				<param name="visible" value="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.DBID)"/>
 			</include>
 			<include content="VidInfo_MoreWord">
 				<param name="id" value="10"/>

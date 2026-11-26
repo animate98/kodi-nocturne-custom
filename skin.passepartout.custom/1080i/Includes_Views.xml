@@ -18,6 +18,9 @@
 			<visible>Control.IsVisible(50)</visible>
 			<include>Anim_VisibleFade</include>
 			<control type="list" id="50">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(pp.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(pp.inview,home)</onunfocus>
 				<left>page_margin</left>
 				<top>list_top</top>
 				<width>list_w</width>

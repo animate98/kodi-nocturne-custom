@@ -25,9 +25,9 @@
 		<value>On</value>
 	</variable>
 	<variable name="SS_Value_9121">
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),best) | [!String.IsEqual(Skin.String(passepartout.exhibition),best) + !String.IsEqual(Skin.String(passepartout.exhibition),recent) + !String.IsEqual(Skin.String(passepartout.exhibition),random)]">Unwatched, best rated</value>
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">Unwatched, recently acquired</value>
-		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),random)">Unwatched, drawn at random</value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),best) | [!String.IsEqual(Skin.String(passepartout.exhibition),best) + !String.IsEqual(Skin.String(passepartout.exhibition),recent) + !String.IsEqual(Skin.String(passepartout.exhibition),random)]">Trending this week (POV)</value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">Latest releases (POV)</value>
+		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),random)">Oscar winners (POV)</value>
 	</variable>
 	<variable name="SS_Value_9171">
 		<value condition="Skin.HasSetting(HideMenu.Movies)">Hidden</value>
@@ -38,7 +38,7 @@
 		<value>Shown</value>
 	</variable>
 	<variable name="SS_Value_9173">
-		<value condition="Skin.HasSetting(HideMenu.Music)">Hidden</value>
+		<value condition="true">Hidden</value>
 		<value>Shown</value>
 	</variable>
 	<variable name="SS_Value_9174">

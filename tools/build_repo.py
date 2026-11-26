@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
-ADDONS = ["skin.nocturne.custom", "repository.nocturne.custom"]
+ADDONS = ["skin.nocturne.custom", "skin.passepartout.custom", "repository.nocturne.custom"]
 SKIP = {".DS_Store"}
 VERSION_RE = re.compile(r'(<addon\b[^>]*\bversion=")([^"]+)(")')
 

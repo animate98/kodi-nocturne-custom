@@ -136,7 +136,7 @@
 				<texture colordiffuse="rule">common/white.png</texture>
 			</control>
 			<include content="Dlg_FactRow"><param name="top" value="24"/><param name="label" value="Kodi"/><param name="value" value="$INFO[System.BuildVersion]"/></include>
-			<include content="Dlg_FactRow"><param name="top" value="64"/><param name="label" value="Skin"/><param name="value" value="Passe-partout $INFO[System.AddonVersion(skin.passepartout)]"/></include>
+			<include content="Dlg_FactRow"><param name="top" value="64"/><param name="label" value="Skin"/><param name="value" value="Passe-partout Custom $INFO[System.AddonVersion(skin.passepartout.custom)]"/></include>
 			<include content="Dlg_FactRow"><param name="top" value="104"/><param name="label" value="Address"/><param name="value" value="$INFO[Network.IPAddress]"/></include>
 			<include content="Dlg_FactRow"><param name="top" value="144"/><param name="label" value="Screen"/><param name="value" value="$INFO[System.ScreenResolution]"/></include>
 			<include content="Dlg_FactRow"><param name="top" value="184"/><param name="label" value="Up"/><param name="value" value="$INFO[System.Uptime]"/></include>

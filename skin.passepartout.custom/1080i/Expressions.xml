@@ -30,4 +30,6 @@
 	<!-- Windows -->
 	<expression name="InfoDialogActive">Window.IsVisible(movieinformation) | Window.IsVisible(musicinformation) | Window.IsVisible(addoninformation)</expression>
 	<expression name="OSDPanelOpen">Window.IsVisible(SliderDialog) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdsubtitlesettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(playerprocessinfo) | Window.IsVisible(osdcmssettings)</expression>
+	<!-- custom: OK router (Custom_1160_OkRouter.xml) -->
+	<expression name="OkRouter_Info">String.IsEqual(Window(Home).Property(pp.inview),1) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + !ListItem.IsParentFolder</expression>
 </includes>
