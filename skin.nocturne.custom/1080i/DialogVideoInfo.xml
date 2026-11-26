@@ -7,6 +7,8 @@
 -->
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
+	<!-- custom: POV titles start on their own Play (Kodi's 8 / 9 are hidden for them) -->
+	<onload condition="$EXP[VidInfo_IsPov]">SetFocus(9014)</onload>
 	<include>Anim_DialogOpenClose</include>
 	<controls>
 		<include>Noc_Wall</include>

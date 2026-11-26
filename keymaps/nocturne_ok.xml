@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Installed to /storage/.kodi/userdata/keymaps/ by deploy.sh.
+     1. OK in the Videos window goes through the skin's ok_info.py: films / shows / episodes open Kodi's
+        info page; anything else gets a normal Select.
+     2. Back while a video plays full screen stops it (Kodi's default only leaves full screen and keeps it
+        playing behind the menus). With the on-screen controls open, Back just closes them. -->
+<keymap>
+	<videos>
+		<keyboard>
+			<return>RunScript(special://skin/scripts/ok_info.py)</return>
+			<enter>RunScript(special://skin/scripts/ok_info.py)</enter>
+			<numpadenter>RunScript(special://skin/scripts/ok_info.py)</numpadenter>
+		</keyboard>
+		<remote>
+			<select>RunScript(special://skin/scripts/ok_info.py)</select>
+		</remote>
+		<gamepad>
+			<a>RunScript(special://skin/scripts/ok_info.py)</a>
+		</gamepad>
+	</videos>
+	<FullscreenVideo>
+		<keyboard>
+			<backspace>Stop</backspace>
+			<browser_back>Stop</browser_back>
+			<escape>Stop</escape>
+		</keyboard>
+		<remote>
+			<back>Stop</back>
+		</remote>
+		<gamepad>
+			<b>Stop</b>
+		</gamepad>
+	</FullscreenVideo>
+	<VideoOSD>
+		<keyboard>
+			<backspace>Back</backspace>
+			<browser_back>Back</browser_back>
+			<escape>Back</escape>
+		</keyboard>
+		<remote>
+			<back>Back</back>
+		</remote>
+		<gamepad>
+			<b>Back</b>
+		</gamepad>
+	</VideoOSD>
+</keymap>

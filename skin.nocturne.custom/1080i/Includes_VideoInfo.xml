@@ -10,8 +10,12 @@
 	Focus: 9001 plot ↑ rail 9000 ↓ cast 50 (the page slides up 440 while the cast has focus).
 -->
 <includes>
-	<expression name="VidInfo_ShowResume">Control.IsEnabled(9) + !$EXP[VidView_IsFolderType]</expression>
-	<expression name="VidInfo_ShowPlay">!Control.IsEnabled(9) + !$EXP[VidView_IsFolderType]</expression>
+	<!-- custom: POV titles are not "playable" items to Kodi, so Kodi's own Play (button 8) shows "Playback failed"
+	     while POV plays the film anyway, and Kodi then retries the item when it stops. They get their own Play that
+	     runs POV directly (POV asks to resume from the saved point itself). -->
+	<expression name="VidInfo_IsPov">String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.pov/) + !$EXP[VidView_IsFolderType]</expression>
+	<expression name="VidInfo_ShowResume">Control.IsEnabled(9) + !$EXP[VidView_IsFolderType] + !$EXP[VidInfo_IsPov]</expression>
+	<expression name="VidInfo_ShowPlay">!Control.IsEnabled(9) + !$EXP[VidView_IsFolderType] + !$EXP[VidInfo_IsPov]</expression>
 	<expression name="VidInfo_ShowTrailer">$EXP[ShowTrailerButton] + !String.IsEmpty(ListItem.Trailer)</expression>
 	<expression name="VidInfo_IsStill">String.IsEqual(ListItem.DBType,episode)</expression>
 
@@ -164,6 +168,12 @@
 				<param name="id" value="8"/>
 				<param name="label" value="$LOCALIZE[31261]"/>
 				<param name="visible" value="$EXP[VidInfo_ShowPlay]"/>
+			</include>
+			<include content="VidInfo_RailWord">
+				<param name="id" value="9014"/>
+				<param name="label" value="$LOCALIZE[31261]"/>
+				<param name="onclick" value="RunPlugin(&quot;$INFO[ListItem.FileNameAndPath]&quot;)"/>
+				<param name="visible" value="$EXP[VidInfo_IsPov]"/>
 			</include>
 			<include content="VidInfo_RailWord">
 				<param name="id" value="9012"/>

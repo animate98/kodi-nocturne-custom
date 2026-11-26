@@ -43,6 +43,9 @@
 	<onload condition="!$EXP[Home_RefocusValid] + Skin.HasSetting(HideMenu.Movies) + Skin.HasSetting(HideMenu.TVShows) + Skin.HasSetting(HideMenu.Music) + !$EXP[CustomMenu1On] + !$EXP[CustomMenu2On] + $EXP[CustomMenu3On]">SetFocus(9008)</onload>
 	<onload condition="!$EXP[Home_RefocusValid] + Skin.HasSetting(HideMenu.Movies) + Skin.HasSetting(HideMenu.TVShows) + Skin.HasSetting(HideMenu.Music) + !$EXP[CustomMenu1On] + !$EXP[CustomMenu2On] + !$EXP[CustomMenu3On] + !Skin.HasSetting(HideMenu.Search)">SetFocus(9004)</onload>
 	<onload condition="!$EXP[Home_RefocusValid] + Skin.HasSetting(HideMenu.Movies) + Skin.HasSetting(HideMenu.TVShows) + Skin.HasSetting(HideMenu.Music) + !$EXP[CustomMenu1On] + !$EXP[CustomMenu2On] + !$EXP[CustomMenu3On] + Skin.HasSetting(HideMenu.Search)">SetFocus(9005)</onload>
+	<!-- custom: back from a POV list returns to its group on the row -->
+	<onload condition="!String.IsEmpty(Window(Home).Property(nocturne.povreturn))">SetFocus($INFO[Window(Home).Property(nocturne.povreturn)])</onload>
+	<onload>ClearProperty(nocturne.povreturn,home)</onload>
 	<!-- TMDb Helper colour service: the halo takes the lit picture's colour (optional add-on) -->
 	<onload condition="$EXP[HasTMDbHelper] + !Skin.HasSetting(TMDbHelper.EnableColors) + Skin.HasSetting(nocturne.halocolour)">Skin.SetBool(TMDbHelper.EnableColors)</onload>
 	<onload condition="Skin.HasSetting(TMDbHelper.EnableColors) + !Skin.HasSetting(nocturne.halocolour)">Skin.Reset(TMDbHelper.EnableColors)</onload>
@@ -50,10 +53,12 @@
 	<include>Anim_WindowOpenClose</include>
 	<controls>
 		<include>Home_DataLists</include>
+		<include>Home_PovData</include>
 		<include>Home_WanderTimer</include>
 		<include>Noc_Wall</include>
 		<include>Noc_CorniceImage</include>
-		<include>Home_Wall_films</include>
+		<!-- custom: POV gallery of lists replaces the films wall -->
+		<include>Home_PovRow_films</include>
 		<include>Home_Wall_series</include>
 		<!-- 0.9.5: chosen at run time, not at load (Restore defaults resets reduce motion without a reload) -->
 		<control type="group">
@@ -64,7 +69,6 @@
 			<visible>Skin.HasSetting(nocturne.reducemotion)</visible>
 			<include>Home_TorchReduced</include>
 		</control>
-		<include>Home_WallLabels_films</include>
 		<include>Home_WallLabels_series</include>
 		<include>Home_MusicRoom</include>
 		<!-- 0.9.14: a custom menu item's quiet room (one lit frame + plaque; Includes_Home.xml) -->

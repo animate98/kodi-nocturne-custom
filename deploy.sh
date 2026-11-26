@@ -7,5 +7,6 @@ SKIN="skin.nocturne.custom"
 cd "$(dirname "$0")"
 
 rsync -a --delete --exclude '.DS_Store' "$SKIN/" "root@$HOST:/storage/.kodi/addons/$SKIN/"
-ssh -o BatchMode=yes "root@$HOST" 'kodi-send --action="ReloadSkin()" >/dev/null'
+rsync -a keymaps/ "root@$HOST:/storage/.kodi/userdata/keymaps/"
+ssh -o BatchMode=yes "root@$HOST" 'kodi-send --action="Action(reloadkeymaps)" >/dev/null; kodi-send --action="ReloadSkin()" >/dev/null'
 echo "Deployed $SKIN to $HOST and reloaded the skin."

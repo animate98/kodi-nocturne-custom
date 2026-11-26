@@ -268,6 +268,7 @@
 						<param name="art" value="$VAR[VidView_PosterArt]"/>
 						<param name="lit" value="true"/>
 					</include>
+					<include>VidView_CorridorGlow</include>
 				</focusedlayout>
 			</control>
 			<!-- the light (static: the torch stays centred, the wall slides) -->
@@ -279,16 +280,8 @@
 			<include content="Noc_ShroudStatic">
 				<param name="texture" value="noc/shroud_corridor.png"/>
 			</include>
-			<include content="Noc_Halo">
-				<param name="left" value="320"/>
-				<param name="top" value="-80"/>
-				<param name="size" value="1280"/>
-			</include>
-			<include content="Noc_Glint">
-				<param name="left" value="780"/>
-				<param name="top" value="249"/>
-				<param name="width" value="360"/>
-			</include>
+			<!-- custom: the halo and the glint live in the focused poster's layout (VidView_CorridorGlow) so they
+			     travel with it and settle in each time a new poster is focused -->
 			<include content="Noc_Plaque">
 				<param name="left" value="360"/>
 				<param name="top" value="850"/>
@@ -724,5 +717,27 @@
 			<param name="items" value="Lib_PickerVideo"/>
 			<param name="section" value="$VAR[VidView_Section]"/>
 		</include>
+	</include>
+	<!-- custom: the corridor's halo + glint, drawn in the focused item (item x 0 = screen 780, item y 0 = screen 176).
+	     They fade / settle in a beat after a poster becomes focused, and leave with it. -->
+	<include name="VidView_CorridorGlow">
+		<control type="group">
+			<animation effect="fade" start="0" end="100" time="340" delay="160" tween="sine" easing="out">Focus</animation>
+			<animation effect="fade" start="0" end="100" time="340" delay="160" tween="sine" easing="out">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="100">Unfocus</animation>
+			<include content="Noc_Halo">
+				<param name="left" value="-460"/>
+				<param name="top" value="-256"/>
+				<param name="size" value="1280"/>
+			</include>
+			<control type="group">
+				<animation effect="zoom" start="80,100" end="100,100" center="180,77" time="420" delay="160" tween="sine" easing="out">Focus</animation>
+				<include content="Noc_Glint">
+					<param name="left" value="0"/>
+					<param name="top" value="73"/>
+					<param name="width" value="360"/>
+				</include>
+			</control>
+		</control>
 	</include>
 </includes>

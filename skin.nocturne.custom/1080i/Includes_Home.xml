@@ -277,7 +277,6 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></itemlayout>
 			<focusedlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></focusedlayout>
-			<content target="videos" sortby="lastplayed" sortorder="descending">special://skin/playlists/nocturne_inprogress_movies.xsp</content>
 		</control>
 		<control type="list" id="9202">
 			<left>0</left>
@@ -288,7 +287,6 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></itemlayout>
 			<focusedlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></focusedlayout>
-			<content target="videos" sortby="random">special://skin/playlists/nocturne_toprated_unwatched_all.xsp</content>
 		</control>
 		<control type="list" id="9203">
 			<left>0</left>
@@ -299,7 +297,6 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></itemlayout>
 			<focusedlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></focusedlayout>
-			<content target="videos">videodb://recentlyaddedmovies/</content>
 		</control>
 		<control type="list" id="9204">
 			<left>0</left>
@@ -310,9 +307,10 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"></itemlayout>
 			<focusedlayout width="1" height="1"></focusedlayout>
-			<content target="videos">special://skin/playlists/nocturne_new_acquisitions.xsp</content>
+			
 		</control>
 		<control type="list" id="9211">
+			<visible>Control.IsVisible(9411) + !Container(9411).IsUpdating</visible>
 			<left>0</left>
 			<top>0</top>
 			<width>5</width>
@@ -321,7 +319,7 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></itemlayout>
 			<focusedlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></focusedlayout>
-			<content target="videos" sortby="lastplayed" sortorder="descending">special://skin/playlists/nocturne_inprogress_tvshows.xsp</content>
+			<content target="videos">plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=in_progress_tvshows</content>
 		</control>
 		<control type="list" id="9212">
 			<left>0</left>
@@ -332,9 +330,10 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></itemlayout>
 			<focusedlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(poster)]</texture></control></focusedlayout>
-			<content target="videos" sortby="random">special://skin/playlists/nocturne_unseen_tvshows.xsp</content>
+			<content target="videos">plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_trending</content>
 		</control>
 		<control type="list" id="9213">
+			<visible>Integer.IsGreater(Container(9212).NumItems,0)</visible>
 			<left>0</left>
 			<top>0</top>
 			<width>5</width>
@@ -343,7 +342,7 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture></control></itemlayout>
 			<focusedlayout width="1" height="1"><control type="image"><left>0</left><top>0</top><width>1</width><height>1</height><texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture></control></focusedlayout>
-			<content target="videos">videodb://recentlyaddedepisodes/</content>
+			<content target="videos">plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_popular</content>
 		</control>
 		<control type="list" id="9214">
 			<left>0</left>
@@ -354,7 +353,7 @@
 			<scrolltime>0</scrolltime>
 			<itemlayout width="1" height="1"></itemlayout>
 			<focusedlayout width="1" height="1"></focusedlayout>
-			<content target="videos">special://skin/playlists/nocturne_new_episodes.xsp</content>
+			
 		</control>
 	</include>
 	<include name="Home_WanderTimer">
@@ -705,8 +704,8 @@
 				<onright>9002</onright>
 				<onfocus>SetProperty(nocturne.section,films,home)</onfocus>
 				<onfocus>SetProperty(nocturne.slot,b3,home)</onfocus>
-				<ondown>9226</ondown>
-				<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+				<include>Home_PovWordDown_films</include>
+				<onclick>ActivateWindow(Videos,plugin://plugin.video.pov/?mode=navigator.main&amp;action=MovieList,return)</onclick>
 			</control>
 			<control type="label">
 				<left>96</left>
@@ -741,7 +740,7 @@
 				<onfocus>SetProperty(nocturne.section,series,home)</onfocus>
 				<onfocus>SetProperty(nocturne.slot,b3,home)</onfocus>
 				<ondown>9246</ondown>
-				<onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+				<onclick>ActivateWindow(Videos,plugin://plugin.video.pov/?mode=navigator.main&amp;action=TVShowList,return)</onclick>
 			</control>
 			<control type="label">
 				<left>236</left>
@@ -1576,6 +1575,8 @@
 			<onup>9001</onup>
 			<ondown>9230</ondown>
 			<onback>9001</onback>
+			<!-- custom: past the right edge, open the full POV list -->
+			<onright>ActivateWindow(Videos,plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_latest_releases,return)</onright>
 		</control>
 		<!-- films c2 : Container(9203).ListItemAbsolute(1) -->
 		<control type="group">
@@ -1655,6 +1656,8 @@
 			<ondown condition="!$EXP[CustomRow1On] + $EXP[CustomRow2On]">9882</ondown>
 			<ondown condition="!$EXP[CustomRow1On] + !$EXP[CustomRow2On] + $EXP[CustomRow3On]">9883</ondown>
 			<onback>9001</onback>
+			<!-- custom: past the right edge, open the full POV list -->
+			<onright>ActivateWindow(Videos,plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_latest_releases,return)</onright>
 		</control>
 		</control>
 		<include content="Noc_Plaque2">
@@ -2266,6 +2269,8 @@
 			<onup>9002</onup>
 			<ondown>9250</ondown>
 			<onback>9002</onback>
+			<!-- custom: past the right edge, open the full POV list -->
+			<onright>ActivateWindow(Videos,plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_popular,return)</onright>
 		</control>
 		<!-- series c2 : Container(9213).ListItemAbsolute(1) -->
 		<control type="group">
@@ -2345,6 +2350,8 @@
 			<ondown condition="!$EXP[CustomRow1On] + $EXP[CustomRow2On]">9882</ondown>
 			<ondown condition="!$EXP[CustomRow1On] + !$EXP[CustomRow2On] + $EXP[CustomRow3On]">9883</ondown>
 			<onback>9002</onback>
+			<!-- custom: past the right edge, open the full POV list -->
+			<onright>ActivateWindow(Videos,plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_popular,return)</onright>
 		</control>
 		</control>
 		<include content="Noc_Plaque2">
@@ -2415,7 +2422,7 @@
 			<param name="top" value="507"/>
 			<param name="width" value="404"/>
 			<param name="title" value="$INFO[Container(9213).ListItemAbsolute(0).TVShowTitle]"/>
-			<param name="meta" value="$INFO[Container(9213).ListItemAbsolute(0).Season,$LOCALIZE[31222] ,]$INFO[Container(9213).ListItemAbsolute(0).Episode,  ·  $LOCALIZE[31223] ,]"/>
+			<param name="meta" value="$INFO[Container(9213).ListItemAbsolute(0).Year]"/>
 			<param name="visible" value="!String.IsEmpty(Container(9213).ListItemAbsolute(0).Label) + [[String.IsEqual(Window(Home).Property(nocturne.slot),c1) + !$EXP[Home_Wandering]] | [$EXP[Home_Wandering] + Integer.IsEqual(Container(9190).CurrentItem,6)]]"/>
 		</include>
 		<include content="Noc_Plaque2">
@@ -2423,7 +2430,7 @@
 			<param name="top" value="911"/>
 			<param name="width" value="250"/>
 			<param name="title" value="$INFO[Container(9213).ListItemAbsolute(1).TVShowTitle]"/>
-			<param name="meta" value="$INFO[Container(9213).ListItemAbsolute(1).Season,$LOCALIZE[31222] ,]$INFO[Container(9213).ListItemAbsolute(1).Episode,  ·  $LOCALIZE[31223] ,]"/>
+			<param name="meta" value="$INFO[Container(9213).ListItemAbsolute(1).Year]"/>
 			<param name="visible" value="!String.IsEmpty(Container(9213).ListItemAbsolute(1).Label) + [[String.IsEqual(Window(Home).Property(nocturne.slot),c2) + !$EXP[Home_Wandering]] | [$EXP[Home_Wandering] + Integer.IsEqual(Container(9190).CurrentItem,2)]]"/>
 		</include>
 		<include content="Noc_Plaque2">
@@ -2431,7 +2438,7 @@
 			<param name="top" value="911"/>
 			<param name="width" value="250"/>
 			<param name="title" value="$INFO[Container(9213).ListItemAbsolute(2).TVShowTitle]"/>
-			<param name="meta" value="$INFO[Container(9213).ListItemAbsolute(2).Season,$LOCALIZE[31222] ,]$INFO[Container(9213).ListItemAbsolute(2).Episode,  ·  $LOCALIZE[31223] ,]"/>
+			<param name="meta" value="$INFO[Container(9213).ListItemAbsolute(2).Year]"/>
 			<param name="visible" value="!String.IsEmpty(Container(9213).ListItemAbsolute(2).Label) + [[String.IsEqual(Window(Home).Property(nocturne.slot),c3) + !$EXP[Home_Wandering]] | [$EXP[Home_Wandering] + Integer.IsEqual(Container(9190).CurrentItem,10)]]"/>
 		</include>
 		<control type="image">
@@ -2911,6 +2918,7 @@
 	<control type="group">
 		<visible>[[String.IsEqual(Window(Home).Property(nocturne.section),films) | String.IsEmpty(Window(Home).Property(nocturne.section))] + !Skin.HasSetting(HideMenu.Movies) + !$EXP[CustomRowsFocus]] | [String.IsEqual(Window(Home).Property(nocturne.section),series) + !Skin.HasSetting(HideMenu.TVShows) + !$EXP[CustomRowsFocus]]</visible>
 		<include>Anim_SectionSwap</include>
+		<include>Home_PovTorchNormal</include>
 		<animation effect="slide" start="0,0" end="-682,-134" time="180" tween="sine" easing="inout" condition="String.IsEqual(Window(Home).Property(nocturne.slot),a1) + !$EXP[Home_Wandering]">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-780,224" time="180" tween="sine" easing="inout" condition="String.IsEqual(Window(Home).Property(nocturne.slot),a2) + !$EXP[Home_Wandering]">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-584,224" time="180" tween="sine" easing="inout" condition="String.IsEqual(Window(Home).Property(nocturne.slot),a3) + !$EXP[Home_Wandering]">Conditional</animation>
@@ -2952,6 +2960,7 @@
 	<control type="group">
 		<visible>[[String.IsEqual(Window(Home).Property(nocturne.section),films) | String.IsEmpty(Window(Home).Property(nocturne.section))] + !Skin.HasSetting(HideMenu.Movies) + !$EXP[CustomRowsFocus]] | [String.IsEqual(Window(Home).Property(nocturne.section),series) + !Skin.HasSetting(HideMenu.TVShows) + !$EXP[CustomRowsFocus]]</visible>
 		<include>Anim_SectionSwap</include>
+		<include>Home_PovTorchReduced</include>
 		<animation effect="slide" start="0,0" end="-682,-134" time="1" tween="sine" easing="inout" condition="String.IsEqual(Window(Home).Property(nocturne.slot),a1) + !$EXP[Home_Wandering]">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-780,224" time="1" tween="sine" easing="inout" condition="String.IsEqual(Window(Home).Property(nocturne.slot),a2) + !$EXP[Home_Wandering]">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-584,224" time="1" tween="sine" easing="inout" condition="String.IsEqual(Window(Home).Property(nocturne.slot),a3) + !$EXP[Home_Wandering]">Conditional</animation>

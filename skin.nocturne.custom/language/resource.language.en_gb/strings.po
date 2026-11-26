@@ -605,19 +605,19 @@ msgid "On the easel"
 msgstr ""
 
 msgctxt "#31211"
-msgid "Unwatched, 7.5+"
+msgid "Trending this week"
 msgstr ""
 
 msgctxt "#31212"
-msgid "New acquisitions"
+msgid "New releases"
 msgstr ""
 
 msgctxt "#31213"
-msgid "Unseen, 7.5+"
+msgid "Trending this week"
 msgstr ""
 
 msgctxt "#31214"
-msgid "New episodes"
+msgid "Popular"
 msgstr ""
 
 msgctxt "#31220"

@@ -10,7 +10,10 @@ Licensed under GPL-2.0-or-later, same as the original (see `skin.nocturne.custom
   - `colors/defaults.xml` – color palette
   - `1080i/` – window and include XML
   - `media/` – textures
-- `deploy.sh` – syncs the skin to the box over SSH and reloads it
+- `tools/make_pov_rows.py` – generates `1080i/Includes_PovRows.xml`, the POV sections on the Films tab
+  (layout rules, lists and seeds are at the top of the script)
+- `keymaps/nocturne_ok.xml` – OK opens Kodi's info page in video lists; Back stops playback
+- `deploy.sh` – syncs the skin and keymaps to the box over SSH and reloads them
 
 ## Deploy
 
