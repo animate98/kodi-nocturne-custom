@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	custom: OK router (keymaps/nocturne_ok.xml maps OK in the Videos window to ActivateWindow(1160)).
+	Films, shows and episodes in a view open Kodi's info page (POV runs its own play screen on a plain click);
+	anything else (POV menus, genres, seasons, the options bar) gets a normal Select.
+	It closes itself first, so the action lands on the Videos window. ListItem.* here reads the Videos window's
+	focused item; nocturne.inview is set by the views' onfocus (a dialog can't test Control.HasFocus there).
+	Done in the skin rather than a Python script: a script per OK overlapped POV's own Python when the OK opened a
+	POV folder, which crashes Kodi 22 RC.
+-->
+<window type="dialog" id="1160">
+	<onload>Dialog.Close(1160,true)</onload>
+	<onload condition="$EXP[OkRouter_Info]">Action(Info)</onload>
+	<onload condition="!$EXP[OkRouter_Info]">Action(Select)</onload>
+	<controls/>
+</window>

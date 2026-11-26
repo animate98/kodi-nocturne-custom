@@ -219,6 +219,9 @@
 			<include>VidView_Rail</include>
 			<include>VidView_Floor</include>
 			<control type="fixedlist" id="500">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>-300</left>
 				<top>176</top>
 				<width>2520</width>
@@ -351,6 +354,9 @@
 			<visible>Control.IsVisible(501)</visible>
 			<include>Anim_VisibleFade</include>
 			<control type="panel" id="501">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>96</left>
 				<top>170</top>
 				<width>1728</width>
@@ -452,6 +458,9 @@
 			<include>VidView_Rail</include>
 			<include>VidView_Floor</include>
 			<control type="fixedlist" id="503">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>-490</left>
 				<top>176</top>
 				<width>2900</width>

@@ -13,6 +13,9 @@
 			<visible>Control.IsVisible(50)</visible>
 			<include>Anim_VisibleFade</include>
 			<control type="list" id="50">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>96</left>
 				<top>190</top>
 				<width>1000</width>

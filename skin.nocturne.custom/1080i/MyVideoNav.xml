@@ -21,6 +21,7 @@
 	<!-- empty folder: Kodi can't focus an empty view, so land on the header bar instead -->
 	<onload condition="Integer.IsEqual(Container.NumItems,0) + !Container.IsUpdating">SetFocus(9000)</onload>
 	<include>Anim_WindowOpenClose</include>
+	<onunload>ClearProperty(nocturne.inview,home)</onunload>
 	<controls>
 		<include>VidView_Window</include>
 	</controls>

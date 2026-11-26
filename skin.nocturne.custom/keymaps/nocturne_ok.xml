@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Installed to /storage/.kodi/userdata/keymaps/ by deploy.sh.
-     1. OK in the Videos window goes through the skin's ok_info.py: films / shows / episodes open Kodi's
+     1. OK in the Videos window opens the skin's OK router (Custom_1160_OkRouter.xml): films / shows / episodes open Kodi's
         info page; anything else gets a normal Select.
      2. Back while a video plays full screen stops it (Kodi's default only leaves full screen and keeps it
         playing behind the menus). With the on-screen controls open, Back just closes them. -->
 <keymap>
 	<videos>
 		<keyboard>
-			<return>RunScript(special://skin/scripts/ok_info.py)</return>
-			<enter>RunScript(special://skin/scripts/ok_info.py)</enter>
-			<numpadenter>RunScript(special://skin/scripts/ok_info.py)</numpadenter>
+			<return>ActivateWindow(1160)</return>
+			<enter>ActivateWindow(1160)</enter>
+			<numpadenter>ActivateWindow(1160)</numpadenter>
 		</keyboard>
 		<remote>
-			<select>RunScript(special://skin/scripts/ok_info.py)</select>
+			<select>ActivateWindow(1160)</select>
 		</remote>
 		<gamepad>
-			<a>RunScript(special://skin/scripts/ok_info.py)</a>
+			<a>ActivateWindow(1160)</a>
 		</gamepad>
 	</videos>
 	<FullscreenVideo>

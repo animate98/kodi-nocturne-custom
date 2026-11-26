@@ -182,6 +182,9 @@
 			<include>Anim_VisibleFade</include>
 			<!-- the drawer: the rest of the room in small frames, the focused one centred and lit -->
 			<control type="list" id="502">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>120</left>
 				<top>800</top>
 				<width>1680</width>
@@ -472,6 +475,9 @@
 			<visible>Control.IsVisible(506)</visible>
 			<include>Anim_VisibleFade</include>
 			<control type="panel" id="506">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>96</left>
 				<top>176</top>
 				<width>1728</width>
@@ -640,6 +646,9 @@
 				<param name="texture" value="noc/shroud_catalogue.png"/>
 			</include>
 			<control type="list" id="507">
+				<!-- custom: tells the OK router (Custom_1160) that a view has focus -->
+				<onfocus>SetProperty(nocturne.inview,1,home)</onfocus>
+				<onunfocus>ClearProperty(nocturne.inview,home)</onunfocus>
 				<left>96</left>
 				<top>190</top>
 				<width>1060</width>
