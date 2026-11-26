@@ -82,6 +82,27 @@
 		<value condition="!String.IsEmpty(Container(9101).ListItem.Art(landscape))">$INFO[Container(9101).ListItem.Art(landscape)]</value>
 		<value>$INFO[Container(9101).ListItem.Art(poster)]</value>
 	</variable>
+	<!-- custom: the prints either side of the one on show (see Home_PrintPreload) -->
+	<variable name="Home_PrintArt_p1">
+		<value condition="!String.IsEmpty(Container(9101).ListItem(1).Art(fanart))">$INFO[Container(9101).ListItem(1).Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(9101).ListItem(1).Art(landscape))">$INFO[Container(9101).ListItem(1).Art(landscape)]</value>
+		<value>$INFO[Container(9101).ListItem(1).Art(poster)]</value>
+	</variable>
+	<variable name="Home_PrintArt_m1">
+		<value condition="!String.IsEmpty(Container(9101).ListItem(-1).Art(fanart))">$INFO[Container(9101).ListItem(-1).Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(9101).ListItem(-1).Art(landscape))">$INFO[Container(9101).ListItem(-1).Art(landscape)]</value>
+		<value>$INFO[Container(9101).ListItem(-1).Art(poster)]</value>
+	</variable>
+	<variable name="Home_PrintArt_p2">
+		<value condition="!String.IsEmpty(Container(9101).ListItem(2).Art(fanart))">$INFO[Container(9101).ListItem(2).Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(9101).ListItem(2).Art(landscape))">$INFO[Container(9101).ListItem(2).Art(landscape)]</value>
+		<value>$INFO[Container(9101).ListItem(2).Art(poster)]</value>
+	</variable>
+	<variable name="Home_PrintArt_m2">
+		<value condition="!String.IsEmpty(Container(9101).ListItem(-2).Art(fanart))">$INFO[Container(9101).ListItem(-2).Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(9101).ListItem(-2).Art(landscape))">$INFO[Container(9101).ListItem(-2).Art(landscape)]</value>
+		<value>$INFO[Container(9101).ListItem(-2).Art(poster)]</value>
+	</variable>
 	<variable name="Home_CaptionMeta">
 		<value condition="$EXP[Home_Music]">$INFO[Container(9101).ListItem.Artist]$INFO[Container(9101).ListItem.Year, · ,]$INFO[Container(9101).ListItem.Genre, · ,]</value>
 		<value condition="$EXP[Home_Series]">$INFO[Container(9101).ListItem.Year]$INFO[Container(9101).ListItem.Genre, · ,]</value>
@@ -469,6 +490,18 @@
 			<!-- one Hidden animation only: Kodi resets just the first Hidden when the control shows again, so a reduce-motion
 			     twin would stay applied at fade 0 (LESSONS, Groove device pass 2). Reduce motion: instant hide. -->
 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<!-- custom: preload. The print loads its picture in the background and shows the previous one until it is in,
+			     and a 4K fanart takes a moment to decode, so moving along the exhibition showed the old print for a beat.
+			     The two prints on each side are drawn here 4 px wide behind the print, so their pictures are already
+			     decoded when they slide in. (Kodi only loads textures for visible images.) -->
+			<control type="group">
+				<visible>!$EXP[Home_Music]</visible>
+				<left>900</left><top>400</top><width>4</width><height>4</height>
+				<control type="image"><left>0</left><top>0</top><width>4</width><height>4</height><texture background="true">$VAR[Home_PrintArt_p1]</texture></control>
+				<control type="image"><left>0</left><top>0</top><width>4</width><height>4</height><texture background="true">$VAR[Home_PrintArt_m1]</texture></control>
+				<control type="image"><left>0</left><top>0</top><width>4</width><height>4</height><texture background="true">$VAR[Home_PrintArt_p2]</texture></control>
+				<control type="image"><left>0</left><top>0</top><width>4</width><height>4</height><texture background="true">$VAR[Home_PrintArt_m2]</texture></control>
+			</control>
 			<!-- landscape print (films, series): picture 1092 x 612 at 414,160 -->
 			<control type="group">
 				<visible>!$EXP[Home_Music]</visible>
