@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.nocturne.custom" name="Nocturne Custom Repository" version="1.0.0" provider-name="animate98">
+	<extension point="xbmc.addon.repository" name="Nocturne Custom Repository">
+		<dir>
+			<info compressed="false">https://animate98.github.io/kodi-nocturne-custom/addons.xml</info>
+			<checksum>https://animate98.github.io/kodi-nocturne-custom/addons.xml.md5</checksum>
+			<datadir zip="true">https://animate98.github.io/kodi-nocturne-custom/</datadir>
+		</dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Updates for the Nocturne Custom skin.</summary>
+		<description lang="en_GB">Installs and updates Nocturne Custom (skin.nocturne.custom), built from github.com/animate98/kodi-nocturne-custom.</description>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+		<source>https://github.com/animate98/kodi-nocturne-custom</source>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>

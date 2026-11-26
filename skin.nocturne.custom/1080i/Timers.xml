@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Skin timers (Kodi 20+). Nocturne needs none; the file is here so the skin defines every file Estuary does. -->
+<!-- Skin timers (Kodi 20+). -->
 <timers>
+	<!-- custom: install / update the skin's keymaps (scripts/install_keymap.py) once per session, after 90 s idle -->
+	<timer>
+		<name>nocturne_keymap</name>
+		<description>Install the skin's keymaps into userdata</description>
+		<start reset="false">System.IdleTime(90) + String.IsEmpty(Window(Home).Property(nocturne.keymapcheck))</start>
+		<onstart>SetProperty(nocturne.keymapcheck,1,home)</onstart>
+		<onstart>RunScript(special://skin/scripts/install_keymap.py)</onstart>
+		<stop>!String.IsEmpty(Window(Home).Property(nocturne.keymapcheck))</stop>
+	</timer>
 </timers>
