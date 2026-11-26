@@ -108,6 +108,7 @@
 	<!-- One engraved word on the brass rail. params: id, label, onclick, visible, sep (separator before it) -->
 	<include name="VidInfo_RailWord">
 		<param name="onclick">noop</param>
+		<param name="onclick2">noop</param>
 		<param name="visible">true</param>
 		<param name="width">232</param>
 		<definition>
@@ -124,6 +125,7 @@
 				<texturefocus border="30,0,30,0">noc/rail_on.png</texturefocus>
 				<label>$PARAM[label]</label>
 				<onclick>$PARAM[onclick]</onclick>
+				<onclick>$PARAM[onclick2]</onclick>
 				<onup condition="Control.IsVisible(9001)">9001</onup>
 				<ondown condition="Integer.IsGreater(Container(50).NumItems,0)">50</ondown>
 				<visible>$PARAM[visible]</visible>
@@ -175,6 +177,9 @@
 				<param name="id" value="9014"/>
 				<param name="label" value="$LOCALIZE[31261]"/>
 				<param name="onclick" value="RunPlugin(&quot;$INFO[ListItem.FileNameAndPath]&quot;)"/>
+				<!-- close the info page as POV starts, like Kodi's own Play does: left open, it showed between POV's
+				     busy spinner and its loading screen, so starting a film looked like loading twice -->
+				<param name="onclick2" value="Dialog.Close(movieinformation,true)"/>
 				<param name="visible" value="$EXP[VidInfo_IsPov]"/>
 			</include>
 			<include content="VidInfo_RailWord">
