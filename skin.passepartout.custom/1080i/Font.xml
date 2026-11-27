@@ -27,6 +27,8 @@
 		<font><name>sans_22_med</name><filename>PPSans-Medium.ttf</filename><size>22</size></font>
 		<font><name>sans_20_med</name><filename>PPSans-Medium.ttf</filename><size>20</size></font>
 		<font><name>cap_20</name><filename>PPCaps-Medium.ttf</filename><size>20</size><linespacing>1.167</linespacing><style>uppercase</style></font>
+		<!-- custom: badges in the source picker -->
+		<font><name>cap_16</name><filename>PPCaps-Medium.ttf</filename><size>16</size><style>uppercase</style></font>
 		<font><name>capw_22</name><filename>PPCapsWide-Medium.ttf</filename><size>22</size><style>uppercase</style></font>
 		<!-- custom: the active list name on Home > Films rows -->
 		<font><name>capw_30</name><filename>PPCapsWide-Medium.ttf</filename><size>30</size><style>uppercase</style></font>
@@ -76,6 +78,8 @@
 		<font><name>sans_22_med</name><filename>arial.ttf</filename><size>22</size></font>
 		<font><name>sans_20_med</name><filename>arial.ttf</filename><size>20</size></font>
 		<font><name>cap_20</name><filename>arial.ttf</filename><size>20</size><linespacing>1.167</linespacing><style>uppercase</style></font>
+		<!-- custom: badges in the source picker -->
+		<font><name>cap_16</name><filename>arial.ttf</filename><size>16</size><style>uppercase</style></font>
 		<font><name>capw_22</name><filename>arial.ttf</filename><size>22</size><style>uppercase</style></font>
 		<!-- custom: the active list name on Home > Films rows -->
 		<font><name>capw_30</name><filename>arial.ttf</filename><size>30</size><style>uppercase</style></font>

@@ -17,6 +17,7 @@
 	<include file="Includes_Home.xml"/>
 	<include file="Includes_PovFilmRows.xml"/>
 	<include file="Includes_PovGrid.xml"/>
+	<include file="Includes_PovSources.xml"/>
 	<include file="Includes_OSD.xml"/>
 	<include file="Includes_Search.xml"/>
 	<include file="Includes_Views_Video.xml"/>
