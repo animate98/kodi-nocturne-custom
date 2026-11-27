@@ -4,10 +4,12 @@
   dist/
     addons.xml, addons.xml.md5
     index.html                                   (Kodi can browse it as a file source)
-    repository.nocturne.custom-<ver>.zip          (install this once: "Install from zip file")
+    repository.nocturne.custom.zip                (install this once: "Install from zip file"; no version in
+                                                  the name, so nobody mistakes it for an old build)
     <addon id>/<addon id>-<ver>.zip              (what Kodi downloads to install / update)
 
-The skin's version is rewritten to MAJOR.MINOR.<BUILD_NUMBER> so every push is a newer release.
+Every add-on's version is rewritten to MAJOR.MINOR.<BUILD_NUMBER> so every push is a newer release for all
+of them (the addon.xml files in git keep x.y.0; only these built zips carry real versions).
 
 Usage: BUILD_NUMBER=42 python3 tools/build_repo.py
 """
@@ -27,7 +29,7 @@ VERSION_RE = re.compile(r'(<addon\b[^>]*\bversion=")([^"]+)(")')
 
 def addon_xml(addon, build):
     text = (ROOT / addon / "addon.xml").read_text(encoding="utf-8")
-    if addon.startswith("skin.") and build:
+    if build:
         base = VERSION_RE.search(text).group(2).split(".")
         text = VERSION_RE.sub(lambda m: f"{m.group(1)}{base[0]}.{base[1]}.{build}{m.group(3)}", text, count=1)
     return text, VERSION_RE.search(text).group(2)
@@ -63,8 +65,8 @@ def main():
         entries.append(re.sub(r"^<\?xml[^>]*\?>\s*", "", text).strip())
         links.append(f"{addon}/")
         if addon.startswith("repository."):
-            shutil.copy(out, DIST / out.name)
-            links.insert(0, out.name)
+            shutil.copy(out, DIST / f"{addon}.zip")
+            links.insert(0, f"{addon}.zip")
         print(f"{addon} {version}")
     addons = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<addons>\n' + "\n".join(entries) + "\n</addons>\n"
     (DIST / "addons.xml").write_text(addons, encoding="utf-8")

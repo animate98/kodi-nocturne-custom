@@ -33,10 +33,21 @@ KODI_HOST=192.168.1.50 ./deploy.sh
 
 Requires SSH key login as `root` on the CoreELEC box.
 
-## Install on Kodi from GitHub
+## Install on Kodi (for anyone)
 
-1. Kodi → Settings → File manager → Add source → `https://animate98.github.io/kodi-nocturne-custom/`
-2. Add-ons → Install from zip file → that source → `repository.nocturne.custom-1.0.0.zip`
-3. Add-ons → Install from repository → Nocturne Custom Repository → Look and feel → Skin → Nocturne Custom
+Install through the Kodi repository, not from GitHub's "Code → Download ZIP" or a folder in this repo: the
+`addon.xml` files here say `1.0.0`, and only the repository's zips carry the real, current version.
 
-Every push to `main` publishes a new version (`1.0.<run number>`); Kodi picks it up with its normal add-on updates.
+1. Kodi → Settings → System → Add-ons → turn on **Unknown sources**.
+2. Settings → File manager → Add source → `https://animate98.github.io/kodi-nocturne-custom/` (name it e.g. `pp`).
+3. Add-ons → Install from zip file → `pp` → `repository.nocturne.custom.zip`.
+4. Add-ons → Install from repository → Nocturne Custom Repository → Look and feel → Skin →
+   **Passe-partout Custom** (or Nocturne Custom). Kodi installs the grid helper and the other dependencies
+   with it; POV (`plugin.video.pov`) must already be installed and set up.
+5. Settings → Interface → Skin → Passe-partout Custom.
+
+Every push to `main` publishes new versions (`1.0.<run number>`) of all add-ons; Kodi picks them up with its
+normal add-on updates (or Add-ons → My add-ons → … → Check for updates).
+
+**Stuck on an old build?** (e.g. a skin installed from a zip by hand): do steps 2–4 above; installing from
+the repository replaces it with the current version, and from then on it updates itself.

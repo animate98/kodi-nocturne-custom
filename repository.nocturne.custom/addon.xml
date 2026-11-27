@@ -8,8 +8,8 @@
 		</dir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Updates for the Nocturne Custom skin.</summary>
-		<description lang="en_GB">Installs and updates Nocturne Custom (skin.nocturne.custom), built from github.com/animate98/kodi-nocturne-custom.</description>
+		<summary lang="en_GB">Passe-partout Custom and Nocturne Custom skins for Kodi.</summary>
+		<description lang="en_GB">Installs and updates Passe-partout Custom (skin.passepartout.custom, with its grid helper) and Nocturne Custom (skin.nocturne.custom), built from github.com/animate98/kodi-nocturne-custom.</description>
 		<platform>all</platform>
 		<license>GPL-2.0-or-later</license>
 		<source>https://github.com/animate98/kodi-nocturne-custom</source>
