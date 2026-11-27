@@ -3,8 +3,11 @@
 	POV's loading screen (and its questions, e.g. resume) in Passe-partout's look. -->
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
-	<include>Anim_DialogOpenClose</include>
+	<!-- no open / close effect; after it closes, pp.hold keeps the info page's loading view until the picker opens -->
+	<onunload>SetProperty(pp.hold,1,home)</onunload>
 	<controls>
+		<control type="group">
+		<visible>!$EXP[PovMorph]</visible>
 		<include>PP_Background</include>
 		<control type="label">
 			<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
@@ -27,10 +30,11 @@
 			<font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[Window.Property(tikiskins.source_progress.year)]</label>
 		</control>
 		<control type="image"><left>640</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>
+		</control>
 		<control type="label">
 			<left>640</left><top>350</top><width>1160</width><height>60</height><aligny>center</aligny>
 			<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
-			<visible>!String.IsEqual(Window.Property(tikiskins.source_progress.buttons),true)</visible>
+			<visible>!String.IsEqual(Window.Property(tikiskins.source_progress.buttons),true) + !$EXP[PovMorph]</visible>
 		</control>
 		<control type="progress" id="5000">
 			<left>640</left><top>440</top><width>1160</width><height>4</height>

@@ -29,12 +29,20 @@
 				<effect type="slide" start="0,0" end="0,-540" time="0"/>
 			</animation>
 			<include>VidInfo_Header</include>
-			<include>VidInfo_Print</include>
-			<include>VidInfo_Label</include>
-			<include>VidInfo_Buttons</include>
-			<include>VidInfo_MoreRow</include>
-			<include>VidInfo_CastRow</include>
+			<control type="group">
+				<include>PovMorph_Poster</include>
+				<include>VidInfo_Print</include>
+			</control>
+			<control type="group">
+				<include>PovMorph_Hide</include>
+				<include>VidInfo_Label</include>
+				<include>VidInfo_Buttons</include>
+				<include>VidInfo_MoreRow</include>
+				<include>VidInfo_CastRow</include>
+			</control>
 		</control>
+		<!-- custom (POV): Play turns this page into the source picker's loading view -->
+		<include>PovMorph_Info</include>
 		<include>VidInfo_FullPlot</include>
 	</controls>
 </window>

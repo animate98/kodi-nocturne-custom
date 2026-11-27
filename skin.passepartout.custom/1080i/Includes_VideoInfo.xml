@@ -12,7 +12,8 @@
 	<expression name="VidInfo_IsFolderType">String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set)</expression>
 	<!-- custom (POV): POV titles are not "playable" items to Kodi, so Kodi's own Play / Resume (8 / 9) show
 	     "Playback failed" while POV plays anyway, and Kodi retries the item when it stops. They get their own Play
-	     (9014) that runs POV directly (POV offers to resume itself) and closes this page, like Kodi's Play does. -->
+	     (9014) that runs POV directly (POV offers to resume itself). This page stays open and turns into the source
+     picker's loading view (PovMorph_*, Includes_PovSources.xml) so the list underneath never shows. -->
 	<!-- custom: Versions (14) / Extras (15) open Kodi's video-version manager, which crashes on a film outside the
 	     library (POV titles): library films only (they have a DBID) -->
 	<expression name="VidInfo_IsPov">String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.pov/) + !$EXP[VidInfo_IsFolderType]</expression>
@@ -128,6 +129,7 @@
 	<!-- ================================================================== header + print -->
 	<include name="VidInfo_Header">
 		<control type="grouplist">
+			<include>PovMorph_Hide</include>
 			<left>120</left>
 			<top>64</top>
 			<width>1200</width>
@@ -299,8 +301,8 @@
 				<param name="onup" value="SetFocus(9001)"/>
 				<param name="ondown" value="SetFocus(50)"/>
 				<param name="label" value="Play"/>
-				<param name="onclick" value="RunPlugin(&quot;$INFO[ListItem.FileNameAndPath]&quot;)"/>
-				<param name="onclick2" value="Dialog.Close(movieinformation,true)"/>
+				<param name="onclick" value="SetProperty(pp.play,1,home)"/>
+				<param name="onclick2" value="RunPlugin(&quot;$INFO[ListItem.FileNameAndPath]&quot;)"/>
 				<param name="visible" value="$EXP[VidInfo_IsPov]"/>
 			</include>
 			<include content="PP_ButtonSecondary">

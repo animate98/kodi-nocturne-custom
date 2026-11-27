@@ -182,7 +182,7 @@ def results_list(lid, style):
 \t\t</include>"""
 
 
-def page(crumb, title_label, meta_label, poster, plot=None):
+def page(crumb, title_label, meta_label, poster, plot=None, own=None):
     plot_xml = f"""
 \t\t<control type="textbox">
 \t\t\t<left>120</left><top>786</top><width>400</width><height>222</height>
@@ -190,7 +190,9 @@ def page(crumb, title_label, meta_label, poster, plot=None):
 \t\t\t<!-- static: no autoscroll; a long description stops at the box -->
 \t\t\t<label>{plot}</label>
 \t\t</control>""" if plot else ""
-    return f"""\t\t<include>PP_Background</include>
+    head = f"\t\t<control type=\"group\">\n\t\t<visible>{own}</visible>\n" if own else ""
+    tail = "\n\t\t</control>" if own else ""
+    return head + f"""\t\t<include>PP_Background</include>
 \t\t<control type="label">
 \t\t\t<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
 \t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>Films  /  [COLOR ink]{X(crumb)}[/COLOR]</label>
@@ -211,7 +213,73 @@ def page(crumb, title_label, meta_label, poster, plot=None):
 \t\t\t<left>{LIST_LEFT}</left><top>230</top><width>{LIST_W}</width><height>32</height><aligny>center</aligny>
 \t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>{meta_label}</label>
 \t\t</control>
-\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>"""
+\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>""" + tail
+
+
+# ---- the hand-off from the wall label ---------------------------------------------------------------------------
+# Play on the wall label (POV titles) sets pp.play and starts POV. While POV works the info page itself turns into
+# the loading page: its print shrinks and slides from the wall label's place (480 x 720 at 200,150) to this page's
+# (400 x 600 at 120,150) in 0.4 s, its texts fade, and the loading view fades in (POV's loading screen does not
+# get the description; the info page has it). POV's loading screen then opens on top as a transparent layer
+# (its live text and bar only), and the source picker over the same picture, its list fading in after 0.3 s, so
+# the loading view stays at least 0.5 s and the print has arrived first. Back on the picker / a cancelled search
+# lets the info page slide back; playback resets it (Player.HasMedia). pp.hold bridges the moment between POV's
+# loading screen closing and the picker opening (Timers.xml clears both).
+MORPH = ("[String.IsEqual(Window(Home).Property(pp.play),1) | String.IsEqual(Window(Home).Property(pp.hold),1)"
+         " | Window.IsVisible(progress_media.xml) | Window.IsVisible(sources_results.xml)] + !Player.HasMedia")
+T4 = 'time="400" tween="sine" easing="inout"'
+
+
+def morph_includes():
+    k = 400 / 480
+    return f"""\t<expression name="PovMorph">{MORPH}</expression>
+\t<!-- the wall label's print: shrink about the target corner, then slide (Kodi applies the zoom after the slide) -->
+\t<include name="PovMorph_Poster">
+\t\t<animation type="Conditional" condition="$EXP[PovMorph]" reversible="true">
+\t\t\t<effect type="zoom" start="100" end="{round(k * 100, 2)}" center="120,150" {T4}/>
+\t\t\t<effect type="slide" start="0,0" end="-80,0" {T4}/>
+\t\t</animation>
+\t</include>
+\t<include name="PovMorph_Hide">
+\t\t<animation effect="fade" start="100" end="0" time="200" condition="$EXP[PovMorph]" reversible="true">Conditional</animation>
+\t</include>
+\t<!-- the loading view drawn by the info page (ListItem = the film) -->
+\t<include name="PovMorph_Info">
+\t\t<control type="group">
+\t\t\t<visible>$EXP[PovMorph]</visible>
+\t\t\t<animation effect="fade" start="0" end="100" time="200" delay="120">Visible</animation>
+\t\t\t<animation effect="fade" start="100" end="0" time="160">Hidden</animation>
+\t\t\t<control type="label">
+\t\t\t\t<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
+\t\t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>Films  /  [COLOR ink]Looking for copies[/COLOR]</label>
+\t\t\t</control>
+\t\t\t<control type="textbox">
+\t\t\t\t<left>120</left><top>786</top><width>400</width><height>222</height>
+\t\t\t\t<font>body_22</font><textcolor>body</textcolor><label>$INFO[ListItem.Plot]</label>
+\t\t\t</control>
+\t\t\t<control type="label">
+\t\t\t\t<left>{LIST_LEFT}</left><top>128</top><width>{LIST_W}</width><height>96</height><aligny>center</aligny>
+\t\t\t\t<font>ttl_72</font><textcolor>ink</textcolor><label>$INFO[ListItem.Title]</label>
+\t\t\t</control>
+\t\t\t<control type="label">
+\t\t\t\t<left>{LIST_LEFT}</left><top>230</top><width>{LIST_W}</width><height>32</height><aligny>center</aligny>
+\t\t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Year]$INFO[ListItem.Duration(mins),  ·  , min]</label>
+\t\t\t</control>
+\t\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>
+{loading_view("true")}
+\t\t</control>
+\t</include>"""
+
+
+def loading_view(visible):
+    return f"""\t\t\t<control type="group">
+\t\t\t\t<visible>{visible}</visible>
+\t\t\t\t<control type="label">
+\t\t\t\t\t<left>{LIST_LEFT}</left><top>350</top><width>{LIST_W}</width><height>60</height><aligny>center</aligny>
+\t\t\t\t\t<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
+\t\t\t\t</control>
+\t\t\t\t<control type="image"><left>{LIST_LEFT}</left><top>440</top><width>{LIST_W}</width><height>4</height><texture colordiffuse="rule_track">common/white.png</texture></control>
+\t\t\t</control>"""
 
 
 def main():
@@ -221,14 +289,24 @@ def main():
 	POV's source picker in Passe-partout's look (Kodi uses the skin's copy over POV's). -->
 <window>
 	<defaultcontrol always="true">2000</defaultcontrol>
-	<include>Anim_DialogOpenClose</include>
+	<!-- no open / close effect: it opens over the same picture (the info page in its loading view, or POV's
+	     loading screen) -->
+	<onunload>ClearProperty(pp.play,home)</onunload>
+	<onunload>ClearProperty(pp.hold,home)</onunload>
 	<controls>
 {page("Choose a copy", f"$INFO[{W}(tikiskins.title)]",
       f"[COLOR ink]$INFO[{W}(tikiskins.total_results)] copies[/COLOR]$INFO[{W}(tikiskins.scrape_time),  ·  found in , s]  ·  best first",
       f"$INFO[{W}(tikiskins.poster)]", f"$INFO[{W}(tikiskins.plot)]")}
+\t\t<control type="group">
+\t\t\t<animation effect="fade" start="100" end="0" time="200" delay="300">WindowOpen</animation>
+{loading_view("true")}
+\t\t</control>
+\t\t<control type="group">
+\t\t\t<animation effect="fade" start="0" end="100" time="200" delay="300">WindowOpen</animation>
 {results_list(2000, "list")}
 {results_list(2001, "infolist")}
 {results_list(2002, "widelist")}
+\t\t</control>
 \t\t<control type="label">
 \t\t\t<left>{LIST_LEFT}</left><top>968</top><width>800</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor>
 \t\t\t<label>The catalogue</label>
@@ -262,13 +340,14 @@ def main():
 	POV's loading screen (and its questions, e.g. resume) in Passe-partout's look. -->
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
-	<include>Anim_DialogOpenClose</include>
+	<!-- no open / close effect; after it closes, pp.hold keeps the info page's loading view until the picker opens -->
+	<onunload>SetProperty(pp.hold,1,home)</onunload>
 	<controls>
-{page("Looking for copies", f"$INFO[{P}.title)]", f"$INFO[{P}.year)]", f"$INFO[{P}.poster)]")}
+{page("Looking for copies", f"$INFO[{P}.title)]", f"$INFO[{P}.year)]", f"$INFO[{P}.poster)]", own="!$EXP[PovMorph]")}
 \t\t<control type="label">
 \t\t\t<left>{LIST_LEFT}</left><top>350</top><width>{LIST_W}</width><height>60</height><aligny>center</aligny>
 \t\t\t<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
-\t\t\t<visible>!String.IsEqual({P}.buttons),true)</visible>
+\t\t\t<visible>!String.IsEqual({P}.buttons),true) + !$EXP[PovMorph]</visible>
 \t\t</control>
 \t\t<control type="progress" id="5000">
 \t\t\t<left>{LIST_LEFT}</left><top>440</top><width>{LIST_W}</width><height>4</height>
@@ -290,6 +369,7 @@ def main():
 <!-- GENERATED by tools/make_pp_sources.py - edit that script, not this file. Badge columns of the source picker. -->
 <includes>
 {variables()}
+{morph_includes()}
 </includes>
 """
     (OUT / "sources_results.xml").write_text(results)

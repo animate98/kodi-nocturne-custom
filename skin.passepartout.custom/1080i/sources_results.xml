@@ -3,7 +3,10 @@
 	POV's source picker in Passe-partout's look (Kodi uses the skin's copy over POV's). -->
 <window>
 	<defaultcontrol always="true">2000</defaultcontrol>
-	<include>Anim_DialogOpenClose</include>
+	<!-- no open / close effect: it opens over the same picture (the info page in its loading view, or POV's
+	     loading screen) -->
+	<onunload>ClearProperty(pp.play,home)</onunload>
+	<onunload>ClearProperty(pp.hold,home)</onunload>
 	<controls>
 		<include>PP_Background</include>
 		<control type="label">
@@ -33,6 +36,19 @@
 			<font>cap_20</font><textcolor>ink2</textcolor><label>[COLOR ink]$INFO[Window.Property(tikiskins.total_results)] copies[/COLOR]$INFO[Window.Property(tikiskins.scrape_time),  ·  found in , s]  ·  best first</label>
 		</control>
 		<control type="image"><left>640</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" delay="300">WindowOpen</animation>
+			<control type="group">
+				<visible>true</visible>
+				<control type="label">
+					<left>640</left><top>350</top><width>1160</width><height>60</height><aligny>center</aligny>
+					<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
+				</control>
+				<control type="image"><left>640</left><top>440</top><width>1160</width><height>4</height><texture colordiffuse="rule_track">common/white.png</texture></control>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="fade" start="0" end="100" time="200" delay="300">WindowOpen</animation>
 		<control type="fixedlist" id="2000">
 			<left>640</left><top>330</top><width>1160</width><height>624</height>
 			<orientation>vertical</orientation>
@@ -852,6 +868,7 @@
 			<param name="id" value="2062"/><param name="left" value="1818"/>
 			<param name="top" value="330"/><param name="height" value="624"/><param name="onleft" value="2002"/>
 		</include>
+		</control>
 		<control type="label">
 			<left>640</left><top>968</top><width>800</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor>
 			<label>The catalogue</label>

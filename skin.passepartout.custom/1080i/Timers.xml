@@ -10,4 +10,21 @@
 		<onstart>RunScript(special://skin/scripts/install_keymap.py)</onstart>
 		<stop>!String.IsEmpty(Window(Home).Property(pp.keymapcheck))</stop>
 	</timer>
+	<!-- custom (POV): the wall label's hand-off to POV (Includes_PovSources.xml, PovMorph). pp.play is set by Play
+	     and cleared once POV's own window is up, playback starts, or POV gave up silently; pp.hold covers the gap
+	     between POV's loading screen and its source picker. -->
+	<timer>
+		<name>pp_play</name>
+		<description>Wall label Play: waiting for POV</description>
+		<start reset="true">String.IsEqual(Window(Home).Property(pp.play),1)</start>
+		<stop>Window.IsVisible(progress_media.xml) | Window.IsVisible(sources_results.xml) | Player.HasMedia | Integer.IsGreater(Skin.TimerElapsedSecs(pp_play),20)</stop>
+		<onstop>ClearProperty(pp.play,home)</onstop>
+	</timer>
+	<timer>
+		<name>pp_hold</name>
+		<description>POV loading screen closed: waiting for the source picker</description>
+		<start reset="true">String.IsEqual(Window(Home).Property(pp.hold),1)</start>
+		<stop>Window.IsVisible(sources_results.xml) | Player.HasMedia | Integer.IsGreater(Skin.TimerElapsedSecs(pp_hold),2)</stop>
+		<onstop>ClearProperty(pp.hold,home)</onstop>
+	</timer>
 </timers>
