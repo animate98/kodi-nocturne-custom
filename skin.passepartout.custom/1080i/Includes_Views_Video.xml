@@ -204,9 +204,9 @@
 		<control type="group">
 			<visible>$EXP[VidView_IsLibraryVideo] + Integer.IsGreater(Container.NumItems,0)</visible>
 			<animation effect="fade" start="100" end="0" time="160" condition="Control.HasFocus(506)">Conditional</animation>
-			<!-- legend, bottom left (the hang only) -->
+			<!-- legend, bottom left (the hang only). custom: off, the caption under the print already says watched / unwatched -->
 			<control type="group">
-				<visible>$EXP[VidView_HangView] + $EXP[ShowWatchedMarkers] + !Container.Content(tvshows)</visible>
+				<visible>false</visible>
 				<control type="image">
 					<left>120</left>
 					<top>973</top>
@@ -345,6 +345,7 @@
 	<include name="VidView_PrintBody">
 		<param name="art">$VAR[VidView_PosterArt]</param>
 		<param name="font">body_22</param>
+		<param name="titlevisible">true</param>
 		<definition>
 			<control type="group">
 				<visible>!ListItem.IsParentFolder</visible>
@@ -352,6 +353,7 @@
 					<param name="art" value="$PARAM[art]"/>
 					<param name="title" value="$INFO[ListItem.Label]"/>
 					<param name="font" value="$PARAM[font]"/>
+					<param name="titlevisible" value="$PARAM[titlevisible]"/>
 				</include>
 				<include>PP_Bevel</include>
 				<include>PP_WatchedMarkers</include>

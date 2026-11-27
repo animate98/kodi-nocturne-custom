@@ -337,6 +337,8 @@
 		<param name="aspect">scale</param>
 		<param name="title">$INFO[ListItem.Label]</param>
 		<param name="font">body_22</param>
+		<!-- custom: when the "no art" title may show (see PP_Print) -->
+		<param name="titlevisible">true</param>
 		<definition>
 			<control type="image">
 				<left>0</left>
@@ -355,6 +357,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$PARAM[title]</label>
+				<visible>$PARAM[titlevisible]</visible>
 			</control>
 			<control type="image">
 				<left>0</left>

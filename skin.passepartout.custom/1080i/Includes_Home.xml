@@ -54,11 +54,11 @@
 	</variable>
 	<variable name="Home_ContinuePath">
 		<value condition="$EXP[Home_Series] + $EXP[Home_RoomReady]">plugin://plugin.video.pov/?mode=build_next_episode</value>
-		<value condition="$EXP[Home_Films] + $EXP[Home_RoomReady]">plugin://plugin.video.pov/?mode=build_movie_list&amp;action=in_progress_movies</value>
+		<!-- custom: Films has its own list rows now -->
 	</variable>
 	<variable name="Home_RoomPath">
 		<value condition="$EXP[Home_Series] + $EXP[Home_ExhibitionReady]">plugin://plugin.video.pov/?mode=build_tvshow_list&amp;action=tmdb_tv_trending</value>
-		<value condition="$EXP[Home_Films] + $EXP[Home_ExhibitionReady]">plugin://plugin.video.pov/?mode=build_movie_list&amp;action=tmdb_movies_popular</value>
+		<!-- custom: Films has its own list rows now -->
 	</variable>
 	<variable name="Home_ContinueName">
 		<value condition="$EXP[Home_Series]">Next up</value>
@@ -436,8 +436,10 @@
 			<onback>9000</onback>
 			<ondown condition="$EXP[Home_Music] + Integer.IsGreater(Container(9130).NumItems,0)">9130</ondown>
 			<ondown condition="$EXP[Home_Music] + !Integer.IsGreater(Container(9130).NumItems,0)">9131</ondown>
-			<ondown condition="!$EXP[Home_Music] + Integer.IsGreater(Container(9120).NumItems,0)">9120</ondown>
-			<ondown condition="!$EXP[Home_Music] + !Integer.IsGreater(Container(9120).NumItems,0)">9121</ondown>
+			<ondown condition="!$EXP[Home_Music] + !$EXP[Home_Films] + Integer.IsGreater(Container(9120).NumItems,0)">9120</ondown>
+			<ondown condition="!$EXP[Home_Music] + !$EXP[Home_Films] + !Integer.IsGreater(Container(9120).NumItems,0)">9121</ondown>
+			<!-- custom (POV): Films go down into the list rows -->
+			<include>Home_FilmRowsExhibitionDown</include>
 			<onfocus>SetProperty(TMDbHelper.WidgetContainer,9101,home)</onfocus>
 			<onfocus condition="$EXP[Home_Music]">SetProperty(TMDbHelper.Colors.SourceImage,Art(thumb)|Art(fanart),home)</onfocus>
 			<onfocus condition="!$EXP[Home_Music]">SetProperty(TMDbHelper.Colors.SourceImage,Art(fanart)|Art(landscape)|Art(poster)|Art(thumb),home)</onfocus>
@@ -481,7 +483,7 @@
 
 	<include name="Home_Exhibition">
 		<control type="group">
-			<visible>$EXP[Home_AnySection] + [!$EXP[Home_InRoom] + Integer.IsGreater(Container(9101).NumItems,0)] + !$EXP[CustomRowsFocus]</visible>
+			<visible>$EXP[Home_AnySection] + [!$EXP[Home_InRoom] + Integer.IsGreater(Container(9101).NumItems,0)] + !$EXP[CustomRowsFocus] + !$EXP[Home_InFilmRows]</visible>
 			<animation effect="fade" start="0" end="100" time="320" delay="80">Visible</animation>
 			<animation type="Hidden" condition="!Skin.HasSetting(passepartout.reducemotion)">
 				<effect type="fade" start="100" end="0" time="240"/>
@@ -704,7 +706,8 @@
 
 	<include name="Home_RoomRows">
 		<control type="group">
-			<visible>$EXP[Home_AnySection] + [!$EXP[Home_Music]]</visible>
+			<!-- custom (POV): Films has its own list rows (Includes_PovFilmRows.xml) -->
+			<visible>$EXP[Home_AnySection] + [!$EXP[Home_Music]] + !$EXP[Home_Films]</visible>
 			<!-- row labels -->
 			<control type="label">
 				<left>120</left>

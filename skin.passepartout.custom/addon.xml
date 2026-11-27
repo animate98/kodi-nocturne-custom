@@ -7,6 +7,8 @@
 		<!-- Optional: the art-coloured paper (TMDb Helper colour service). The skin runs on neutral paper without it. -->
 		<import addon="plugin.video.themoviedb.helper" version="4.0.0" optional="true"/>
 		<import addon="script.embuary.helper" version="2.0.0" optional="true"/>
+		<!-- custom: View all (Custom_1158_PovGrid) gets its pages from the grid helper (POV lists, small posters) -->
+		<import addon="plugin.video.ppgrid" version="1.0.0"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="1">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>

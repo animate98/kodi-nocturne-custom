@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.ppgrid" name="Passe-partout grid helper" version="1.0.0" provider-name="animate98">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+		<import addon="plugin.video.pov"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">POV lists with small posters, for Passe-partout Custom's View all grid.</summary>
+		<description lang="en_GB">Runs POV's own list code and adds a small TMDb poster (342 px wide) to every title as "gridposter", so a page of 20 small prints does not decode 20 full-size posters. POV's own poster stays for the info page. One page of 20 per call, no "Next page" item. Used by skin.passepartout.custom; not meant to be opened on its own.</description>
+		<platform>all</platform>
+		<license>GPL-3.0-or-later</license>
+		<source>https://github.com/animate98/kodi-nocturne-custom</source>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>

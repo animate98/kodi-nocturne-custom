@@ -40,6 +40,9 @@
 	<onload condition="String.IsEqual(Window(Home).Property(passepartout.section),music)">SetProperty(TMDbHelper.Colors.SourceImage,Art(thumb)|Art(fanart),home)</onload>
 	<onload condition="!String.IsEqual(Window(Home).Property(passepartout.section),music)">SetProperty(TMDbHelper.Colors.SourceImage,Art(fanart)|Art(landscape)|Art(poster)|Art(thumb),home)</onload>
 	<onload>SetProperty(TMDbHelper.WidgetContainer,9101,home)</onload>
+	<!-- custom (POV): back from a list opened from the Films rows (View all / Right past the end): that row again -->
+	<onload condition="!String.IsEmpty(Window(Home).Property(pp.rowreturn))">SetFocus($INFO[Window(Home).Property(pp.rowreturn)])</onload>
+	<onload>ClearProperty(pp.rowreturn,home)</onload>
 	<!-- other windows must not inherit Home's container id (TMDb Helper reads it globally) -->
 	<onunload>ClearProperty(TMDbHelper.WidgetContainer,home)</onunload>
 	<include>Anim_WindowOpenClose</include>
@@ -50,6 +53,8 @@
 		<include>Home_CustomMenuPanel</include>
 		<include>Home_ExhibitionSmall</include>
 		<include>Home_RoomRows</include>
+		<!-- custom (POV): Films, Down from the exhibition: one POV list at a time (Includes_PovFilmRows.xml) -->
+		<include>Home_FilmRows</include>
 		<include>Home_CustomRows</include>
 		<include>CustomRows_Probes</include>
 		<include>PP_NowPlayingLine</include>

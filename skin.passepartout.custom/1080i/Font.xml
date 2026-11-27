@@ -28,6 +28,8 @@
 		<font><name>sans_20_med</name><filename>PPSans-Medium.ttf</filename><size>20</size></font>
 		<font><name>cap_20</name><filename>PPCaps-Medium.ttf</filename><size>20</size><linespacing>1.167</linespacing><style>uppercase</style></font>
 		<font><name>capw_22</name><filename>PPCapsWide-Medium.ttf</filename><size>22</size><style>uppercase</style></font>
+		<!-- custom: the active list name on Home > Films rows -->
+		<font><name>capw_30</name><filename>PPCapsWide-Medium.ttf</filename><size>30</size><style>uppercase</style></font>
 		<font><name>clock_24</name><filename>PPClock-Regular.ttf</filename><size>24</size></font>
 		<font><name>num_20</name><filename>PPNum-Regular.ttf</filename><size>20</size></font>
 		<font><name>num_22</name><filename>PPNum-Regular.ttf</filename><size>22</size></font>
@@ -75,6 +77,8 @@
 		<font><name>sans_20_med</name><filename>arial.ttf</filename><size>20</size></font>
 		<font><name>cap_20</name><filename>arial.ttf</filename><size>20</size><linespacing>1.167</linespacing><style>uppercase</style></font>
 		<font><name>capw_22</name><filename>arial.ttf</filename><size>22</size><style>uppercase</style></font>
+		<!-- custom: the active list name on Home > Films rows -->
+		<font><name>capw_30</name><filename>arial.ttf</filename><size>30</size><style>uppercase</style></font>
 		<font><name>clock_24</name><filename>arial.ttf</filename><size>24</size></font>
 		<font><name>num_20</name><filename>arial.ttf</filename><size>20</size></font>
 		<font><name>num_22</name><filename>arial.ttf</filename><size>22</size></font>
