@@ -20,7 +20,7 @@
 				<top>-12</top>
 				<width>272</width>
 				<height>72</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<left>0</left>
@@ -29,7 +29,7 @@
 				<height>24</height>
 				<align>right</align>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31013]$INFO[Control.GetLabel(10),  ·  ,%]</label>
 			</control>
 			<control type="image">
@@ -37,14 +37,14 @@
 				<top>38</top>
 				<width>240</width>
 				<height>2</height>
-				<texture colordiffuse="rule_strong">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_strong]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>
 				<top>38</top>
 				<width>60</width>
 				<height>2</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<animation effect="slide" start="0,0" end="180,0" time="700" tween="sine" easing="inout" loop="true" reversible="false" condition="!Skin.HasSetting(passepartout.reducemotion)">Conditional</animation>
 			</control>
 			<control type="label" id="10">

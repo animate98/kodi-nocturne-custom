@@ -70,7 +70,7 @@
 					<width>72</width>
 					<height>72</height>
 					<aspectratio>scale</aspectratio>
-					<texture colordiffuse="wash">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 				</control>
 				<control type="image">
 					<left>16</left>
@@ -86,7 +86,7 @@
 					<width>900</width>
 					<height>40</height>
 					<font>sans_26_med</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="label">
@@ -95,7 +95,7 @@
 					<width>900</width>
 					<height>30</height>
 					<font>cap_20</font>
-					<textcolor>ink3</textcolor>
+					<textcolor>$VAR[C_ink3]</textcolor>
 					<label>$INFO[ListItem.Label2,Last login  ,]</label>
 				</control>
 				<control type="image">
@@ -103,7 +103,7 @@
 					<bottom>0</bottom>
 					<width>1080</width>
 					<height>rule_h</height>
-					<texture colordiffuse="rule">common/hairline.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 				</control>
 			</itemlayout>
 			<focusedlayout width="1080" height="100">
@@ -112,7 +112,7 @@
 					<top>0</top>
 					<width>1080</width>
 					<height>100</height>
-					<texture colordiffuse="ink">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 					<visible>Control.HasFocus(2)</visible>
 				</control>
 				<control type="image">
@@ -148,7 +148,7 @@
 					<width>900</width>
 					<height>30</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Label2,Last login  ,]</label>
 					<visible>!Control.HasFocus(2)</visible>
 				</control>
@@ -167,7 +167,7 @@
 					<bottom>0</bottom>
 					<width>1080</width>
 					<height>rule_h</height>
-					<texture colordiffuse="rule">common/hairline.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 				</control>
 			</focusedlayout>
 		</control>

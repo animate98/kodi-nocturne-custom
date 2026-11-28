@@ -84,7 +84,7 @@
 				<top>222</top>
 				<width>127</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),hang)</visible>
 			</control>
 			<control type="image">
@@ -92,7 +92,7 @@
 				<top>222</top>
 				<width>223</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),series)</visible>
 			</control>
 			<control type="image">
@@ -100,7 +100,7 @@
 				<top>222</top>
 				<width>84</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),salon)</visible>
 			</control>
 			<control type="image">
@@ -108,7 +108,7 @@
 				<top>222</top>
 				<width>126</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),wall)</visible>
 			</control>
 			<control type="image">
@@ -116,7 +116,7 @@
 				<top>222</top>
 				<width>55</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),list)</visible>
 			</control>
 			<control type="image">
@@ -124,7 +124,7 @@
 				<top>222</top>
 				<width>127</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),ephang)</visible>
 			</control>
 			<control type="image">
@@ -132,7 +132,7 @@
 				<top>222</top>
 				<width>199</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),widehang)</visible>
 			</control>
 			<control type="image">
@@ -140,7 +140,7 @@
 				<top>222</top>
 				<width>213</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),printroom)</visible>
 			</control>
 			<control type="image">
@@ -148,7 +148,7 @@
 				<top>222</top>
 				<width>147</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>String.IsEqual(ListItem.Property(key),tracklist)</visible>
 			</control>
 		</definition>
@@ -159,7 +159,7 @@
 			<top>188</top>
 			<width>159</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),hang)</visible>
 		</control>
 		<control type="image">
@@ -167,7 +167,7 @@
 			<top>188</top>
 			<width>255</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),series)</visible>
 		</control>
 		<control type="image">
@@ -175,7 +175,7 @@
 			<top>188</top>
 			<width>116</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),salon)</visible>
 		</control>
 		<control type="image">
@@ -183,7 +183,7 @@
 			<top>188</top>
 			<width>158</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),wall)</visible>
 		</control>
 		<control type="image">
@@ -191,7 +191,7 @@
 			<top>188</top>
 			<width>87</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),list)</visible>
 		</control>
 		<control type="image">
@@ -199,7 +199,7 @@
 			<top>188</top>
 			<width>159</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),ephang)</visible>
 		</control>
 		<control type="image">
@@ -207,7 +207,7 @@
 			<top>188</top>
 			<width>231</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),widehang)</visible>
 		</control>
 		<control type="image">
@@ -215,7 +215,7 @@
 			<top>188</top>
 			<width>245</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),printroom)</visible>
 		</control>
 		<control type="image">
@@ -223,7 +223,7 @@
 			<top>188</top>
 			<width>179</width>
 			<height>44</height>
-			<texture colordiffuse="ink">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			<visible>String.IsEqual(ListItem.Property(key),tracklist)</visible>
 		</control>
 	</include>
@@ -249,8 +249,8 @@
 				<width>240</width>
 				<height>44</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
-				<selectedcolor>ink2</selectedcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
+				<selectedcolor>$VAR[C_ink2]</selectedcolor>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>!$EXP[PP_PickCurrent]</visible>
 			</control>
@@ -262,8 +262,8 @@
 					<width>240</width>
 					<height>44</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
-					<selectedcolor>ink</selectedcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
+					<selectedcolor>$VAR[C_ink]</selectedcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<include>PP_PickWordMarks</include>
@@ -312,8 +312,8 @@
 				<width>240</width>
 				<height>44</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
-				<selectedcolor>ink</selectedcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
+				<selectedcolor>$VAR[C_ink]</selectedcolor>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>!Control.HasFocus(100)</visible>
 			</control>

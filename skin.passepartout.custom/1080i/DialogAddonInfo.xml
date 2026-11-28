@@ -31,7 +31,7 @@
 				<top>0</top>
 				<width>400</width>
 				<height>400</height>
-				<texture colordiffuse="wash">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>40</left>
@@ -50,7 +50,7 @@
 					<top>300</top>
 					<width>400</width>
 					<height>100</height>
-					<texture colordiffuse="paper">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>20</left>
@@ -66,7 +66,7 @@
 					<width>360</width>
 					<height>43</height>  <!-- 2 lines exactly: no half-clipped line at the bottom -->
 					<font>body_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.AddonLifecycleDesc]</label>
 				</control>
 			</control>
@@ -107,8 +107,8 @@
 					<height>subnav_h</height>
 					<align>right</align>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
-					<focusedcolor>on_ink</focusedcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
+					<focusedcolor>$VAR[C_on_ink]</focusedcolor>
 					<textoffsetx>12</textoffsetx>
 					<label>$VAR[Dlg_AddonNewsLabel]</label>
 					<onclick condition="String.IsEmpty(Window(Home).Property(passepartout.addonnews))">SetProperty(passepartout.addonnews,1,home)</onclick>
@@ -151,7 +151,7 @@
 				<width>1264</width>
 				<height>24</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[ListItem.AddonDisclaimer]</label>
 			</control>
 			<!-- screenshots (Kodi fills panel 50) -->
@@ -174,7 +174,7 @@
 						<top>8</top>
 						<width>400</width>
 						<height>225</height>
-						<texture colordiffuse="wash">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>8</left>
@@ -191,7 +191,7 @@
 						<top>8</top>
 						<width>400</width>
 						<height>225</height>
-						<texture colordiffuse="wash">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>8</left>
@@ -243,15 +243,15 @@
 				<width>238</width>
 				<height>dialog_row_h</height>
 				<font>sans_22_med</font>
-				<focusedcolor>on_ink</focusedcolor>
+				<focusedcolor>$VAR[C_on_ink]</focusedcolor>
 				<textoffsetx>16</textoffsetx>
 				<radiowidth>18</radiowidth>
 				<radioheight>18</radioheight>
 				<include>Dlg_Tex_DialogButton</include>
-				<textureradioonfocus colordiffuse="on_ink">markers/check.png</textureradioonfocus>
-				<textureradioonnofocus colordiffuse="ink">markers/check.png</textureradioonnofocus>
-				<textureradioofffocus border="2" colordiffuse="on_ink">pp/frame_1.png</textureradioofffocus>
-				<textureradiooffnofocus border="2" colordiffuse="rule_strong">pp/frame_1.png</textureradiooffnofocus>
+				<textureradioonfocus colordiffuse="$VAR[C_on_ink]">markers/check.png</textureradioonfocus>
+				<textureradioonnofocus colordiffuse="$VAR[C_ink]">markers/check.png</textureradioonnofocus>
+				<textureradioofffocus border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</textureradioofffocus>
+				<textureradiooffnofocus border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</textureradiooffnofocus>
 				<visible>Control.IsEnabled(13)</visible>
 			</control>
 			<include content="PP_DialogButton">

@@ -83,7 +83,7 @@
 				<width>548</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>right</align>
 				<label>$VAR[PP_LibCaption]</label>
 				<visible>Integer.IsEqual(Container(100).NumItems,3)</visible>
@@ -94,7 +94,7 @@
 				<width>844</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>right</align>
 				<label>$VAR[PP_LibCaption]</label>
 				<visible>Integer.IsGreaterOrEqual(Container(100).NumItems,4)</visible>
@@ -104,7 +104,7 @@
 				<top>72</top>
 				<width>600</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 				<visible>!Integer.IsGreater(Container(100).NumItems,2)</visible>
 			</control>
 			<control type="image">
@@ -112,7 +112,7 @@
 				<top>72</top>
 				<width>896</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 				<visible>Integer.IsEqual(Container(100).NumItems,3)</visible>
 			</control>
 			<control type="image">
@@ -120,7 +120,7 @@
 				<top>72</top>
 				<width>1192</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 				<visible>Integer.IsGreaterOrEqual(Container(100).NumItems,4)</visible>
 			</control>
 			<control type="list" id="100">

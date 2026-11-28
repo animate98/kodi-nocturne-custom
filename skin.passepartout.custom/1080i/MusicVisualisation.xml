@@ -81,7 +81,7 @@
 				<width>1600</width>
 				<height>34</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>center</align>
 				<label>$INFO[MusicPlayer.offset(1).Title,Next · ,]$INFO[MusicPlayer.offset(1).Artist, — ,]</label>
 			</control>
@@ -99,7 +99,7 @@
 				<width max="1300">auto</width>
 				<height>56</height>
 				<font>cap_20</font>
-				<disabledcolor>ink</disabledcolor>
+				<disabledcolor>$VAR[C_ink]</disabledcolor>
 				<textoffsetx>26</textoffsetx>
 				<texturefocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturefocus>
 				<texturenofocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturenofocus>
@@ -110,8 +110,8 @@
 				<width>auto</width>
 				<height>56</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
-				<disabledcolor>ink2</disabledcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
+				<disabledcolor>$VAR[C_ink2]</disabledcolor>
 				<textoffsetx>26</textoffsetx>
 				<texturefocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturefocus>
 				<texturenofocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturenofocus>
@@ -129,7 +129,7 @@
 				<top>960</top>
 				<width>1680</width>
 				<height>1</height>
-				<texturebg colordiffuse="rule">common/white.png</texturebg>
+				<texturebg colordiffuse="$VAR[C_rule]">common/white.png</texturebg>
 				<info>Player.Progress</info>
 			</control>
 			<control type="label">
@@ -138,7 +138,7 @@
 				<width>800</width>
 				<height>34</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[MusicPlayer.TrackNumber,Track ,]$INFO[Playlist.Length(music), of ,]$VAR[Music_PlayModesSep]</label>
 			</control>
 			<control type="grouplist">
@@ -158,7 +158,7 @@
 					<width>auto</width>
 					<height>34</height>
 					<font>mono_22</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[Player.Duration, / ,]</label>
 				</control>
 			</control>

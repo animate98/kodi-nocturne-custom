@@ -56,7 +56,7 @@
 			<width>400</width>
 			<height>24</height>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$LOCALIZE[31137]</label>
 		</control>
 		<control type="label" id="12">
@@ -66,7 +66,7 @@
 			<height>24</height>
 			<align>right</align>
 			<font>num_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 		</control>
 		<include content="PP_Rule">
 			<param name="top" value="232"/>
@@ -114,7 +114,7 @@
 			<height>24</height>
 			<align>right</align>
 			<font>num_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 		</control>
 		<include content="PP_Rule">
 			<param name="top" value="232"/>
@@ -151,7 +151,7 @@
 			<width>820</width>
 			<height>66</height>
 			<font>body_24</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$LOCALIZE[31205]</label>
 			<visible>Integer.IsEqual(Container(100).NumItems,0)</visible>
 		</control>

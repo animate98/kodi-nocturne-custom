@@ -55,7 +55,7 @@
 					<height>28</height>
 					<align>center</align>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31256]</label>
 				</control>
 			</control>
@@ -118,6 +118,14 @@
 					<param name="width" value="234"/>
 					<param name="onclick" value="ActivateWindow(osdsubtitlesettings)"/>
 					<param name="visible" value="Player.HasVideo"/>
+				</include>
+				<!-- custom: the player process info panel (DialogPlayerProcessInfo.xml) - codecs, HDR, bitrates,
+				     decoder, display mode; the Fire TV remote has no key for it -->
+				<include content="OSD_PPWord">
+					<param name="id" value="70050"/>
+					<param name="label" value="Stats"/>
+					<param name="width" value="184"/>
+					<param name="onclick" value="Action(PlayerProcessInfo)"/>
 				</include>
 			</control>
 		</control>

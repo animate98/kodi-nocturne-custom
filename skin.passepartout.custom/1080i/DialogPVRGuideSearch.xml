@@ -42,7 +42,7 @@
 				<width>1340</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[19001]</label>
 			</control>
 			<control type="grouplist" id="5000">

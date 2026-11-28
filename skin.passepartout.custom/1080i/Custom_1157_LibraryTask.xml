@@ -46,7 +46,7 @@
 				<top>72</top>
 				<width>608</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="textbox">
 				<left>40</left>

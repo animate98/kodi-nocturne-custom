@@ -192,12 +192,12 @@
 		<value>$INFO[Player.Icon]</value>
 	</variable>
 	<variable name="OSD_RepeatColor">
-		<value condition="Playlist.IsRepeat | Playlist.IsRepeatOne">ink</value>
-		<value>ink</value>
+		<value condition="Playlist.IsRepeat | Playlist.IsRepeatOne">$VAR[C_ink]</value>
+		<value>$VAR[C_ink]</value>
 	</variable>
 	<variable name="OSD_ShuffleColor">
-		<value condition="Playlist.IsRandom">ink</value>
-		<value>ink</value>
+		<value condition="Playlist.IsRandom">$VAR[C_ink]</value>
+		<value>$VAR[C_ink]</value>
 	</variable>
 	<variable name="OSD_RepeatLabel">
 		<value condition="Playlist.IsRepeatOne">REPEAT ONE</value>
@@ -217,12 +217,12 @@
 	<!-- ============================================================= textures -->
 	<!-- 72px transport/text boxes: 1px border_control frame, white frame when focused -->
 	<include name="OSD_Tex_Box">
-		<texturefocus border="2" colordiffuse="ink">pp/frame_1.png</texturefocus>
-		<texturenofocus border="2" colordiffuse="rule_strong">pp/frame_1.png</texturenofocus>
+		<texturefocus border="2" colordiffuse="$VAR[C_ink]">pp/frame_1.png</texturefocus>
+		<texturenofocus border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texturenofocus>
 	</include>
 	<include name="OSD_Tex_Box_Round">
-		<texturefocus border="2" colordiffuse="ink">pp/frame_1.png</texturefocus>
-		<texturenofocus border="2" colordiffuse="rule_strong">pp/frame_1.png</texturenofocus>
+		<texturefocus border="2" colordiffuse="$VAR[C_ink]">pp/frame_1.png</texturefocus>
+		<texturenofocus border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texturenofocus>
 	</include>
 
 	<!-- ============================================================= scrims -->
@@ -276,7 +276,7 @@
 		<param name="onclick2">noop</param>
 		<param name="icon_size">osd_box_icon</param>
 		<param name="icon_pos">osd_box_icon_pos</param>
-		<param name="icon_color">ink</param>
+		<param name="icon_color">$VAR[C_ink]</param>
 		<definition>
 			<control type="group">
 				<top>8</top>  <!-- room for the focus frame: the grouplist clips to its own rect -->
@@ -343,7 +343,7 @@
 				<top>osd_box_icon_pos</top>
 				<width>osd_box_icon</width>
 				<height>osd_box_icon</height>
-				<texture colordiffuse="on_ink">$VAR[OSD_PlayIcon]</texture>
+				<texture colordiffuse="$VAR[C_on_ink]">$VAR[OSD_PlayIcon]</texture>
 			</control>
 			<include content="PP_FocusFrameAlways">
 				<param name="visible" value="Control.HasFocus(602)"/>
@@ -358,7 +358,7 @@
 		<param name="visible">true</param>
 		<definition>
 			<control type="group">
-				<width>860</width>
+				<width>1060</width>
 				<height>40</height>
 				<visible>$PARAM[visible]</visible>
 				<control type="label">
@@ -367,24 +367,24 @@
 					<width>220</width>
 					<height>40</height>
 					<font>cap_20</font>
-					<textcolor>ink3</textcolor>
+					<textcolor>$VAR[C_ink3]</textcolor>
 					<label>$PARAM[key]</label>
 				</control>
 				<control type="label">
 					<left>220</left>
 					<top>0</top>
-					<width>640</width>
+					<width>840</width>
 					<height>40</height>
 					<font>num_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$PARAM[value]</label>
 				</control>
 				<control type="image">
 					<left>0</left>
 					<bottom>0</bottom>
-					<width>860</width>
+					<width>1060</width>
 					<height>rule_h</height>
-					<texture colordiffuse="rule">common/hairline.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 				</control>
 			</control>
 		</definition>
@@ -402,7 +402,7 @@
 				<top>27</top>
 				<width>52</width>
 				<height>30</height>
-				<texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture>
+				<texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture>
 			</control>
 			<control type="label">
 				<left>16</left>
@@ -411,7 +411,7 @@
 				<height>30</height>
 				<align>center</align>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$INFO[ListItem.Thumb]</label>
 			</control>
 			<control type="label">
@@ -420,7 +420,7 @@
 				<width>464</width>
 				<height>32</height>
 				<font>sans_22_med</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$INFO[ListItem.Label2]</label>
 				<scroll>$PARAM[focused]</scroll>
 			</control>
@@ -430,7 +430,7 @@
 				<width>464</width>
 				<height>24</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[ListItem.Label]$INFO[ListItem.ActualIcon,  ·  RATING , / 5]</label>
 			</control>
 			<!-- HI: next to SYNC, or at the right edge without it -->
@@ -445,7 +445,7 @@
 					<top>0</top>
 					<width>40</width>
 					<height>30</height>
-					<texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture>
+					<texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -454,7 +454,7 @@
 					<height>30</height>
 					<align>center</align>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>HI</label>
 				</control>
 			</control>
@@ -469,7 +469,7 @@
 					<top>0</top>
 					<width>40</width>
 					<height>30</height>
-					<texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture>
+					<texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -478,7 +478,7 @@
 					<height>30</height>
 					<align>center</align>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>HI</label>
 				</control>
 			</control>
@@ -493,7 +493,7 @@
 					<top>0</top>
 					<width>62</width>
 					<height>30</height>
-					<texture colordiffuse="ink">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -502,7 +502,7 @@
 					<height>30</height>
 					<align>center</align>
 					<font>cap_20</font>
-					<textcolor>on_ink</textcolor>
+					<textcolor>$VAR[C_on_ink]</textcolor>
 					<label>$LOCALIZE[31184]</label>
 				</control>
 			</control>
@@ -511,7 +511,7 @@
 				<bottom>0</bottom>
 				<width>696</width>
 				<height>rule_h</height>
-				<texture colordiffuse="rule">common/hairline.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 			</control>
 		</definition>
 	</include>
@@ -520,14 +520,14 @@
 	<!-- One VideoOSDBookmarks thumb (item 344 x 290; thumb 320 x 180 at 8,12 so the focus frame
 	     is not clipped by the panel). No art -> raised block with the time. param label_color -->
 	<include name="OSD_BookmarkItem">
-		<param name="label_color">ink2</param>
+		<param name="label_color">$VAR[C_ink2]</param>
 		<definition>
 			<control type="image">
 				<left>8</left>
 				<top>12</top>
 				<width>320</width>
 				<height>180</height>
-				<texture colordiffuse="wash">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<left>8</left>
@@ -536,7 +536,7 @@
 				<height>180</height>
 				<align>center</align>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[ListItem.Label2]</label>
 				<visible>String.IsEmpty(ListItem.Art(thumb))</visible>
 			</control>
@@ -565,7 +565,7 @@
 				<width>320</width>
 				<height>26</height>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[ListItem.Label2]</label>
 			</control>
 		</definition>
@@ -592,7 +592,7 @@
 	<variable name="OSD_PPEnds">
 		<!-- non-breaking spaces (U+00A0, in both fonts): "· " stays on the first line and "ends 12:37 AM" never splits;
 		     the time is built from (hh:mm) + (xx) so its own space is non-breaking too (0.9.6) -->
-		<value condition="Player.HasVideo + !String.IsEmpty(Player.FinishTime)">[COLOR ink2]&#160;· ends&#160;[/COLOR]$INFO[Player.FinishTime(hh:mm)]$INFO[Player.FinishTime(xx),&#160;,]</value>
+		<value condition="Player.HasVideo + !String.IsEmpty(Player.FinishTime)">[COLOR $VAR[C_ink2]]&#160;· ends&#160;[/COLOR]$INFO[Player.FinishTime(hh:mm)]$INFO[Player.FinishTime(xx),&#160;,]</value>
 	</variable>
 	<variable name="OSD_PPElapsed">
 		<value condition="!String.IsEmpty(Player.SeekNumeric)">$INFO[Player.SeekNumeric(hh:mm:ss)]</value>
@@ -636,7 +636,7 @@
 					<width>170</width>
 					<height>28</height>
 					<font>mono_22</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPElapsed]</label>
 				</control>
 				<control type="label">
@@ -646,7 +646,7 @@
 					<height>28</height>
 					<align>right</align>
 					<font>mono_22</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[Player.Duration]</label>
 				</control>
 				<control type="image">
@@ -654,7 +654,7 @@
 					<top>48</top>
 					<width>1320</width>
 					<height>1</height>
-					<texture colordiffuse="rule_track">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_rule_track]">common/white.png</texture>
 				</control>
 				<control type="progress">
 					<left>300</left>
@@ -663,7 +663,7 @@
 					<height>1</height>
 					<info>Player.ProgressCache</info>
 					<texturebg colordiffuse="clear">common/white.png</texturebg>
-					<midtexture colordiffuse="rule_strong">common/white.png</midtexture>
+					<midtexture colordiffuse="$VAR[C_rule_strong]">common/white.png</midtexture>
 					<visible>Player.SeekEnabled</visible>
 				</control>
 				<control type="progress">
@@ -673,7 +673,7 @@
 					<height>1</height>
 					<info>Player.SeekBar</info>
 					<texturebg colordiffuse="clear">common/white.png</texturebg>
-					<midtexture colordiffuse="ink">common/white.png</midtexture>
+					<midtexture colordiffuse="$VAR[C_ink]">common/white.png</midtexture>
 				</control>
 				<control type="ranges">
 					<left>300</left>
@@ -683,7 +683,7 @@
 					<texturebg>pp/playhead_bar.png</texturebg>
 					<lefttexture />
 					<midtexture />
-					<righttexture colordiffuse="ink2">osd/tick.png</righttexture>
+					<righttexture colordiffuse="$VAR[C_ink2]">osd/tick.png</righttexture>
 					<info>Player.Chapters</info>
 					<visible>Integer.IsGreater(Player.ChapterCount,1)</visible>
 				</control>
@@ -695,8 +695,8 @@
 					<height>21</height>
 					<info>Player.SeekBar</info>
 					<texturesliderbar>pp/playhead_bar.png</texturesliderbar>
-					<textureslidernib colordiffuse="ink">pp/playhead.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="ink">pp/playhead.png</textureslidernibfocus>
+					<textureslidernib colordiffuse="$VAR[C_ink]">pp/playhead.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$VAR[C_ink]">pp/playhead.png</textureslidernibfocus>
 					<visible>Player.SeekEnabled</visible>
 				</control>
 				<!-- title + museum line -->
@@ -718,7 +718,7 @@
 						<width>$PARAM[titlew]</width>
 						<height>58</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<align>left</align>
 						<label>$VAR[OSD_PPArtist]$VAR[OSD_PPEnds]</label>
 					</control>
@@ -740,7 +740,7 @@
 				<top>60</top>
 				<width>326</width>
 				<height>116</height>
-				<texture border="74,34,74,86" colordiffuse="shade">pp/placard.png</texture>
+				<texture border="74,34,74,86" colordiffuse="$VAR[C_shade]">pp/placard.png</texture>
 				<visible>Player.Paused</visible>
 			</control>
 			<control type="image">
@@ -748,7 +748,7 @@
 				<top>60</top>
 				<width>175</width>
 				<height>116</height>
-				<texture border="74,34,74,86" colordiffuse="shade">pp/placard.png</texture>
+				<texture border="74,34,74,86" colordiffuse="$VAR[C_shade]">pp/placard.png</texture>
 				<visible>!Player.Paused</visible>
 			</control>
 			<control type="grouplist">
@@ -763,8 +763,8 @@
 					<width>auto</width>
 					<height>56</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
-					<disabledcolor>ink</disabledcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
+					<disabledcolor>$VAR[C_ink]</disabledcolor>
 					<textoffsetx>26</textoffsetx>
 					<texturefocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturefocus>
 					<texturenofocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturenofocus>
@@ -776,8 +776,8 @@
 					<width>127</width>
 					<height>56</height>
 					<font>clock_24</font>
-					<textcolor>ink</textcolor>
-					<disabledcolor>ink</disabledcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
+					<disabledcolor>$VAR[C_ink]</disabledcolor>
 					<textoffsetx>26</textoffsetx>
 					<align>center</align>
 					<texturefocus colordiffuse="$VAR[PlayerPaper]">common/white.png</texturefocus>
@@ -791,7 +791,7 @@
 				<top>80</top>
 				<width>1</width>
 				<height>24</height>
-				<texture colordiffuse="rule_hair">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_hair]">common/white.png</texture>
 				<visible>Player.Paused</visible>
 			</control>
 		</control>
@@ -800,9 +800,13 @@
 	<!-- one transport word. Control = block + 24 / 4 / 24 / 56 (placard with its shadow). params: id, label, pad, color, width.
 	     Rows give every word a FIXED width (widest label + 2 x 36 + 2, measured from PPCapsWide 22): auto widths made the
 	     right-aligned row shift whenever a label changed (Pause/Play, Shuffle on/off, seek flicker). -->
+	<variable name="OSD_StatsFile">
+		<value condition="!String.IsEmpty(Window(Home).Property(pp.nowfile)) + String.IsEqual(VideoPlayer.Title,Window(Home).Property(pp.nowfor))">$INFO[Window(Home).Property(pp.nowfile)]</value>
+		<value>$INFO[Player.Filename]</value>
+	</variable>
 	<include name="OSD_PPWord">
 		<param name="width">auto</param>
-		<param name="color">ink</param>
+		<param name="color">$VAR[C_ink]</param>
 		<param name="pad">36</param>
 		<param name="visible">true</param>
 		<param name="onclick">noop</param>

@@ -37,7 +37,7 @@
 						<top>0</top>
 						<width>240</width>
 						<height>240</height>
-						<texture colordiffuse="wash">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -54,7 +54,7 @@
 					<width>240</width>
 					<height>40</height>
 					<font>sans_22_med</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
@@ -69,7 +69,7 @@
 						<top>0</top>
 						<width>240</width>
 						<height>240</height>
-						<texture colordiffuse="wash">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -99,7 +99,7 @@
 			<width>page_width</width>
 			<height>30</height>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$INFO[Container(52).ListItem.Label2,Last login  ,]</label>
 		</control>
 		<control type="button" id="20">
@@ -110,11 +110,11 @@
 			<height>dialog_row_h</height>
 			<label>$LOCALIZE[31022]</label>
 			<font>capw_22</font>
-			<focusedcolor>on_ink</focusedcolor>
+			<focusedcolor>$VAR[C_on_ink]</focusedcolor>
 			<align>center</align>
 			<textoffsetx>16</textoffsetx>
-			<texturefocus border="10" colordiffuse="ink">common/rect_square.png</texturefocus>
-			<texturenofocus border="2" colordiffuse="rule_strong">pp/frame_1.png</texturenofocus>
+			<texturefocus border="10" colordiffuse="$VAR[C_ink]">common/rect_square.png</texturefocus>
+			<texturenofocus border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texturenofocus>
 			<onclick>ActivateWindow(ShutdownMenu)</onclick>
 			<onup>52</onup>
 			<ondown>52</ondown>

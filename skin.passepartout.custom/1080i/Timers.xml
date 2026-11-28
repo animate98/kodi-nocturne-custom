@@ -27,4 +27,31 @@
 		<stop>Window.IsVisible(sources_results.xml) | Player.HasMedia | Integer.IsGreater(Skin.TimerElapsedSecs(pp_hold),2)</stop>
 		<onstop>ClearProperty(pp.hold,home)</onstop>
 	</timer>
+	<!-- custom (POV): the highlighted copy's release name in the source picker, kept in pp.nowfile (+ the film in
+	     pp.nowfor) for the Stats panel - debrid links play as an opaque id. Kodi runs no skin click actions in
+	     POV's window, so each timer re-copies whenever the highlight moves; on OK the last copy is the pick. -->
+	<timer>
+		<name>pp_srcname_2000</name>
+		<description>Source picker list 2000: remember the highlighted release name</description>
+		<start reset="true">Window.IsActive(sources_results.xml) + Control.IsVisible(2000) + !String.IsEmpty(Container(2000).ListItem.Property(tikiskins.name)) + !String.IsEqual(Container(2000).ListItem.Property(tikiskins.name),Window(Home).Property(pp.nowfile))</start>
+		<onstart>SetProperty(pp.nowfile,$ESCINFO[Container(2000).ListItem.Property(tikiskins.name)],home)</onstart>
+		<onstart>SetProperty(pp.nowfor,$ESCINFO[Window.Property(tikiskins.title)],home)</onstart>
+		<stop>true</stop>
+	</timer>
+	<timer>
+		<name>pp_srcname_2001</name>
+		<description>Source picker list 2001: remember the highlighted release name</description>
+		<start reset="true">Window.IsActive(sources_results.xml) + Control.IsVisible(2001) + !String.IsEmpty(Container(2001).ListItem.Property(tikiskins.name)) + !String.IsEqual(Container(2001).ListItem.Property(tikiskins.name),Window(Home).Property(pp.nowfile))</start>
+		<onstart>SetProperty(pp.nowfile,$ESCINFO[Container(2001).ListItem.Property(tikiskins.name)],home)</onstart>
+		<onstart>SetProperty(pp.nowfor,$ESCINFO[Window.Property(tikiskins.title)],home)</onstart>
+		<stop>true</stop>
+	</timer>
+	<timer>
+		<name>pp_srcname_2002</name>
+		<description>Source picker list 2002: remember the highlighted release name</description>
+		<start reset="true">Window.IsActive(sources_results.xml) + Control.IsVisible(2002) + !String.IsEmpty(Container(2002).ListItem.Property(tikiskins.name)) + !String.IsEqual(Container(2002).ListItem.Property(tikiskins.name),Window(Home).Property(pp.nowfile))</start>
+		<onstart>SetProperty(pp.nowfile,$ESCINFO[Container(2002).ListItem.Property(tikiskins.name)],home)</onstart>
+		<onstart>SetProperty(pp.nowfor,$ESCINFO[Window.Property(tikiskins.title)],home)</onstart>
+		<stop>true</stop>
+	</timer>
 </timers>

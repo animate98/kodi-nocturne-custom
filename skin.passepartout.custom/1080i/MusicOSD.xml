@@ -50,7 +50,7 @@
 					<height>28</height>
 					<align>center</align>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31202]</label>
 				</control>
 			</control>

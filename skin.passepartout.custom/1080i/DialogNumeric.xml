@@ -24,7 +24,7 @@
 				<width>544</width>
 				<height>50</height>
 				<font>ttl_40</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 			</control>
 			<!-- the number, set large under the heading rule -->
 			<control type="label" id="4">

@@ -24,6 +24,10 @@
 		<value condition="Skin.HasSetting(passepartout.noshadow)">Off</value>
 		<value>On</value>
 	</variable>
+	<variable name="SS_Value_9115">
+		<value condition="Skin.HasSetting(pp.night)">On</value>
+		<value>Off</value>
+	</variable>
 	<variable name="SS_Value_9121">
 		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),best) | [!String.IsEqual(Skin.String(passepartout.exhibition),best) + !String.IsEqual(Skin.String(passepartout.exhibition),recent) + !String.IsEqual(Skin.String(passepartout.exhibition),random)]">Trending this week (POV)</value>
 		<value condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">Latest releases (POV)</value>
@@ -117,7 +121,7 @@
 					<top>-3</top>
 					<right>-3</right>
 					<bottom>-3</bottom>
-					<texture colordiffuse="rule_card">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					<visible>$PARAM[edge]</visible>
 				</control>
 				<control type="image">
@@ -161,7 +165,7 @@
 				<top>-7</top>
 				<right>-7</right>
 				<bottom>-7</bottom>
-				<texture colordiffuse="rule_mat">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>-6</left>
@@ -175,7 +179,7 @@
 				<top>-6</top>
 				<right>-6</right>
 				<bottom>-6</bottom>
-				<texture colordiffuse="card_lift">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 			</control>
 		</control>
 		<control type="image">

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Night mode colour switch, written by tools/night_colors.py -->
+<includes>
+	<variable name="C_paper">
+		<value condition="Skin.HasSetting(pp.night)">n_paper</value>
+		<value>paper</value>
+	</variable>
+	<variable name="C_card">
+		<value condition="Skin.HasSetting(pp.night)">n_card</value>
+		<value>card</value>
+	</variable>
+	<variable name="C_card_edge">
+		<value condition="Skin.HasSetting(pp.night)">n_card_edge</value>
+		<value>card_edge</value>
+	</variable>
+	<variable name="C_card_lift">
+		<value condition="Skin.HasSetting(pp.night)">n_card_lift</value>
+		<value>card_lift</value>
+	</variable>
+	<variable name="C_rule_card">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_card</value>
+		<value>rule_card</value>
+	</variable>
+	<variable name="C_rule_mat">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_mat</value>
+		<value>rule_mat</value>
+	</variable>
+	<variable name="C_rule_row">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_row</value>
+		<value>rule_row</value>
+	</variable>
+	<variable name="C_rule_div">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_div</value>
+		<value>rule_div</value>
+	</variable>
+	<variable name="C_rule_track">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_track</value>
+		<value>rule_track</value>
+	</variable>
+	<variable name="C_rule_hair">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_hair</value>
+		<value>rule_hair</value>
+	</variable>
+	<variable name="C_wash">
+		<value condition="Skin.HasSetting(pp.night)">n_wash</value>
+		<value>wash</value>
+	</variable>
+	<variable name="C_wash_strong">
+		<value condition="Skin.HasSetting(pp.night)">n_wash_strong</value>
+		<value>wash_strong</value>
+	</variable>
+	<variable name="C_ink">
+		<value condition="Skin.HasSetting(pp.night)">n_ink</value>
+		<value>ink</value>
+	</variable>
+	<variable name="C_body">
+		<value condition="Skin.HasSetting(pp.night)">n_body</value>
+		<value>body</value>
+	</variable>
+	<variable name="C_ink2">
+		<value condition="Skin.HasSetting(pp.night)">n_ink2</value>
+		<value>ink2</value>
+	</variable>
+	<variable name="C_ink3">
+		<value condition="Skin.HasSetting(pp.night)">n_ink3</value>
+		<value>ink3</value>
+	</variable>
+	<variable name="C_on_ink">
+		<value condition="Skin.HasSetting(pp.night)">n_on_ink</value>
+		<value>on_ink</value>
+	</variable>
+	<variable name="C_disabled">
+		<value condition="Skin.HasSetting(pp.night)">n_disabled</value>
+		<value>disabled</value>
+	</variable>
+	<variable name="C_rule">
+		<value condition="Skin.HasSetting(pp.night)">n_rule</value>
+		<value>rule</value>
+	</variable>
+	<variable name="C_rule_strong">
+		<value condition="Skin.HasSetting(pp.night)">n_rule_strong</value>
+		<value>rule_strong</value>
+	</variable>
+	<variable name="C_veil">
+		<value condition="Skin.HasSetting(pp.night)">n_veil</value>
+		<value>veil</value>
+	</variable>
+	<variable name="C_veil_video">
+		<value condition="Skin.HasSetting(pp.night)">n_veil_video</value>
+		<value>veil_video</value>
+	</variable>
+	<variable name="C_video_dim">
+		<value condition="Skin.HasSetting(pp.night)">n_video_dim</value>
+		<value>video_dim</value>
+	</variable>
+	<variable name="C_shade">
+		<value condition="Skin.HasSetting(pp.night)">n_shade</value>
+		<value>shade</value>
+	</variable>
+	<variable name="C_shadow">
+		<value condition="Skin.HasSetting(pp.night)">n_shadow</value>
+		<value>shadow</value>
+	</variable>
+	<variable name="C_placard">
+		<value condition="Skin.HasSetting(pp.night)">n_placard</value>
+		<value>placard</value>
+	</variable>
+	<variable name="C_bevel">
+		<value condition="Skin.HasSetting(pp.night)">n_bevel</value>
+		<value>bevel</value>
+	</variable>
+</includes>

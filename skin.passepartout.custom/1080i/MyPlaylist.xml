@@ -95,7 +95,7 @@
 			<width>list_w</width>
 			<height>66</height>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$LOCALIZE[31206]</label>
 			<visible>Integer.IsEqual(Container.NumItems,0) + !Container.IsUpdating</visible>
 			<!-- under the ".." row (Back), not over it -->

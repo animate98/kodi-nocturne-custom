@@ -186,19 +186,19 @@ def main():
 {header_down}
 			<control type="button">
 				<top>10</top><width max="560">auto</width><height>34</height>
-				<font>cap_20</font><textcolor>ink</textcolor><disabledcolor>ink</disabledcolor>
+				<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><disabledcolor>$VAR[C_ink]</disabledcolor>
 				<textoffsetx>0</textoffsetx><aligny>top</aligny>
-				<texturefocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturefocus>
-				<texturenofocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturenofocus>
+				<texturefocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturefocus>
+				<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturenofocus>
 				<label>POV</label>
 				<enable>false</enable>
 			</control>
 			<control type="image"><width>16</width><height>44</height><texture/></control>
 			<control type="button" id="{OPTIONS}">
 				<width>auto</width><height>44</height>
-				<font>cap_20</font><textcolor>ink2</textcolor><focusedcolor>$VAR[PaperColor]</focusedcolor>
+				<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><focusedcolor>$VAR[PaperColor]</focusedcolor>
 				<textoffsetx>16</textoffsetx><aligny>center</aligny>
-				<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 				<texturenofocus/>
 				<label>Options</label>
 {options_click}
@@ -210,12 +210,12 @@ def main():
 		<!-- the list name and the page -->
 		<control type="label">
 			<left>120</left><top>190</top><width>1200</width><height>48</height><aligny>center</aligny>
-			<font>capw_30</font><textcolor>ink2</textcolor>
+			<font>capw_30</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>$INFO[Window(Home).Property(pp.grid.title)]</label>
 		</control>
 		<control type="label">
 			<left>1200</left><top>190</top><width>600</width><height>48</height><align>right</align><aligny>center</aligny>
-			<font>body_28</font><textcolor>ink2</textcolor>
+			<font>body_28</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>Page $INFO[{PAGE}]</label>
 		</control>
 
@@ -224,13 +224,13 @@ def main():
 		<control type="image">
 			<left>{56 - 60}</left><top>{TOP + CELL_H - 60}</top><width>120</width><height>120</height>
 			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="ink2">custom/chevron_left.png</texture>
+			<texture colordiffuse="$VAR[C_ink2]">custom/chevron_left.png</texture>
 			<visible>!{page_is(1)} + !String.IsEmpty({PAGE})</visible>
 		</control>
 		<control type="image">
 			<left>{1864 - 60}</left><top>{TOP + CELL_H - 60}</top><width>120</width><height>120</height>
 			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="ink2">custom/chevron_right.png</texture>
+			<texture colordiffuse="$VAR[C_ink2]">custom/chevron_right.png</texture>
 			<visible>{cur_full}</visible>
 		</control>
 
@@ -241,20 +241,20 @@ def main():
 		</control>
 		<control type="label">
 			<left>120</left><top>{TOP + 180}</top><width>1680</width><height>60</height><align>center</align><aligny>center</aligny>
-			<font>cap_20</font><textcolor>ink2</textcolor><label>Hanging…</label>
+			<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>Hanging…</label>
 			<visible>{cur_waiting} + !String.IsEmpty({BASE})</visible>
 		</control>
 
 		<!-- caption of the print in focus -->
 		<control type="label">
 			<left>120</left><top>924</top><width>1680</width><height>60</height>
-			<font>ttl_44</font><textcolor>ink</textcolor>
+			<font>ttl_44</font><textcolor>$VAR[C_ink]</textcolor>
 			<label>$INFO[Container.ListItem.Label]</label>
 			<visible>{in_grid}</visible>
 		</control>
 		<control type="label">
 			<left>120</left><top>990</top><width>1680</width><height>30</height>
-			<font>cap_20</font><textcolor>ink2</textcolor>
+			<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[VidView_Cap]</label>
 			<visible>{in_grid}</visible>
 		</control>

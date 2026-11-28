@@ -19,13 +19,13 @@
 				<top>0</top>
 				<width>screen_w</width>
 				<height>200</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<include content="PP_Rule">
 				<param name="left" value="0"/>
 				<param name="top" value="0"/>
 				<param name="width" value="screen_w"/>
-				<param name="color" value="rule_strong"/>
+				<param name="color" value="$VAR[C_rule_strong]"/>
 			</include>
 			<!-- programmes -->
 			<include content="Misc_Caption">
@@ -151,7 +151,7 @@
 				<width>page_width</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[31164]</label>
 			</control>
 		</control>

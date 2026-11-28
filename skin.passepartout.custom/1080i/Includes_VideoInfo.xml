@@ -140,21 +140,21 @@
 				<width>auto</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[VidInfo_Section]</label>
 			</control>
 			<control type="label">
 				<width>auto</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>/</label>
 			</control>
 			<control type="label">
 				<width>auto</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$LOCALIZE[31193]</label>
 			</control>
 		</control>
@@ -193,7 +193,7 @@
 				<width>900</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[VidInfo_Artist]</label>
 			</control>
 			<control type="label">
@@ -201,14 +201,14 @@
 				<width>900</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[VidInfo_Medium]</label>
 			</control>
 			<control type="image">
 				<top>40</top>
 				<width>64</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 			</control>
 			<!-- curator text: OK opens it in full (9200) -->
 			<control type="group" id="9002">
@@ -221,7 +221,7 @@
 					<width>4</width>
 					<height>160</height>
 					<label></label>
-					<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 					<texturenofocus />
 					<onclick>SetFocus(61)</onclick>
 					<ondown>9000</ondown>
@@ -236,7 +236,7 @@
 					<width>820</width>
 					<height>160</height>
 					<font>body_26</font>
-					<textcolor>body</textcolor>
+					<textcolor>$VAR[C_body]</textcolor>
 					<label>$INFO[ListItem.Plot]</label>
 					<!-- four whole lines; after a ten-second rest the curator text rolls on slowly, then returns -->
 					<autoscroll delay="10000" time="4000" repeat="12000">true</autoscroll>
@@ -247,7 +247,7 @@
 				<width>820</width>
 				<height max="72">auto</height>
 				<font>body_24_loose</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[VidInfo_With]</label>
 			</control>
 		</control>
@@ -259,9 +259,9 @@
 			<width>980</width>
 			<height>28</height>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<align>left</align>
-			<label>$VAR[VidInfo_Acquired][COLOR ink]$VAR[VidInfo_State][/COLOR]$VAR[VidInfo_EndsWord][COLOR ink]$VAR[VidInfo_EndsTime][/COLOR]</label>
+			<label>$VAR[VidInfo_Acquired][COLOR $VAR[C_ink]]$VAR[VidInfo_State][/COLOR]$VAR[VidInfo_EndsWord][COLOR $VAR[C_ink]]$VAR[VidInfo_EndsTime][/COLOR]</label>
 		</control>
 	</include>
 
@@ -350,10 +350,10 @@
 				<width>auto</width>
 				<height>44</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<focusedcolor>$VAR[PaperColor]</focusedcolor>
 				<textoffsetx>16</textoffsetx>
-				<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 				<texturenofocus />
 				<label>$PARAM[label]</label>
 				<onclick>$PARAM[onclick]</onclick>
@@ -439,7 +439,7 @@
 				<width>900</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[VidInfo_CastHeader]</label>
 			</control>
 			<control type="label">
@@ -449,7 +449,7 @@
 				<height>28</height>
 				<align>right</align>
 				<font>num_22</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[Container(50).CurrentItem]$INFO[Container(50).NumItems, / ,]</label>
 			</control>
 			<control type="list" id="50">
@@ -504,7 +504,7 @@
 				<width>196</width>
 				<height>34</height>
 				<font>body_22</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<!-- long names and roles roll on the portrait in focus ("Warden Cl..." was cut) -->
 				<scroll>$PARAM[focused]</scroll>
 				<label>$INFO[ListItem.Label]</label>
@@ -515,7 +515,7 @@
 				<width>196</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<scroll>$PARAM[focused]</scroll>
 				<label>$VAR[VidInfo_CastLine2]</label>
 			</control>
@@ -534,7 +534,7 @@
 				<top>0</top>
 				<width>screen_w</width>
 				<height>screen_h</height>
-				<texture colordiffuse="veil">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_veil]">common/white.png</texture>
 			</control>
 			<control type="group">
 				<left>360</left>
@@ -548,7 +548,7 @@
 					<width>1072</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31194]</label>
 				</control>
 				<control type="label">
@@ -557,7 +557,7 @@
 					<width>1072</width>
 					<height>76</height>
 					<font>ttl_64</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidInfo_Title]</label>
 				</control>
 				<control type="image">
@@ -565,7 +565,7 @@
 					<top>188</top>
 					<width>64</width>
 					<height>1</height>
-					<texture colordiffuse="ink">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				</control>
 				<control type="textbox">
 					<left>64</left>
@@ -573,7 +573,7 @@
 					<width>1040</width>
 					<height>520</height>
 					<font>body_26</font>
-					<textcolor>body</textcolor>
+					<textcolor>$VAR[C_body]</textcolor>
 					<pagecontrol>61</pagecontrol>
 					<label>$INFO[ListItem.Plot]</label>
 				</control>
@@ -594,7 +594,7 @@
 					<width>1072</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31195]</label>
 				</control>
 			</control>

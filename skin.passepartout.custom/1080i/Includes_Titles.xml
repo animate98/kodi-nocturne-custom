@@ -38,7 +38,7 @@
 					<font>ttl_72</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Title]</label>
 					<visible>!Integer.IsGreater(Container(7201).NumPages,1)</visible>
 				</control>
@@ -50,7 +50,7 @@
 					<font>ttl_56</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Title]</label>
 					<visible>Integer.IsGreater(Container(7201).NumPages,1) + !Integer.IsGreater(Container(7202).NumPages,1)</visible>
 				</control>
@@ -62,7 +62,7 @@
 					<font>ttl_44</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Title]</label>
 					<visible>Integer.IsGreater(Container(7201).NumPages,1) + Integer.IsGreater(Container(7202).NumPages,1)</visible>
 				</control>
@@ -106,7 +106,7 @@
 					<font>ttl_72</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Title]</label>
 					<visible>!Integer.IsGreater(Container(7211).NumPages,1)</visible>
 				</control>
@@ -118,7 +118,7 @@
 					<font>ttl_56</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Title]</label>
 					<visible>Integer.IsGreater(Container(7211).NumPages,1) + !Integer.IsGreater(Container(7212).NumPages,1)</visible>
 				</control>
@@ -130,7 +130,7 @@
 					<font>ttl_44</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Title]</label>
 					<visible>Integer.IsGreater(Container(7211).NumPages,1) + Integer.IsGreater(Container(7212).NumPages,1)</visible>
 				</control>
@@ -174,7 +174,7 @@
 					<font>ttl_72</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Container(9101).ListItem.Label]</label>
 					<visible>!Integer.IsGreater(Container(7221).NumPages,1)</visible>
 				</control>
@@ -186,7 +186,7 @@
 					<font>ttl_56</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Container(9101).ListItem.Label]</label>
 					<visible>Integer.IsGreater(Container(7221).NumPages,1) + !Integer.IsGreater(Container(7222).NumPages,1)</visible>
 				</control>
@@ -198,7 +198,7 @@
 					<font>ttl_44</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Container(9101).ListItem.Label]</label>
 					<visible>Integer.IsGreater(Container(7221).NumPages,1) + Integer.IsGreater(Container(7222).NumPages,1)</visible>
 				</control>
@@ -242,7 +242,7 @@
 					<font>ttl_72</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Music_Title]</label>
 					<visible>!Integer.IsGreater(Container(7231).NumPages,1)</visible>
 				</control>
@@ -254,7 +254,7 @@
 					<font>ttl_56</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Music_Title]</label>
 					<visible>Integer.IsGreater(Container(7231).NumPages,1) + !Integer.IsGreater(Container(7232).NumPages,1)</visible>
 				</control>
@@ -266,7 +266,7 @@
 					<font>ttl_44</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Music_Title]</label>
 					<visible>Integer.IsGreater(Container(7231).NumPages,1) + Integer.IsGreater(Container(7232).NumPages,1)</visible>
 				</control>
@@ -310,7 +310,7 @@
 					<font>ttl_64</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPTitle]</label>
 					<visible>!Integer.IsGreater(Container(7241).NumPages,1)</visible>
 				</control>
@@ -322,7 +322,7 @@
 					<font>ttl_48</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPTitle]</label>
 					<visible>Integer.IsGreater(Container(7241).NumPages,1) + !Integer.IsGreater(Container(7242).NumPages,1)</visible>
 				</control>
@@ -334,7 +334,7 @@
 					<font>ttl_40</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPTitle]</label>
 					<visible>Integer.IsGreater(Container(7241).NumPages,1) + Integer.IsGreater(Container(7242).NumPages,1)</visible>
 				</control>
@@ -378,7 +378,7 @@
 					<font>ttl_64</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPTitle]</label>
 					<visible>!Integer.IsGreater(Container(7251).NumPages,1)</visible>
 				</control>
@@ -390,7 +390,7 @@
 					<font>ttl_48</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPTitle]</label>
 					<visible>Integer.IsGreater(Container(7251).NumPages,1) + !Integer.IsGreater(Container(7252).NumPages,1)</visible>
 				</control>
@@ -402,7 +402,7 @@
 					<font>ttl_40</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[OSD_PPTitle]</label>
 					<visible>Integer.IsGreater(Container(7251).NumPages,1) + Integer.IsGreater(Container(7252).NumPages,1)</visible>
 				</control>
@@ -436,7 +436,7 @@
 					<font>ttl_64</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Home_RoomTitle]</label>
 					<visible>!Integer.IsGreater(Container(7271).NumPages,1)</visible>
 				</control>
@@ -448,7 +448,7 @@
 					<font>ttl_48</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Home_RoomTitle]</label>
 					<visible>Integer.IsGreater(Container(7271).NumPages,1)</visible>
 				</control>
@@ -492,7 +492,7 @@
 					<font>ttl_72</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[MusicPlayer.Title]</label>
 					<visible>!Integer.IsGreater(Container(7281).NumPages,1)</visible>
 				</control>
@@ -504,7 +504,7 @@
 					<font>ttl_56</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[MusicPlayer.Title]</label>
 					<visible>Integer.IsGreater(Container(7281).NumPages,1) + !Integer.IsGreater(Container(7282).NumPages,1)</visible>
 				</control>
@@ -516,7 +516,7 @@
 					<font>ttl_44</font>
 					<align>center</align>
 					<aligny>center</aligny>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[MusicPlayer.Title]</label>
 					<visible>Integer.IsGreater(Container(7281).NumPages,1) + Integer.IsGreater(Container(7282).NumPages,1)</visible>
 				</control>
@@ -554,7 +554,7 @@
 			<width>900</width>
 			<height max="264">auto</height>
 			<font>disp_112</font>
-			<textcolor>ink</textcolor>
+			<textcolor>$VAR[C_ink]</textcolor>
 			<label>$VAR[VidInfo_Title]</label>
 			<visible>!Integer.IsGreater(Container(7301).NumPages,1)</visible>
 		</control>
@@ -562,7 +562,7 @@
 			<width>900</width>
 			<height max="224">auto</height>
 			<font>disp_96</font>
-			<textcolor>ink</textcolor>
+			<textcolor>$VAR[C_ink]</textcolor>
 			<label>$VAR[VidInfo_Title]</label>
 			<visible>Integer.IsGreater(Container(7301).NumPages,1) + !Integer.IsGreater(Container(7302).NumPages,1)</visible>
 		</control>
@@ -570,7 +570,7 @@
 			<width>900</width>
 			<height max="252">auto</height>
 			<font>ttl_72</font>
-			<textcolor>ink</textcolor>
+			<textcolor>$VAR[C_ink]</textcolor>
 			<label>$VAR[VidInfo_Title]</label>
 			<visible>Integer.IsGreater(Container(7301).NumPages,1) + Integer.IsGreater(Container(7302).NumPages,1)</visible>
 		</control>

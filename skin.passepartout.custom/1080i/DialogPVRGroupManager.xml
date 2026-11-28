@@ -59,7 +59,7 @@
 				<width>400</width>
 				<height>40</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[Container(13).ListItem.Property(ClientName)]</label>
 			</control>
 			<!-- ====== channels not in the group -->
@@ -77,7 +77,7 @@
 				<height>36</height>
 				<align>right</align>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[Container(11).NumItems]</label>
 			</control>
 			<control type="list" id="11">
@@ -120,7 +120,7 @@
 				<height>36</height>
 				<align>right</align>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[Container(12).NumItems]</label>
 			</control>
 			<control type="list" id="12">

@@ -48,7 +48,7 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="rule_strong" border="2">pp/frame_1.png</texture>
+					<texture colordiffuse="$VAR[C_rule_strong]" border="2">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -56,7 +56,7 @@
 					<right>0</right>
 					<bottom>0</bottom>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>center</align>
 					<label>$LOCALIZE[31196]</label>
 				</control>
@@ -113,7 +113,7 @@
 				<width>1260</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[Music_Cap]</label>
 			</control>
 		</control>
@@ -185,7 +185,7 @@
 				<width>1100</width>
 				<height>50</height>
 				<font>ttl_40</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[Music_Title]</label>
 			</control>
 			<control type="label">
@@ -194,7 +194,7 @@
 				<width>1100</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[Music_Cap]</label>
 			</control>
 		</control>
@@ -210,8 +210,8 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<include name="Music_TrackCells">
-		<param name="ink">ink</param>
-		<param name="ink2">ink2</param>
+		<param name="ink">$VAR[C_ink]</param>
+		<param name="ink2">$VAR[C_ink2]</param>
 		<param name="scroll">false</param>
 		<definition>
 			<control type="label">
@@ -293,7 +293,7 @@
 				<width>$PARAM[width]</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>$PARAM[align]</align>
 				<label>$PARAM[label]</label>
 			</control>
@@ -318,7 +318,7 @@
 					<top>40</top>
 					<width>1680</width>
 					<height>1</height>
-					<texture colordiffuse="rule">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 				</control>
 			</control>
 			<control type="list" id="508">
@@ -351,7 +351,7 @@
 							<top>0</top>
 							<width>1680</width>
 							<height>66</height>
-							<texture colordiffuse="ink">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						</control>
 						<include content="Music_TrackCells">
 							<param name="ink" value="$VAR[PaperColor]"/>
@@ -400,12 +400,12 @@
 				<width max="520">auto</width>
 				<height>34</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
-				<disabledcolor>ink</disabledcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
+				<disabledcolor>$VAR[C_ink]</disabledcolor>
 				<textoffsetx>0</textoffsetx>
 				<aligny>top</aligny>
-				<texturefocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturefocus>
-				<texturenofocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturenofocus>
+				<texturefocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturefocus>
+				<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturenofocus>
 				<label>$VAR[Music_SectionWord]</label>
 				<enable>false</enable>
 			</control>
@@ -444,7 +444,7 @@
 			</include>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9324"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="$VAR[Music_SortWord]"/>
 				<param name="onclick" value="SendClick(3)"/>
 				<param name="onclick2" value="noop"/>
@@ -452,7 +452,7 @@
 			</include>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9327"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="$VAR[PP_ViewName]"/>
 				<param name="onclick" value="ActivateWindow(1156)"/>
 				<param name="onclick2" value="noop"/>
@@ -463,12 +463,12 @@
 				<width>auto</width>
 				<height>44</height>
 				<font>num_22</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[Container.NumItems]</label>
 			</control>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9328"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="Options"/>
 				<param name="onclick" value="ActivateWindow(1155)"/>
 				<param name="onclick2" value="noop"/>

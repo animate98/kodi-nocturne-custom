@@ -151,27 +151,27 @@
 		<value condition="Control.HasFocus(9883)">$INFO[Container(9883).ListItem.Label]</value>
 	</variable>
 	<variable name="Home_RoomMeta">
-		<value condition="Control.HasFocus(9120) + String.IsEqual(Container(9120).ListItem.DBType,episode)">[COLOR ink]$INFO[Container(9120).ListItem.TVShowTitle][/COLOR]$INFO[Container(9120).ListItem.Season, · Season ,]$INFO[Container(9120).ListItem.Episode, · Episode ,]$VAR[Home_RoomAired]</value>
-		<value condition="Control.HasFocus(9120) + String.IsEqual(Container(9120).ListItem.DBType,tvshow)">[COLOR ink]$INFO[Container(9120).ListItem.Property(WatchedEpisodes)] of $INFO[Container(9120).ListItem.Property(TotalEpisodes)] watched[/COLOR]$INFO[Container(9120).ListItem.Year, · ,]</value>
-		<value condition="Control.HasFocus(9120)">[COLOR ink]$INFO[Container(9120).ListItem.Director][/COLOR]$INFO[Container(9120).ListItem.Year, · ,]$INFO[Container(9120).ListItem.PercentPlayed, · ,% seen]</value>
-		<value condition="Control.HasFocus(9121) + String.IsEqual(Container(9121).ListItem.DBType,tvshow)">[COLOR ink]$INFO[Container(9121).ListItem.Year][/COLOR]$INFO[Container(9121).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
-		<value condition="Control.HasFocus(9121)">[COLOR ink]$INFO[Container(9121).ListItem.Director][/COLOR]$INFO[Container(9121).ListItem.Year, · ,]$INFO[Container(9121).ListItem.Duration(mins), · , min]</value>
-		<value condition="Control.HasFocus(9130)">[COLOR ink]$INFO[Container(9130).ListItem.Artist][/COLOR]$INFO[Container(9130).ListItem.Year, · ,]</value>
-		<value condition="Control.HasFocus(9131)">[COLOR ink]$INFO[Container(9131).ListItem.Artist][/COLOR]$INFO[Container(9131).ListItem.Year, · ,]</value>
-		<value condition="Control.HasFocus(9881) + String.IsEqual(Container(9881).ListItem.DBType,episode)">[COLOR ink]$INFO[Container(9881).ListItem.TVShowTitle][/COLOR]$INFO[Container(9881).ListItem.Season, · Season ,]$INFO[Container(9881).ListItem.Episode, · Episode ,]</value>
-		<value condition="Control.HasFocus(9881) + String.IsEqual(Container(9881).ListItem.DBType,tvshow)">[COLOR ink]$INFO[Container(9881).ListItem.Year][/COLOR]$INFO[Container(9881).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
-		<value condition="Control.HasFocus(9881) + !String.IsEmpty(Container(9881).ListItem.Artist)">[COLOR ink]$INFO[Container(9881).ListItem.Artist][/COLOR]$INFO[Container(9881).ListItem.Year, · ,]</value>
-		<value condition="Control.HasFocus(9881) + !String.IsEmpty(Container(9881).ListItem.Year)">[COLOR ink]$INFO[Container(9881).ListItem.Director][/COLOR]$INFO[Container(9881).ListItem.Year, · ,]$INFO[Container(9881).ListItem.Duration(mins), · , min]</value>
+		<value condition="Control.HasFocus(9120) + String.IsEqual(Container(9120).ListItem.DBType,episode)">[COLOR $VAR[C_ink]]$INFO[Container(9120).ListItem.TVShowTitle][/COLOR]$INFO[Container(9120).ListItem.Season, · Season ,]$INFO[Container(9120).ListItem.Episode, · Episode ,]$VAR[Home_RoomAired]</value>
+		<value condition="Control.HasFocus(9120) + String.IsEqual(Container(9120).ListItem.DBType,tvshow)">[COLOR $VAR[C_ink]]$INFO[Container(9120).ListItem.Property(WatchedEpisodes)] of $INFO[Container(9120).ListItem.Property(TotalEpisodes)] watched[/COLOR]$INFO[Container(9120).ListItem.Year, · ,]</value>
+		<value condition="Control.HasFocus(9120)">[COLOR $VAR[C_ink]]$INFO[Container(9120).ListItem.Director][/COLOR]$INFO[Container(9120).ListItem.Year, · ,]$INFO[Container(9120).ListItem.PercentPlayed, · ,% seen]</value>
+		<value condition="Control.HasFocus(9121) + String.IsEqual(Container(9121).ListItem.DBType,tvshow)">[COLOR $VAR[C_ink]]$INFO[Container(9121).ListItem.Year][/COLOR]$INFO[Container(9121).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
+		<value condition="Control.HasFocus(9121)">[COLOR $VAR[C_ink]]$INFO[Container(9121).ListItem.Director][/COLOR]$INFO[Container(9121).ListItem.Year, · ,]$INFO[Container(9121).ListItem.Duration(mins), · , min]</value>
+		<value condition="Control.HasFocus(9130)">[COLOR $VAR[C_ink]]$INFO[Container(9130).ListItem.Artist][/COLOR]$INFO[Container(9130).ListItem.Year, · ,]</value>
+		<value condition="Control.HasFocus(9131)">[COLOR $VAR[C_ink]]$INFO[Container(9131).ListItem.Artist][/COLOR]$INFO[Container(9131).ListItem.Year, · ,]</value>
+		<value condition="Control.HasFocus(9881) + String.IsEqual(Container(9881).ListItem.DBType,episode)">[COLOR $VAR[C_ink]]$INFO[Container(9881).ListItem.TVShowTitle][/COLOR]$INFO[Container(9881).ListItem.Season, · Season ,]$INFO[Container(9881).ListItem.Episode, · Episode ,]</value>
+		<value condition="Control.HasFocus(9881) + String.IsEqual(Container(9881).ListItem.DBType,tvshow)">[COLOR $VAR[C_ink]]$INFO[Container(9881).ListItem.Year][/COLOR]$INFO[Container(9881).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
+		<value condition="Control.HasFocus(9881) + !String.IsEmpty(Container(9881).ListItem.Artist)">[COLOR $VAR[C_ink]]$INFO[Container(9881).ListItem.Artist][/COLOR]$INFO[Container(9881).ListItem.Year, · ,]</value>
+		<value condition="Control.HasFocus(9881) + !String.IsEmpty(Container(9881).ListItem.Year)">[COLOR $VAR[C_ink]]$INFO[Container(9881).ListItem.Director][/COLOR]$INFO[Container(9881).ListItem.Year, · ,]$INFO[Container(9881).ListItem.Duration(mins), · , min]</value>
 		<value condition="Control.HasFocus(9881)">$INFO[Container(9881).ListItem.Label2]</value>
-		<value condition="Control.HasFocus(9882) + String.IsEqual(Container(9882).ListItem.DBType,episode)">[COLOR ink]$INFO[Container(9882).ListItem.TVShowTitle][/COLOR]$INFO[Container(9882).ListItem.Season, · Season ,]$INFO[Container(9882).ListItem.Episode, · Episode ,]</value>
-		<value condition="Control.HasFocus(9882) + String.IsEqual(Container(9882).ListItem.DBType,tvshow)">[COLOR ink]$INFO[Container(9882).ListItem.Year][/COLOR]$INFO[Container(9882).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
-		<value condition="Control.HasFocus(9882) + !String.IsEmpty(Container(9882).ListItem.Artist)">[COLOR ink]$INFO[Container(9882).ListItem.Artist][/COLOR]$INFO[Container(9882).ListItem.Year, · ,]</value>
-		<value condition="Control.HasFocus(9882) + !String.IsEmpty(Container(9882).ListItem.Year)">[COLOR ink]$INFO[Container(9882).ListItem.Director][/COLOR]$INFO[Container(9882).ListItem.Year, · ,]$INFO[Container(9882).ListItem.Duration(mins), · , min]</value>
+		<value condition="Control.HasFocus(9882) + String.IsEqual(Container(9882).ListItem.DBType,episode)">[COLOR $VAR[C_ink]]$INFO[Container(9882).ListItem.TVShowTitle][/COLOR]$INFO[Container(9882).ListItem.Season, · Season ,]$INFO[Container(9882).ListItem.Episode, · Episode ,]</value>
+		<value condition="Control.HasFocus(9882) + String.IsEqual(Container(9882).ListItem.DBType,tvshow)">[COLOR $VAR[C_ink]]$INFO[Container(9882).ListItem.Year][/COLOR]$INFO[Container(9882).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
+		<value condition="Control.HasFocus(9882) + !String.IsEmpty(Container(9882).ListItem.Artist)">[COLOR $VAR[C_ink]]$INFO[Container(9882).ListItem.Artist][/COLOR]$INFO[Container(9882).ListItem.Year, · ,]</value>
+		<value condition="Control.HasFocus(9882) + !String.IsEmpty(Container(9882).ListItem.Year)">[COLOR $VAR[C_ink]]$INFO[Container(9882).ListItem.Director][/COLOR]$INFO[Container(9882).ListItem.Year, · ,]$INFO[Container(9882).ListItem.Duration(mins), · , min]</value>
 		<value condition="Control.HasFocus(9882)">$INFO[Container(9882).ListItem.Label2]</value>
-		<value condition="Control.HasFocus(9883) + String.IsEqual(Container(9883).ListItem.DBType,episode)">[COLOR ink]$INFO[Container(9883).ListItem.TVShowTitle][/COLOR]$INFO[Container(9883).ListItem.Season, · Season ,]$INFO[Container(9883).ListItem.Episode, · Episode ,]</value>
-		<value condition="Control.HasFocus(9883) + String.IsEqual(Container(9883).ListItem.DBType,tvshow)">[COLOR ink]$INFO[Container(9883).ListItem.Year][/COLOR]$INFO[Container(9883).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
-		<value condition="Control.HasFocus(9883) + !String.IsEmpty(Container(9883).ListItem.Artist)">[COLOR ink]$INFO[Container(9883).ListItem.Artist][/COLOR]$INFO[Container(9883).ListItem.Year, · ,]</value>
-		<value condition="Control.HasFocus(9883) + !String.IsEmpty(Container(9883).ListItem.Year)">[COLOR ink]$INFO[Container(9883).ListItem.Director][/COLOR]$INFO[Container(9883).ListItem.Year, · ,]$INFO[Container(9883).ListItem.Duration(mins), · , min]</value>
+		<value condition="Control.HasFocus(9883) + String.IsEqual(Container(9883).ListItem.DBType,episode)">[COLOR $VAR[C_ink]]$INFO[Container(9883).ListItem.TVShowTitle][/COLOR]$INFO[Container(9883).ListItem.Season, · Season ,]$INFO[Container(9883).ListItem.Episode, · Episode ,]</value>
+		<value condition="Control.HasFocus(9883) + String.IsEqual(Container(9883).ListItem.DBType,tvshow)">[COLOR $VAR[C_ink]]$INFO[Container(9883).ListItem.Year][/COLOR]$INFO[Container(9883).ListItem.Property(UnWatchedEpisodes), · , unwatched]</value>
+		<value condition="Control.HasFocus(9883) + !String.IsEmpty(Container(9883).ListItem.Artist)">[COLOR $VAR[C_ink]]$INFO[Container(9883).ListItem.Artist][/COLOR]$INFO[Container(9883).ListItem.Year, · ,]</value>
+		<value condition="Control.HasFocus(9883) + !String.IsEmpty(Container(9883).ListItem.Year)">[COLOR $VAR[C_ink]]$INFO[Container(9883).ListItem.Director][/COLOR]$INFO[Container(9883).ListItem.Year, · ,]$INFO[Container(9883).ListItem.Duration(mins), · , min]</value>
 		<value condition="Control.HasFocus(9883)">$INFO[Container(9883).ListItem.Label2]</value>
 	</variable>
 
@@ -180,14 +180,14 @@
 	</variable>
 
 	<!-- nav word colours: the section on show is ink, the rest secondary -->
-	<variable name="Home_NavFilms"><value condition="$EXP[Home_Films]">ink</value><value>ink2</value></variable>
-	<variable name="Home_NavSeries"><value condition="$EXP[Home_Series]">ink</value><value>ink2</value></variable>
-	<variable name="Home_NavMusic"><value condition="$EXP[Home_Music]">ink</value><value>ink2</value></variable>
+	<variable name="Home_NavFilms"><value condition="$EXP[Home_Films]">$VAR[C_ink]</value><value>$VAR[C_ink2]</value></variable>
+	<variable name="Home_NavSeries"><value condition="$EXP[Home_Series]">$VAR[C_ink]</value><value>$VAR[C_ink2]</value></variable>
+	<variable name="Home_NavMusic"><value condition="$EXP[Home_Music]">$VAR[C_ink]</value><value>$VAR[C_ink2]</value></variable>
 
 	<!-- ================================================================ nav -->
 	<!-- One word. x = text start, w = measured text width (_src/measure.py, PPCaps 20) -->
 	<include name="Home_NavWord">
-		<param name="color">ink2</param>
+		<param name="color">$VAR[C_ink2]</param>
 		<param name="focus_a">noop</param>
 		<param name="focus_b">noop</param>
 		<param name="active">false</param>
@@ -213,7 +213,7 @@
 				<textoffsetx>0</textoffsetx>
 				<textcolor>$PARAM[color]</textcolor>
 				<focusedcolor>$VAR[PaperColor]</focusedcolor>
-				<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 				<texturenofocus />
 				<label>$PARAM[label]</label>
 				<onfocus>$PARAM[focus_a]</onfocus>
@@ -235,7 +235,7 @@
 				<top>47</top>
 				<width>$PARAM[uwidth]</width>
 				<height>1</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>$PARAM[active] + !Control.HasFocus($PARAM[id])</visible>
 			</control>
 			</control>
@@ -254,9 +254,9 @@
 				<font>cap_20</font>
 				<aligny>center</aligny>
 				<textoffsetx>16</textoffsetx>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<focusedcolor>$VAR[PaperColor]</focusedcolor>
-				<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 				<texturenofocus />
 				<label>$VAR[CustomMenu_Label$PARAM[n]]</label>
 				<visible>$EXP[CustomMenu$PARAM[n]On]</visible>
@@ -316,7 +316,7 @@
 				<width>1400</width>
 				<height>88</height>
 				<font>ttl_72</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<align>center</align>
 				<label>$VAR[Home_CustomMenuLabel]</label>
 			</control>
@@ -326,7 +326,7 @@
 				<width>1400</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<align>center</align>
 				<label>$VAR[Home_CustomMenuKind] · $VAR[Home_CustomMenuOpens]</label>
 			</control>
@@ -336,7 +336,7 @@
 				<width>1400</width>
 				<height>34</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31995]</label>
 			</control>
@@ -348,7 +348,7 @@
 					<width>520</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31980]</label>
 				</control>
 				<control type="label">
@@ -357,7 +357,7 @@
 					<width>520</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Home_CustomMenuSlot]</label>
 				</control>
 			</control>
@@ -540,7 +540,7 @@
 				<width>1400</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<align>center</align>
 				<label>$VAR[Home_CaptionMeta]</label>
 			</control>
@@ -550,9 +550,9 @@
 				<width>1400</width>
 				<height>34</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>center</align>
-				<label>$VAR[Home_LineA][COLOR ink]$VAR[Home_LineMono][/COLOR]$VAR[Home_LineB]</label>
+				<label>$VAR[Home_LineA][COLOR $VAR[C_ink]]$VAR[Home_LineMono][/COLOR]$VAR[Home_LineB]</label>
 			</control>
 			<!-- the exhibition's name, bottom left; counter bottom right -->
 			<control type="group">
@@ -563,7 +563,7 @@
 					<width>520</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31177]</label>
 				</control>
 				<control type="label">
@@ -572,7 +572,7 @@
 					<width>520</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Home_ExhibitionName]</label>
 				</control>
 				<control type="label">
@@ -581,7 +581,7 @@
 					<width>500</width>
 					<height>28</height>
 					<font>mono_22</font>
-					<textcolor>ink3</textcolor>
+					<textcolor>$VAR[C_ink3]</textcolor>
 					<align>right</align>
 					<label>$INFO[Container(9101).CurrentItem]$INFO[Container(9101).NumItems, / ,]</label>
 				</control>
@@ -596,7 +596,7 @@
 				<width>1680</width>
 				<height>84</height>
 				<font>ttl_72</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31178]</label>
 			</control>
@@ -606,7 +606,7 @@
 				<width>1680</width>
 				<height>34</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31179]</label>
 			</control>
@@ -644,7 +644,7 @@
 				<width>1000</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>left</align>
 				<label>The exhibition · $INFO[Container(9101).CurrentItem]$INFO[Container(9101).NumItems, / ,]</label>
 			</control>
@@ -654,7 +654,7 @@
 				<width>1088</width>
 				<height>76</height>
 				<font>ttl_64</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[Container(9101).ListItem.Label]</label>
 			</control>
 			<control type="label">
@@ -663,7 +663,7 @@
 				<width>1088</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[Home_CaptionMeta]</label>
 			</control>
 		</control>
@@ -715,7 +715,7 @@
 				<width>800</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[Home_ContinueName]</label>
 				<visible>Integer.IsGreater(Container(9120).NumItems,0)</visible>
 				<include>Home_RoomFade</include>
@@ -789,7 +789,7 @@
 					<top>600</top>
 					<width>1</width>
 					<height>180</height>
-					<texture colordiffuse="rule">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 					<visible>Integer.IsGreater(Container(9120).NumItems,0)</visible>
 				</control>
 				<control type="label">
@@ -798,7 +798,7 @@
 					<width>800</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Home_RoomName]</label>
 					<visible>Integer.IsGreater(Container(9121).NumItems,0)</visible>
 				</control>
@@ -864,7 +864,7 @@
 				<width>800</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$LOCALIZE[31180]</label>
 				<visible>Integer.IsGreater(Container(9130).NumItems,0)</visible>
 				<include>Home_RoomFade</include>
@@ -924,7 +924,7 @@
 					<top>600</top>
 					<width>1</width>
 					<height>180</height>
-					<texture colordiffuse="rule">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 					<visible>Integer.IsGreater(Container(9130).NumItems,0)</visible>
 				</control>
 				<control type="label">
@@ -933,7 +933,7 @@
 					<width>700</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$LOCALIZE[31181]</label>
 				</control>
 				<control type="fixedlist" id="9131">
@@ -995,7 +995,7 @@
 				<width>1680</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[Home_RoomMeta]</label>
 			</control>
 		</control>
@@ -1018,7 +1018,7 @@
 				<top>0</top>
 				<width>$PARAM[width]</width>
 				<height>320</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -1058,8 +1058,8 @@
 				<top>960</top>
 				<width>1680</width>
 				<height>1</height>
-				<texturebg colordiffuse="rule">common/white.png</texturebg>
-				<midtexture colordiffuse="ink">common/white.png</midtexture>
+				<texturebg colordiffuse="$VAR[C_rule]">common/white.png</texturebg>
+				<midtexture colordiffuse="$VAR[C_ink]">common/white.png</midtexture>
 				<info>Player.Progress</info>
 			</control>
 			<control type="grouplist">
@@ -1075,14 +1075,14 @@
 					<width>auto</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31017]</label>
 				</control>
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
 					<font>mono_22</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
 					<visible>$PARAM[footer]</visible>
 				</control>
@@ -1090,7 +1090,7 @@
 					<width max="$PARAM[artist_max]">auto</width>
 					<height>34</height>
 					<font>body_24</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[MusicPlayer.Artist]</label>
 				</control>
 				<control type="label">
@@ -1098,7 +1098,7 @@
 					<width max="$PARAM[title_max]">auto</width>
 					<height>34</height>
 					<font>body_24</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[MusicPlayer.Title,— ,]</label>
 				</control>
 			</control>
@@ -1115,14 +1115,14 @@
 					<width>auto</width>
 					<height>34</height>
 					<font>mono_22</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Player.Time]</label>
 				</control>
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
 					<font>mono_22</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[Player.Duration, / ,]</label>
 				</control>
 			</control>
@@ -1158,7 +1158,7 @@
 				<width>1680</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31960]</label>
 			</control>
 			<control type="label">
@@ -1167,7 +1167,7 @@
 				<width>1680</width>
 				<height>76</height>
 				<font>ttl_64</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[Home_CustomSignTitle]</label>
 			</control>
 			<control type="label">
@@ -1176,7 +1176,7 @@
 				<width>1680</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[Home_CustomSignCount]</label>
 			</control>
 		</control>

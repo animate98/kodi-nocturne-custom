@@ -122,7 +122,7 @@
 			<width>1040</width>
 			<height>68</height>
 			<font>body_24</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$INFO[Container(9000).ListItem.Property(help)]</label>
 		</control>
 		<control type="group">
@@ -133,7 +133,7 @@
 				<top>0</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<include content="Dlg_FactRow"><param name="top" value="24"/><param name="label" value="Kodi"/><param name="value" value="$INFO[System.BuildVersion]"/></include>
 			<include content="Dlg_FactRow"><param name="top" value="64"/><param name="label" value="Skin"/><param name="value" value="Passe-partout Custom $INFO[System.AddonVersion(skin.passepartout.custom)]"/></include>

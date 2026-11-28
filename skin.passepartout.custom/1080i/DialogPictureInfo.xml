@@ -35,14 +35,14 @@
 				<top>0</top>
 				<width>680</width>
 				<height>1080</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
 				<width>rule_h</width>
 				<height>1080</height>
-				<texture colordiffuse="rule_strong">common/hairline_v.png</texture>
+				<texture colordiffuse="$VAR[C_rule_strong]">common/hairline_v.png</texture>
 			</control>
 			<control type="label">
 				<left>40</left>
@@ -56,7 +56,7 @@
 				<param name="left" value="0"/>
 				<param name="top" value="topbar_rule_y"/>
 				<param name="width" value="680"/>
-				<param name="color" value="rule"/>
+				<param name="color" value="$VAR[C_rule]"/>
 			</include>
 			<control type="group" id="9000">
 				<control type="list" id="5">
@@ -82,7 +82,7 @@
 							<width>260</width>
 							<height>55</height>
 							<font>cap_20</font>
-							<textcolor>ink3</textcolor>
+							<textcolor>$VAR[C_ink3]</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -92,7 +92,7 @@
 							<height>55</height>
 							<align>right</align>
 							<font>body_22</font>
-							<textcolor>ink2</textcolor>
+							<textcolor>$VAR[C_ink2]</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
 						</control>
 						<control type="image">
@@ -100,7 +100,7 @@
 							<bottom>0</bottom>
 							<width>600</width>
 							<height>rule_h</height>
-							<texture colordiffuse="rule">common/hairline.png</texture>
+							<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 						</control>
 					</itemlayout>
 					<focusedlayout width="600" height="55">
@@ -109,7 +109,7 @@
 							<top>0</top>
 							<width>600</width>
 							<height>55</height>
-							<texture colordiffuse="ink">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 							<visible>Control.HasFocus(5)</visible>
 						</control>
 						<control type="label">

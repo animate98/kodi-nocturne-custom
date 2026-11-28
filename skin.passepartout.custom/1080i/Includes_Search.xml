@@ -47,7 +47,7 @@
 	</variable>
 	<variable name="Search_KeyText">
 		<value condition="Control.HasFocus(9300)">$VAR[PaperColor]</value>
-		<value>ink</value>
+		<value>$VAR[C_ink]</value>
 	</variable>
 
 	<!-- ============================================================== query + keyboard -->
@@ -64,7 +64,7 @@
 				<width max="1640">auto</width>
 				<height>124</height>
 				<font>disp_104</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$INFO[Window(Home).Property(passepartout.q)]</label>
 				<visible>$EXP[Search_HasQuery]</visible>
 			</control>
@@ -72,7 +72,7 @@
 				<width max="1640">auto</width>
 				<height>124</height>
 				<font>disp_104</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[31186]</label>
 				<visible>!$EXP[Search_HasQuery]</visible>
 			</control>
@@ -80,7 +80,7 @@
 				<top>24</top>
 				<width>2</width>
 				<height>92</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<animation effect="fade" start="100" end="0" time="600" delay="400" pulse="true" condition="true">Conditional</animation>
 			</control>
 		</control>
@@ -89,7 +89,7 @@
 			<top>296</top>
 			<width>1680</width>
 			<height>1</height>
-			<texture colordiffuse="rule_strong">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_rule_strong]">common/white.png</texture>
 		</control>
 
 		<!-- keys: 88 x 88, gap 8, six columns from 120,360. Items are 96 x 96 with the key at 24,4 so the
@@ -635,7 +635,7 @@
 					<top>4</top>
 					<width>88</width>
 					<height>88</height>
-					<texture border="2" colordiffuse="rule_row">pp/frame_1.png</texture>
+					<texture border="2" colordiffuse="$VAR[C_rule_row]">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>24</left>
@@ -643,7 +643,7 @@
 					<width>88</width>
 					<height>88</height>
 					<font>key_34</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<align>center</align>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
@@ -654,7 +654,7 @@
 					<top>4</top>
 					<width>88</width>
 					<height>88</height>
-					<texture border="2" colordiffuse="rule_row">pp/frame_1.png</texture>
+					<texture border="2" colordiffuse="$VAR[C_rule_row]">pp/frame_1.png</texture>
 					<visible>!Control.HasFocus(9300)</visible>
 				</control>
 				<control type="image">
@@ -662,7 +662,7 @@
 					<top>0</top>
 					<width>136</width>
 					<height>148</height>
-					<texture>pp/placard_key.png</texture>
+					<texture colordiffuse="$VAR[C_placard]">pp/placard_key_w.png</texture>
 					<visible>Control.HasFocus(9300)</visible>
 				</control>
 				<control type="label">
@@ -732,13 +732,13 @@
 				<width>328</width>
 				<height>116</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<focusedcolor>$VAR[PaperColor]</focusedcolor>
 				<align>center</align>
 				<aligny>top</aligny>
 				<textoffsety>20</textoffsety>
-				<texturefocus border="74,0,74,0">pp/placard_btn56.png</texturefocus>
-				<texturenofocus border="26,6,26,58" colordiffuse="rule">pp/frame_pad.png</texturenofocus>
+				<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn56_w.png</texturefocus>
+				<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule]">pp/frame_pad.png</texturenofocus>
 				<label>$LOCALIZE[31043]</label>
 			<onclick condition="[String.IsEmpty(Window(Home).Property(passepartout.qn)) | String.IsEqual(Window(Home).Property(passepartout.qn),n0)]">SetProperty(passepartout.qh0,"$INFO[Window(Home).Property(passepartout.q)]",home)</onclick>
 			<onclick condition="[String.IsEmpty(Window(Home).Property(passepartout.qn)) | String.IsEqual(Window(Home).Property(passepartout.qn),n0)]">SetProperty(passepartout.qn,n1,home)</onclick>
@@ -865,13 +865,13 @@
 				<width>328</width>
 				<height>116</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<focusedcolor>$VAR[PaperColor]</focusedcolor>
 				<align>center</align>
 				<aligny>top</aligny>
 				<textoffsety>20</textoffsety>
-				<texturefocus border="74,0,74,0">pp/placard_btn56.png</texturefocus>
-				<texturenofocus border="26,6,26,58" colordiffuse="rule">pp/frame_pad.png</texturenofocus>
+				<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn56_w.png</texturefocus>
+				<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule]">pp/frame_pad.png</texturenofocus>
 				<label>$LOCALIZE[31044]</label>
 				<onclick condition="String.IsEqual(Window(Home).Property(passepartout.qn),n1)">SetProperty(passepartout.q,"$INFO[Window(Home).Property(passepartout.qh0)]",home)</onclick>
 				<onclick condition="String.IsEqual(Window(Home).Property(passepartout.qn),n1)">SetProperty(passepartout.qn,n0,home)</onclick>
@@ -999,7 +999,7 @@
 				<width>188</width>
 				<height>64</height>
 				<font>body_24</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$INFO[ListItem.Label]</label>
 			</control>
 			<control type="label">
@@ -1008,7 +1008,7 @@
 				<width>188</width>
 				<height>28</height>
 				<font>num_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[ListItem.Year]</label>
 				<animation effect="slide" start="0,0" end="0,68" time="0" condition="true">Conditional</animation>
 				<visible>!$PARAM[square]</visible>
@@ -1019,7 +1019,7 @@
 				<width>188</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[ListItem.Artist]</label>
 				<animation effect="slide" start="0,0" end="0,68" time="0" condition="true">Conditional</animation>
 				<visible>$PARAM[square]</visible>
@@ -1039,7 +1039,7 @@
 				<width>700</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$LOCALIZE[31130]</label>
 				<visible>Integer.IsGreater(Container(9101).NumItems,0)</visible>
 			</control>
@@ -1089,7 +1089,7 @@
 				<width>700</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$LOCALIZE[31131]</label>
 				<visible>Integer.IsGreater(Container(9102).NumItems,0)</visible>
 			</control>
@@ -1180,7 +1180,7 @@
 				<width>700</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$LOCALIZE[31132]</label>
 				<visible>Integer.IsGreater(Container(9103).NumItems,0)</visible>
 			</control>
@@ -1219,8 +1219,8 @@
 			<width>960</width>
 			<height>56</height>
 			<font>body_24</font>
-			<textcolor>ink2</textcolor>
-			<label>$LOCALIZE[31187] [COLOR ink]$LOCALIZE[31188][/COLOR] $LOCALIZE[31189]</label>
+			<textcolor>$VAR[C_ink2]</textcolor>
+			<label>$LOCALIZE[31187] [COLOR $VAR[C_ink]]$LOCALIZE[31188][/COLOR] $LOCALIZE[31189]</label>
 			<visible>$EXP[Search_HasResults]</visible>
 		</control>
 		<control type="label">
@@ -1229,7 +1229,7 @@
 			<width>960</width>
 			<height>34</height>
 			<font>body_24</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$LOCALIZE[31190]</label>
 			<visible>$EXP[Search_HasQuery] + !String.IsEmpty(Window(Home).Property(Passepartout.Search.Encoded)) + !$EXP[Search_HasResults] + !Container(9101).IsUpdating + !Container(9102).IsUpdating + !Container(9103).IsUpdating</visible>
 		</control>
@@ -1239,7 +1239,7 @@
 			<width>960</width>
 			<height>34</height>
 			<font>body_24</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$LOCALIZE[31191]</label>
 			<visible>!$EXP[Search_HasQuery]</visible>
 		</control>

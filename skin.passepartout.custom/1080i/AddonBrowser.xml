@@ -28,7 +28,7 @@
 			<height>66</height>
 			<textoffsetx>56</textoffsetx>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$LOCALIZE[31012]</label>
 			<visible>Integer.IsEqual(Container.NumItems,0) + !Container.IsUpdating</visible>
 		</control>
@@ -39,7 +39,7 @@
 			<width>1100</width>
 			<height>24</height>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$INFO[Window(AddonBrowser).Property(Updated),Repositories checked  ,]</label>
 		</control>
 		<control type="grouplist" id="9000">

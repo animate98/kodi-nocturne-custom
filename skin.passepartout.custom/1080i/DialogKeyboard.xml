@@ -23,7 +23,7 @@
 				<width>1680</width>
 				<height>124</height>
 				<font>disp_104</font>
-				<focusedcolor>ink</focusedcolor>
+				<focusedcolor>$VAR[C_ink]</focusedcolor>
 				<textoffsetx>0</textoffsetx>
 				<texturefocus />
 				<texturenofocus />
@@ -33,7 +33,7 @@
 				<top>296</top>
 				<width>1680</width>
 				<height>1</height>
-				<texture colordiffuse="rule_strong">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_strong]">common/white.png</texture>
 			</control>
 			<control type="label" id="313">
 				<left>120</left>
@@ -41,7 +41,7 @@
 				<width>1680</width>
 				<height>28</height>
 				<font>body_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 			</control>
 			<control type="label" id="314">
 				<left>120</left>
@@ -49,7 +49,7 @@
 				<width>1680</width>
 				<height>28</height>
 				<font>body_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 			</control>
 			<control type="group" id="78500">
 				<left>120</left>
@@ -68,8 +68,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>304</onup>
@@ -80,8 +80,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>304</onup>
@@ -92,8 +92,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>303</onup>
@@ -104,8 +104,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>302</onup>
@@ -116,8 +116,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>32</onup>
@@ -128,8 +128,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>32</onup>
@@ -140,8 +140,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>32</onup>
@@ -152,8 +152,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>32</onup>
@@ -164,8 +164,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>305</onup>
@@ -176,8 +176,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>306</onup>
@@ -188,8 +188,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>8</onup>
@@ -200,8 +200,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>8</onup>
@@ -212,8 +212,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>8</onup>
@@ -234,8 +234,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>100</onup>
@@ -246,8 +246,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>101</onup>
@@ -258,8 +258,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>102</onup>
@@ -270,8 +270,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>103</onup>
@@ -282,8 +282,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>104</onup>
@@ -294,8 +294,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>105</onup>
@@ -306,8 +306,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>106</onup>
@@ -318,8 +318,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>107</onup>
@@ -330,8 +330,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>108</onup>
@@ -342,8 +342,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>109</onup>
@@ -354,8 +354,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>110</onup>
@@ -366,8 +366,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>111</onup>
@@ -378,8 +378,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>112</onup>
@@ -400,8 +400,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>120</onup>
@@ -412,8 +412,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>121</onup>
@@ -424,8 +424,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>122</onup>
@@ -436,8 +436,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>123</onup>
@@ -448,8 +448,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>124</onup>
@@ -460,8 +460,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>125</onup>
@@ -472,8 +472,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>126</onup>
@@ -484,8 +484,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>127</onup>
@@ -496,8 +496,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>128</onup>
@@ -508,8 +508,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>129</onup>
@@ -520,8 +520,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>130</onup>
@@ -532,8 +532,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>131</onup>
@@ -544,8 +544,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>132</onup>
@@ -566,8 +566,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>140</onup>
@@ -578,8 +578,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>141</onup>
@@ -590,8 +590,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>142</onup>
@@ -602,8 +602,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>143</onup>
@@ -614,8 +614,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>144</onup>
@@ -626,8 +626,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>145</onup>
@@ -638,8 +638,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>146</onup>
@@ -650,8 +650,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>147</onup>
@@ -662,8 +662,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>148</onup>
@@ -674,8 +674,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>149</onup>
@@ -686,8 +686,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>150</onup>
@@ -698,8 +698,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>151</onup>
@@ -710,8 +710,8 @@
 						<height>148</height>
 						<font>key_34</font>
 						<textoffsety>28</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>152</onup>
@@ -733,8 +733,8 @@
 						<label>$LOCALIZE[31040]</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<textoffsetx>24</textoffsetx>
@@ -753,8 +753,8 @@
 						<label>$LOCALIZE[31041]</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<textoffsetx>24</textoffsetx>
@@ -773,8 +773,8 @@
 						<label>$LOCALIZE[31042]</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<textoffsetx>24</textoffsetx>
@@ -793,8 +793,8 @@
 						<label>$LOCALIZE[31043]</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>164</onup>
@@ -806,8 +806,8 @@
 						<label>←</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>168</onup>
@@ -819,8 +819,8 @@
 						<label>→</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>169</onup>
@@ -832,8 +832,8 @@
 						<label>$LOCALIZE[31044]</label>
 						<font>cap_20</font>
 						<textoffsety>36</textoffsety>
-						<texturefocus border="74,0,74,0">pp/placard_btn_key.png</texturefocus>
-						<texturenofocus border="26,6,26,58" colordiffuse="rule_row">pp/frame_pad.png</texturenofocus>
+						<texturefocus border="74,0,74,0" colordiffuse="$VAR[C_placard]">pp/placard_btn_key_w.png</texturefocus>
+						<texturenofocus border="26,6,26,58" colordiffuse="$VAR[C_rule_row]">pp/frame_pad.png</texturenofocus>
 						<align>center</align>
 						<aligny>top</aligny>
 						<onup>170</onup>

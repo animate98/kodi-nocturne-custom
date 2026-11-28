@@ -68,7 +68,7 @@
 					<width>1420</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[VideoPlayer.Genre]$INFO[Player.Duration, · ,]$INFO[Player.FinishTime, · ends ,]</label>
 				</control>
 				<control type="image">
@@ -76,7 +76,7 @@
 					<top>730</top>
 					<width>64</width>
 					<height>1</height>
-					<texture colordiffuse="ink">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				</control>
 				<control type="textbox">
 					<left>0</left>
@@ -104,7 +104,7 @@
 				<height>28</height>
 				<align>right</align>
 				<font>mono_22</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[Player.Duration]</label>
 			</control>
 			<control type="progress">
@@ -120,7 +120,7 @@
 				<width>1680</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[OSD_NextLabel]</label>
 			</control>
 		</control>

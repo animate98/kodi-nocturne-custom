@@ -97,7 +97,7 @@
 					<width>500</width>
 					<height>58</height>
 					<font>ttl_48</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="label">
@@ -106,7 +106,7 @@
 					<width>500</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Label2]</label>
 				</control>
 				<control type="textbox">
@@ -116,7 +116,7 @@
 					<!-- five whole lines (pitch 34): a sixth ran into the View words -->
 					<height>170</height>
 					<font>body_24</font>
-					<textcolor>body</textcolor>
+					<textcolor>$VAR[C_body]</textcolor>
 					<label>$INFO[ListItem.Plot]</label>
 					<autoscroll delay="8000" time="3000" repeat="10000">true</autoscroll>
 				</control>

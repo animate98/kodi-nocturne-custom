@@ -116,28 +116,28 @@
 			<animation effect="fade" start="100" end="0" time="160">Hidden</animation>
 			<control type="label">
 				<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
-				<font>cap_20</font><textcolor>ink2</textcolor><label>Films  /  [COLOR ink]Looking for copies[/COLOR]</label>
+				<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>Films  /  [COLOR $VAR[C_ink]]Looking for copies[/COLOR]</label>
 			</control>
 			<control type="textbox">
 				<left>120</left><top>786</top><width>400</width><height>222</height>
-				<font>body_22</font><textcolor>body</textcolor><label>$INFO[ListItem.Plot]</label>
+				<font>body_22</font><textcolor>$VAR[C_body]</textcolor><label>$INFO[ListItem.Plot]</label>
 			</control>
 			<control type="label">
 				<left>640</left><top>128</top><width>1160</width><height>96</height><aligny>center</aligny>
-				<font>ttl_72</font><textcolor>ink</textcolor><label>$INFO[ListItem.Title]</label>
+				<font>ttl_72</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Title]</label>
 			</control>
 			<control type="label">
 				<left>640</left><top>230</top><width>1160</width><height>32</height><aligny>center</aligny>
-				<font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Year]$INFO[ListItem.Duration(mins),  ·  , min]</label>
+				<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Year]$INFO[ListItem.Duration(mins),  ·  , min]</label>
 			</control>
-			<control type="image"><left>640</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>
+			<control type="image"><left>640</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>
 			<control type="group">
 				<visible>true</visible>
 				<control type="label">
 					<left>640</left><top>350</top><width>1160</width><height>60</height><aligny>center</aligny>
-					<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
+					<font>ttl_44</font><textcolor>$VAR[C_body]</textcolor><label>Looking for copies…</label>
 				</control>
-				<control type="image"><left>640</left><top>440</top><width>1160</width><height>4</height><texture colordiffuse="rule_track">common/white.png</texture></control>
+				<control type="image"><left>640</left><top>440</top><width>1160</width><height>4</height><texture colordiffuse="$VAR[C_rule_track]">common/white.png</texture></control>
 			</control>
 		</control>
 	</include>

@@ -24,14 +24,14 @@
 				<top>0</top>
 				<width>1040</width>
 				<height>420</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
 				<width>1040</width>
 				<height>420</height>
-				<texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture>
+				<texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture>
 			</control>
 
 			<!-- art -->
@@ -40,7 +40,7 @@
 				<top>40</top>
 				<width>220</width>
 				<height>220</height>
-				<texture colordiffuse="wash">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>40</left>
@@ -75,7 +75,7 @@
 				<width>708</width>
 				<height>26</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[OSD_Meta]</label>
 			</control>
 
@@ -85,7 +85,7 @@
 				<top>212</top>
 				<width>708</width>
 				<height>2</height>
-				<texture colordiffuse="rule_strong">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_strong]">common/white.png</texture>
 			</control>
 			<control type="progress">
 				<left>292</left>
@@ -100,7 +100,7 @@
 				<top>210</top>
 				<width>708</width>
 				<height>6</height>
-				<texture colordiffuse="ink">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 				<visible>Control.HasFocus(87)</visible>
 			</control>
 			<control type="label">
@@ -118,7 +118,7 @@
 				<height>30</height>
 				<align>right</align>
 				<font>num_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[Player.TimeRemaining,−,]$INFO[Player.Duration,  /  ,]</label>
 			</control>
 
@@ -194,7 +194,7 @@
 				<height>osd_box</height>
 				<align>right</align>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$VAR[OSD_RepeatLabel]</label>
 				<visible>Player.HasAudio</visible>
 			</control>

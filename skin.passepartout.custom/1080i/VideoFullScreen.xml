@@ -62,7 +62,7 @@
 				<top>0</top>
 				<width>320</width>
 				<height>72</height>
-				<texture colordiffuse="rule_strong">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_strong]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<left>24</left>
@@ -70,7 +70,7 @@
 				<width>272</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31255]</label>
 			</control>
 			<control type="label">
@@ -88,7 +88,7 @@
 				<width>272</width>
 				<height>2</height>
 				<info>Player.CacheLevel</info>
-				<texturebg colordiffuse="rule_strong">common/white.png</texturebg>
+				<texturebg colordiffuse="$VAR[C_rule_strong]">common/white.png</texturebg>
 			</control>
 		</control>
 	</controls>

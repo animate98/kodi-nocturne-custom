@@ -56,7 +56,7 @@
 		<control type="grouplist">
 			<left>page_margin</left>
 			<top>160</top>
-			<width>860</width>
+			<width>1060</width>
 			<height>760</height>
 			<orientation>vertical</orientation>
 			<!-- video -->
@@ -111,6 +111,13 @@
 				<param name="value" value="$VAR[OSD_SubtitleValue]"/>
 				<param name="visible" value="Player.HasVideo"/>
 			</include>
+			<!-- custom: the file - for POV the release name of the copy picked in the source picker (debrid links
+			     play as an opaque id), otherwise Kodi's file name -->
+			<include content="OSD_InfoRow">
+				<param name="key" value="FILE"/>
+				<param name="value" value="$VAR[OSD_StatsFile]"/>
+				<param name="visible" value="!String.IsEmpty(Player.Filename)"/>
+			</include>
 			<!-- system -->
 			<include content="OSD_InfoRow">
 				<param name="key" value="GUI"/>
@@ -124,7 +131,7 @@
 			<width>860</width>
 			<height>24</height>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$LOCALIZE[31166]</label>
 		</control>
 	</controls>

@@ -62,7 +62,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31228]</label>
 			</control>
 			<control type="image">
@@ -70,7 +70,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9101">
 				<left>680</left>
@@ -88,7 +88,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31229]</label>
 					<onclick>Skin.ToggleSetting(passepartout.neutralpaper)</onclick>
 					<onclick condition="Skin.HasSetting(passepartout.neutralpaper)">Skin.SetBool(TMDbHelper.EnableColors)</onclick>
@@ -99,25 +99,30 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31230]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.80)">Skin.SetString(passepartout.lum,0.83)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.80)">Skin.SetString(TMDbHelper.Colors.Luminance,0.83)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.80)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.83)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.80)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.17)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.83)">Skin.SetString(passepartout.lum,0.86)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.83)">Skin.SetString(TMDbHelper.Colors.Luminance,0.86)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.83)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.86)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.83)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.14)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.86) | [!String.IsEqual(Skin.String(passepartout.lum),0.80) + !String.IsEqual(Skin.String(passepartout.lum),0.83) + !String.IsEqual(Skin.String(passepartout.lum),0.86) + !String.IsEqual(Skin.String(passepartout.lum),0.89) + !String.IsEqual(Skin.String(passepartout.lum),0.92)]">Skin.SetString(passepartout.lum,0.89)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.86) | [!String.IsEqual(Skin.String(passepartout.lum),0.80) + !String.IsEqual(Skin.String(passepartout.lum),0.83) + !String.IsEqual(Skin.String(passepartout.lum),0.86) + !String.IsEqual(Skin.String(passepartout.lum),0.89) + !String.IsEqual(Skin.String(passepartout.lum),0.92)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.89)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.86) | [!String.IsEqual(Skin.String(passepartout.lum),0.80) + !String.IsEqual(Skin.String(passepartout.lum),0.83) + !String.IsEqual(Skin.String(passepartout.lum),0.86) + !String.IsEqual(Skin.String(passepartout.lum),0.89) + !String.IsEqual(Skin.String(passepartout.lum),0.92)]]">Skin.SetString(TMDbHelper.Colors.Luminance,0.89)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.86) | [!String.IsEqual(Skin.String(passepartout.lum),0.80) + !String.IsEqual(Skin.String(passepartout.lum),0.83) + !String.IsEqual(Skin.String(passepartout.lum),0.86) + !String.IsEqual(Skin.String(passepartout.lum),0.89) + !String.IsEqual(Skin.String(passepartout.lum),0.92)]]">Skin.SetString(TMDbHelper.Colors.Luminance,0.11)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.89)">Skin.SetString(passepartout.lum,0.92)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.89)">Skin.SetString(TMDbHelper.Colors.Luminance,0.92)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.89)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.92)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.89)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.08)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.92)">Skin.SetString(passepartout.lum,0.80)</onclick>
-					<onclick condition="String.IsEqual(Skin.String(passepartout.lum),0.92)">Skin.SetString(TMDbHelper.Colors.Luminance,0.80)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.92)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.80)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + [String.IsEqual(Skin.String(passepartout.lum),0.92)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.20)</onclick>
 				</control>
 				<control type="button" id="9113">
 					<width>1120</width>
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31231]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.sat),0.12)">Skin.SetString(passepartout.sat,0.17)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.sat),0.12)">Skin.SetString(TMDbHelper.Colors.Saturation,0.17)</onclick>
@@ -135,9 +140,33 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31232]</label>
 					<onclick>Skin.ToggleSetting(passepartout.noshadow)</onclick>
+				</control>
+				<control type="button" id="9115">
+					<width>1120</width>
+					<height>76</height>
+					<font>body_28</font>
+					<textoffsetx>28</textoffsetx>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
+					<label>$LOCALIZE[31996]</label>
+					<!-- custom: night mode (dark paper, light ink; tools/night_colors.py). Art paper flips to the
+					     same distance from black as the day setting is from white. -->
+					<onclick condition="!Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.80)">Skin.SetString(TMDbHelper.Colors.Luminance,0.20)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.80)">Skin.SetString(TMDbHelper.Colors.Luminance,0.80)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.83)">Skin.SetString(TMDbHelper.Colors.Luminance,0.17)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.83)">Skin.SetString(TMDbHelper.Colors.Luminance,0.83)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + [!String.IsEqual(Skin.String(passepartout.lum),0.80) + !String.IsEqual(Skin.String(passepartout.lum),0.83) + !String.IsEqual(Skin.String(passepartout.lum),0.89) + !String.IsEqual(Skin.String(passepartout.lum),0.92)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.14)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + [!String.IsEqual(Skin.String(passepartout.lum),0.80) + !String.IsEqual(Skin.String(passepartout.lum),0.83) + !String.IsEqual(Skin.String(passepartout.lum),0.89) + !String.IsEqual(Skin.String(passepartout.lum),0.92)]">Skin.SetString(TMDbHelper.Colors.Luminance,0.86)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.89)">Skin.SetString(TMDbHelper.Colors.Luminance,0.11)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.89)">Skin.SetString(TMDbHelper.Colors.Luminance,0.89)</onclick>
+					<onclick condition="!Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.92)">Skin.SetString(TMDbHelper.Colors.Luminance,0.08)</onclick>
+					<onclick condition="Skin.HasSetting(pp.night) + String.IsEqual(Skin.String(passepartout.lum),0.92)">Skin.SetString(TMDbHelper.Colors.Luminance,0.92)</onclick>
+					<onclick>ClearProperty(TMDbHelper.ListItem.Colors.Main,home)</onclick>
+					<onclick>ClearProperty(TMDbHelper.PPPlayer.Colors.Main,home)</onclick>
+					<onclick>ClearProperty(passepartout.np.colorsrc,home)</onclick>
+					<onclick>Skin.ToggleSetting(pp.night)</onclick>
 				</control>
 			</control>
 		<control type="label">
@@ -147,7 +176,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9111]</label>
 			<visible>!Control.HasFocus(9111)</visible>
 		</control>
@@ -169,7 +198,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>mono_24</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9112]</label>
 			<visible>!Control.HasFocus(9112)</visible>
 		</control>
@@ -191,7 +220,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>mono_24</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9113]</label>
 			<visible>!Control.HasFocus(9113)</visible>
 		</control>
@@ -213,7 +242,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9114]</label>
 			<visible>!Control.HasFocus(9114)</visible>
 		</control>
@@ -227,6 +256,28 @@
 			<textcolor>$VAR[PaperColor]</textcolor>
 			<label>$VAR[SS_Value_9114]</label>
 			<visible>Control.HasFocus(9114)</visible>
+		</control>
+		<control type="label">
+			<left>680</left>
+			<top>644</top>
+			<width>1092</width>
+			<height>76</height>
+			<align>right</align>
+			<font>cap_20</font>
+			<textcolor>$VAR[C_ink2]</textcolor>
+			<label>$VAR[SS_Value_9115]</label>
+			<visible>!Control.HasFocus(9115)</visible>
+		</control>
+		<control type="label">
+			<left>680</left>
+			<top>644</top>
+			<width>1092</width>
+			<height>76</height>
+			<align>right</align>
+			<font>cap_20</font>
+			<textcolor>$VAR[PaperColor]</textcolor>
+			<label>$VAR[SS_Value_9115]</label>
+			<visible>Control.HasFocus(9115)</visible>
 		</control>
 		</control>
 		<control type="group">
@@ -246,7 +297,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31233]</label>
 			</control>
 			<control type="image">
@@ -254,7 +305,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9102">
 				<left>680</left>
@@ -272,7 +323,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31177]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.exhibition),best) | [!String.IsEqual(Skin.String(passepartout.exhibition),best) + !String.IsEqual(Skin.String(passepartout.exhibition),recent) + !String.IsEqual(Skin.String(passepartout.exhibition),random)]">Skin.SetString(passepartout.exhibition,recent)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.exhibition),recent)">Skin.SetString(passepartout.exhibition,random)</onclick>
@@ -286,7 +337,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9121]</label>
 			<visible>!Control.HasFocus(9121)</visible>
 		</control>
@@ -319,7 +370,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31264]</label>
 			</control>
 			<control type="image">
@@ -327,7 +378,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9103">
 				<left>680</left>
@@ -345,7 +396,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31130]</label>
 					<onclick>Skin.ToggleSetting(HideMenu.Movies)</onclick>
 				</control>
@@ -354,7 +405,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31131]</label>
 					<onclick>Skin.ToggleSetting(HideMenu.TVShows)</onclick>
 				</control>
@@ -363,7 +414,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31132]</label>
 					<onclick>Skin.ToggleSetting(HideMenu.Music)</onclick>
 				</control>
@@ -372,7 +423,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31133]</label>
 					<onclick>Skin.ToggleSetting(HideMenu.Search)</onclick>
 				</control>
@@ -384,7 +435,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9171]</label>
 			<visible>!Control.HasFocus(9171)</visible>
 		</control>
@@ -406,7 +457,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9172]</label>
 			<visible>!Control.HasFocus(9172)</visible>
 		</control>
@@ -428,7 +479,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9173]</label>
 			<visible>!Control.HasFocus(9173)</visible>
 		</control>
@@ -450,7 +501,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9174]</label>
 			<visible>!Control.HasFocus(9174)</visible>
 		</control>
@@ -483,7 +534,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31957]</label>
 			</control>
 			<control type="image">
@@ -491,7 +542,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9104">
 				<left>680</left>
@@ -509,7 +560,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31941]</label>
 					<include content="CustomRows_SettingsClick"><param name="row" value="1"/><param name="heading" value="$LOCALIZE[31941]"/></include>
 				</control>
@@ -518,7 +569,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31942]</label>
 					<include content="CustomRows_SettingsClick"><param name="row" value="2"/><param name="heading" value="$LOCALIZE[31942]"/></include>
 				</control>
@@ -527,7 +578,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31943]</label>
 					<include content="CustomRows_SettingsClick"><param name="row" value="3"/><param name="heading" value="$LOCALIZE[31943]"/></include>
 				</control>
@@ -539,7 +590,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9181]</label>
 			<visible>!Control.HasFocus(9181)</visible>
 		</control>
@@ -561,7 +612,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9182]</label>
 			<visible>!Control.HasFocus(9182)</visible>
 		</control>
@@ -583,7 +634,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9183]</label>
 			<visible>!Control.HasFocus(9183)</visible>
 		</control>
@@ -616,7 +667,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31994]</label>
 			</control>
 			<control type="image">
@@ -624,7 +675,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9105">
 				<left>680</left>
@@ -642,7 +693,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31981]</label>
 					<include content="CustomMenu_SettingsClick"><param name="item" value="1"/><param name="heading" value="$LOCALIZE[31981]"/></include>
 				</control>
@@ -651,7 +702,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31982]</label>
 					<include content="CustomMenu_SettingsClick"><param name="item" value="2"/><param name="heading" value="$LOCALIZE[31982]"/></include>
 				</control>
@@ -660,7 +711,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31983]</label>
 					<include content="CustomMenu_SettingsClick"><param name="item" value="3"/><param name="heading" value="$LOCALIZE[31983]"/></include>
 				</control>
@@ -672,7 +723,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9184]</label>
 			<visible>!Control.HasFocus(9184)</visible>
 		</control>
@@ -694,7 +745,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9185]</label>
 			<visible>!Control.HasFocus(9185)</visible>
 		</control>
@@ -716,7 +767,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9186]</label>
 			<visible>!Control.HasFocus(9186)</visible>
 		</control>
@@ -749,7 +800,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31234]</label>
 			</control>
 			<control type="image">
@@ -757,7 +808,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9106">
 				<left>680</left>
@@ -775,7 +826,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31235]</label>
 					<onclick>Skin.ToggleSetting(passepartout.nowatched)</onclick>
 				</control>
@@ -784,7 +835,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31054]</label>
 					<onclick>Skin.ToggleSetting(passepartout.hidetrailer)</onclick>
 				</control>
@@ -797,7 +848,7 @@
 						<width>1120</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$LOCALIZE[31150]</label>
 					</control>
 				</control>
@@ -806,7 +857,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31236]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.wall.size),ten)">Skin.SetString(passepartout.wall.size,eight)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.wall.size),eight) | [!String.IsEqual(Skin.String(passepartout.wall.size),ten) + !String.IsEqual(Skin.String(passepartout.wall.size),eight) + !String.IsEqual(Skin.String(passepartout.wall.size),six)]">Skin.SetString(passepartout.wall.size,six)</onclick>
@@ -817,7 +868,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31237]</label>
 					<onclick>Skin.ToggleSetting(passepartout.wall.butted)</onclick>
 				</control>
@@ -826,7 +877,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31238]</label>
 					<onclick>Skin.ToggleSetting(passepartout.wall.nomat)</onclick>
 				</control>
@@ -835,7 +886,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31239]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.wall.label),off) | [!String.IsEqual(Skin.String(passepartout.wall.label),off) + !String.IsEqual(Skin.String(passepartout.wall.label),1) + !String.IsEqual(Skin.String(passepartout.wall.label),2)]">Skin.SetString(passepartout.wall.label,1)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.wall.label),1)">Skin.SetString(passepartout.wall.label,2)</onclick>
@@ -849,7 +900,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9131]</label>
 			<visible>!Control.HasFocus(9131)</visible>
 		</control>
@@ -871,7 +922,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9132]</label>
 			<visible>!Control.HasFocus(9132)</visible>
 		</control>
@@ -893,7 +944,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9133]</label>
 			<visible>!Control.HasFocus(9133)</visible>
 		</control>
@@ -915,7 +966,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9134]</label>
 			<visible>!Control.HasFocus(9134)</visible>
 		</control>
@@ -937,7 +988,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9135]</label>
 			<visible>!Control.HasFocus(9135)</visible>
 		</control>
@@ -959,7 +1010,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9136]</label>
 			<visible>!Control.HasFocus(9136)</visible>
 		</control>
@@ -992,7 +1043,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31240]</label>
 			</control>
 			<control type="image">
@@ -1000,7 +1051,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9107">
 				<left>680</left>
@@ -1018,7 +1069,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31241]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.osdhide),3)">Skin.SetString(passepartout.osdhide,5)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.osdhide),5) | [!String.IsEqual(Skin.String(passepartout.osdhide),3) + !String.IsEqual(Skin.String(passepartout.osdhide),5) + !String.IsEqual(Skin.String(passepartout.osdhide),10) + !String.IsEqual(Skin.String(passepartout.osdhide),off)]">Skin.SetString(passepartout.osdhide,10)</onclick>
@@ -1030,7 +1081,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31242]</label>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.offsetbar),top) | [!String.IsEqual(Skin.String(passepartout.offsetbar),top) + !String.IsEqual(Skin.String(passepartout.offsetbar),bottom)]">Skin.SetString(passepartout.offsetbar,bottom)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(passepartout.offsetbar),bottom)">Skin.SetString(passepartout.offsetbar,top)</onclick>
@@ -1043,7 +1094,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9141]</label>
 			<visible>!Control.HasFocus(9141)</visible>
 		</control>
@@ -1065,7 +1116,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9142]</label>
 			<visible>!Control.HasFocus(9142)</visible>
 		</control>
@@ -1098,7 +1149,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31243]</label>
 			</control>
 			<control type="image">
@@ -1106,7 +1157,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9108">
 				<left>680</left>
@@ -1124,7 +1175,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31058]</label>
 					<onclick>Skin.ToggleSetting(passepartout.reducemotion)</onclick>
 				</control>
@@ -1136,7 +1187,7 @@
 			<height>76</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[SS_Value_9151]</label>
 			<visible>!Control.HasFocus(9151)</visible>
 		</control>
@@ -1169,7 +1220,7 @@
 				<width>1040</width>
 				<height>68</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31244]</label>
 			</control>
 			<control type="image">
@@ -1177,7 +1228,7 @@
 				<top>339</top>
 				<width>1120</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="grouplist" id="9109">
 				<left>680</left>
@@ -1195,7 +1246,7 @@
 					<height>76</height>
 					<font>body_28</font>
 					<textoffsetx>28</textoffsetx>
-					<texturenofocus border="0,0,0,2" colordiffuse="rule_row">pp/underline.png</texturenofocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_rule_row]">pp/underline.png</texturenofocus>
 					<label>$LOCALIZE[31245]</label>
 					<onclick>ActivateWindow(settings)</onclick>
 				</control>
@@ -1212,7 +1263,7 @@
 				<width>600</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31246]</label>
 			</control>
 			<control type="list" id="9190">
@@ -1258,7 +1309,7 @@
 				<width>360</width>
 				<height>90</height>
 				<font>body_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31247]</label>
 			</control>
 		</control>
@@ -1271,7 +1322,7 @@
 				<width>600</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31248]</label>
 			</control>
 			<control type="image">
@@ -1286,7 +1337,7 @@
 				<top>904</top>
 				<width>160</width>
 				<height>56</height>
-				<texture border="2" colordiffuse="rule_div">pp/frame_1.png</texture>
+				<texture border="2" colordiffuse="$VAR[C_rule_div]">pp/frame_1.png</texture>
 			</control>
 			<control type="label">
 				<left>680</left>
@@ -1294,7 +1345,7 @@
 				<width>200</width>
 				<height>26</height>
 				<font>body_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31249]</label>
 			</control>
 			<control type="image">
@@ -1302,14 +1353,14 @@
 				<top>904</top>
 				<width>160</width>
 				<height>56</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>872</left>
 				<top>904</top>
 				<width>160</width>
 				<height>56</height>
-				<texture border="2" colordiffuse="rule_div">pp/frame_1.png</texture>
+				<texture border="2" colordiffuse="$VAR[C_rule_div]">pp/frame_1.png</texture>
 			</control>
 			<control type="label">
 				<left>872</left>
@@ -1317,7 +1368,7 @@
 				<width>200</width>
 				<height>26</height>
 				<font>body_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31250]</label>
 			</control>
 			<control type="textbox">
@@ -1326,7 +1377,7 @@
 				<width>736</width>
 				<height>64</height>
 				<font>body_22</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31251]</label>
 			</control>
 		</control>

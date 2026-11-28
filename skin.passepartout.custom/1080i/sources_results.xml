@@ -11,7 +11,7 @@
 		<include>PP_Background</include>
 		<control type="label">
 			<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
-			<font>cap_20</font><textcolor>ink2</textcolor><label>Films  /  [COLOR ink]Choose a copy[/COLOR]</label>
+			<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>Films  /  [COLOR $VAR[C_ink]]Choose a copy[/COLOR]</label>
 		</control>
 		<include>PP_Clock</include>
 		<include content="PP_Print">
@@ -23,28 +23,28 @@
 		</include>
 		<control type="textbox">
 			<left>120</left><top>786</top><width>400</width><height>222</height>
-			<font>body_22</font><textcolor>body</textcolor>
+			<font>body_22</font><textcolor>$VAR[C_body]</textcolor>
 			<!-- static: no autoscroll; a long description stops at the box -->
 			<label>$INFO[Window.Property(tikiskins.plot)]</label>
 		</control>
 		<control type="label">
 			<left>640</left><top>128</top><width>1160</width><height>96</height><aligny>center</aligny>
-			<font>ttl_72</font><textcolor>ink</textcolor><label>$INFO[Window.Property(tikiskins.title)]</label>
+			<font>ttl_72</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[Window.Property(tikiskins.title)]</label>
 		</control>
 		<control type="label">
 			<left>640</left><top>230</top><width>1160</width><height>32</height><aligny>center</aligny>
-			<font>cap_20</font><textcolor>ink2</textcolor><label>[COLOR ink]$INFO[Window.Property(tikiskins.total_results)] copies[/COLOR]$INFO[Window.Property(tikiskins.scrape_time),  ·  found in , s]  ·  best first</label>
+			<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>[COLOR $VAR[C_ink]]$INFO[Window.Property(tikiskins.total_results)] copies[/COLOR]$INFO[Window.Property(tikiskins.scrape_time),  ·  found in , s]  ·  best first</label>
 		</control>
-		<control type="image"><left>640</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>
+		<control type="image"><left>640</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" delay="300">WindowOpen</animation>
 			<control type="group">
 				<visible>true</visible>
 				<control type="label">
 					<left>640</left><top>350</top><width>1160</width><height>60</height><aligny>center</aligny>
-					<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
+					<font>ttl_44</font><textcolor>$VAR[C_body]</textcolor><label>Looking for copies…</label>
 				</control>
-				<control type="image"><left>640</left><top>440</top><width>1160</width><height>4</height><texture colordiffuse="rule_track">common/white.png</texture></control>
+				<control type="image"><left>640</left><top>440</top><width>1160</width><height>4</height><texture colordiffuse="$VAR[C_rule_track]">common/white.png</texture></control>
 			</control>
 		</control>
 		<control type="group">
@@ -59,25 +59,25 @@
 			<onright>2060</onright>
 			<visible>String.StartsWith(Window.Property(tikiskins.window_style),list)</visible>
 			<itemlayout width="1160" height="104">
-					<control type="image"><left>0</left><top>103</top><width>1160</width><height>1</height><texture colordiffuse="rule_row">common/white.png</texture></control>
+					<control type="image"><left>0</left><top>103</top><width>1160</width><height>1</height><texture colordiffuse="$VAR[C_rule_row]">common/white.png</texture></control>
 					<control type="group">
 						<visible>!!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
-						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>ink3</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label></control>
-						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
-						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label></control>
-						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>body</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
-						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label></control>
+						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>$VAR[C_ink3]</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label></control>
+						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
+						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label></control>
+						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>$VAR[C_body]</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
+						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label></control>
 					<control type="group">
 						<left>234</left><top>62</top><width>142</width><height>26</height>
 						<visible>$EXP[PovBadge_visual_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>142</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_visual_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_visual_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -86,12 +86,12 @@
 						<visible>$EXP[PovBadge_imax_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>112</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_imax_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_imax_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -100,12 +100,12 @@
 						<visible>$EXP[PovBadge_source_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>96</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_source_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_source_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -114,12 +114,12 @@
 						<visible>$EXP[PovBadge_codec_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_codec_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_codec_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -128,12 +128,12 @@
 						<visible>$EXP[PovBadge_audio_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>120</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_audio_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_audio_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -142,12 +142,12 @@
 						<visible>$EXP[PovBadge_truehd_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>90</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_truehd_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_truehd_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -156,12 +156,12 @@
 						<visible>$EXP[PovBadge_channels_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>52</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_channels_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_channels_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -170,45 +170,45 @@
 						<visible>$EXP[PovBadge_tenbit_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_tenbit_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_tenbit_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
 					</control>
 					<control type="label">
 						<left>84</left><top>0</top><width>1048</width><height>104</height><aligny>center</aligny>
-						<font>cap_20</font><textcolor>ink</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
+						<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
 						<visible>!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
 					</control>
 			</itemlayout>
 			<focusedlayout width="1160" height="104">
-					<control type="image"><left>0</left><top>0</top><width>1160</width><height>104</height><texture colordiffuse="ink">common/white.png</texture></control>
+					<control type="image"><left>0</left><top>0</top><width>1160</width><height>104</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>
 					<control type="group">
 						<visible>!!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
-						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>
+						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
-						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
-						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label>
+						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
+						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
-						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
-						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label>
+						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
+						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
 					<control type="group">
 						<left>234</left><top>62</top><width>142</width><height>26</height>
 						<visible>$EXP[PovBadge_visual_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>142</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_visual_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_visual_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -217,12 +217,12 @@
 						<visible>$EXP[PovBadge_imax_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>112</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_imax_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_imax_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -231,12 +231,12 @@
 						<visible>$EXP[PovBadge_source_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>96</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_source_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_source_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -245,12 +245,12 @@
 						<visible>$EXP[PovBadge_codec_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_codec_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_codec_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -259,12 +259,12 @@
 						<visible>$EXP[PovBadge_audio_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>120</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_audio_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_audio_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -273,12 +273,12 @@
 						<visible>$EXP[PovBadge_truehd_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>90</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_truehd_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_truehd_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -287,12 +287,12 @@
 						<visible>$EXP[PovBadge_channels_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>52</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_channels_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_channels_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -301,19 +301,19 @@
 						<visible>$EXP[PovBadge_tenbit_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_tenbit_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_tenbit_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
 					</control>
 					<control type="label">
 						<left>84</left><top>0</top><width>1048</width><height>104</height><aligny>center</aligny>
-						<font>cap_20</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
+						<font>cap_20</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
 						<visible>!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
 					</control>
 			</focusedlayout>
@@ -332,25 +332,25 @@
 			<onright>2061</onright>
 			<visible>String.StartsWith(Window.Property(tikiskins.window_style),infolist)</visible>
 			<itemlayout width="1160" height="104">
-					<control type="image"><left>0</left><top>103</top><width>1160</width><height>1</height><texture colordiffuse="rule_row">common/white.png</texture></control>
+					<control type="image"><left>0</left><top>103</top><width>1160</width><height>1</height><texture colordiffuse="$VAR[C_rule_row]">common/white.png</texture></control>
 					<control type="group">
 						<visible>!!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
-						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>ink3</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label></control>
-						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
-						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label></control>
-						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>body</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
-						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label></control>
+						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>$VAR[C_ink3]</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label></control>
+						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
+						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label></control>
+						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>$VAR[C_body]</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
+						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label></control>
 					<control type="group">
 						<left>234</left><top>62</top><width>142</width><height>26</height>
 						<visible>$EXP[PovBadge_visual_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>142</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_visual_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_visual_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -359,12 +359,12 @@
 						<visible>$EXP[PovBadge_imax_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>112</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_imax_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_imax_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -373,12 +373,12 @@
 						<visible>$EXP[PovBadge_source_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>96</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_source_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_source_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -387,12 +387,12 @@
 						<visible>$EXP[PovBadge_codec_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_codec_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_codec_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -401,12 +401,12 @@
 						<visible>$EXP[PovBadge_audio_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>120</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_audio_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_audio_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -415,12 +415,12 @@
 						<visible>$EXP[PovBadge_truehd_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>90</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_truehd_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_truehd_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -429,12 +429,12 @@
 						<visible>$EXP[PovBadge_channels_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>52</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_channels_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_channels_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -443,45 +443,45 @@
 						<visible>$EXP[PovBadge_tenbit_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_tenbit_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_tenbit_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
 					</control>
 					<control type="label">
 						<left>84</left><top>0</top><width>1048</width><height>104</height><aligny>center</aligny>
-						<font>cap_20</font><textcolor>ink</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
+						<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
 						<visible>!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
 					</control>
 			</itemlayout>
 			<focusedlayout width="1160" height="104">
-					<control type="image"><left>0</left><top>0</top><width>1160</width><height>104</height><texture colordiffuse="ink">common/white.png</texture></control>
+					<control type="image"><left>0</left><top>0</top><width>1160</width><height>104</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>
 					<control type="group">
 						<visible>!!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
-						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>
+						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
-						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
-						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label>
+						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
+						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
-						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
-						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label>
+						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
+						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
 					<control type="group">
 						<left>234</left><top>62</top><width>142</width><height>26</height>
 						<visible>$EXP[PovBadge_visual_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>142</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_visual_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_visual_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -490,12 +490,12 @@
 						<visible>$EXP[PovBadge_imax_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>112</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_imax_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_imax_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -504,12 +504,12 @@
 						<visible>$EXP[PovBadge_source_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>96</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_source_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_source_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -518,12 +518,12 @@
 						<visible>$EXP[PovBadge_codec_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_codec_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_codec_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -532,12 +532,12 @@
 						<visible>$EXP[PovBadge_audio_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>120</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_audio_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_audio_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -546,12 +546,12 @@
 						<visible>$EXP[PovBadge_truehd_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>90</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_truehd_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_truehd_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -560,12 +560,12 @@
 						<visible>$EXP[PovBadge_channels_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>52</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_channels_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_channels_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -574,19 +574,19 @@
 						<visible>$EXP[PovBadge_tenbit_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_tenbit_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_tenbit_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
 					</control>
 					<control type="label">
 						<left>84</left><top>0</top><width>1048</width><height>104</height><aligny>center</aligny>
-						<font>cap_20</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
+						<font>cap_20</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
 						<visible>!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
 					</control>
 			</focusedlayout>
@@ -605,25 +605,25 @@
 			<onright>2062</onright>
 			<visible>String.StartsWith(Window.Property(tikiskins.window_style),widelist)</visible>
 			<itemlayout width="1160" height="104">
-					<control type="image"><left>0</left><top>103</top><width>1160</width><height>1</height><texture colordiffuse="rule_row">common/white.png</texture></control>
+					<control type="image"><left>0</left><top>103</top><width>1160</width><height>1</height><texture colordiffuse="$VAR[C_rule_row]">common/white.png</texture></control>
 					<control type="group">
 						<visible>!!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
-						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>ink3</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label></control>
-						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
-						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label></control>
-						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>body</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
-						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label></control>
+						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>$VAR[C_ink3]</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label></control>
+						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
+						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label></control>
+						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>$VAR[C_body]</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
+						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label></control>
 					<control type="group">
 						<left>234</left><top>62</top><width>142</width><height>26</height>
 						<visible>$EXP[PovBadge_visual_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>142</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_visual_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_visual_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -632,12 +632,12 @@
 						<visible>$EXP[PovBadge_imax_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>112</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_imax_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_imax_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -646,12 +646,12 @@
 						<visible>$EXP[PovBadge_source_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>96</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_source_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_source_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -660,12 +660,12 @@
 						<visible>$EXP[PovBadge_codec_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_codec_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_codec_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -674,12 +674,12 @@
 						<visible>$EXP[PovBadge_audio_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>120</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_audio_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_audio_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -688,12 +688,12 @@
 						<visible>$EXP[PovBadge_truehd_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>90</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_truehd_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_truehd_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -702,12 +702,12 @@
 						<visible>$EXP[PovBadge_channels_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>52</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_channels_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_channels_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -716,45 +716,45 @@
 						<visible>$EXP[PovBadge_tenbit_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="rule_strong">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>ink2</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_rule_strong]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_ink2]</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="ink">$VAR[PovBadge_tenbit_Logo]</texture>
+							<texture colordiffuse="$VAR[C_ink]">$VAR[PovBadge_tenbit_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
 					</control>
 					<control type="label">
 						<left>84</left><top>0</top><width>1048</width><height>104</height><aligny>center</aligny>
-						<font>cap_20</font><textcolor>ink</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
+						<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
 						<visible>!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
 					</control>
 			</itemlayout>
 			<focusedlayout width="1160" height="104">
-					<control type="image"><left>0</left><top>0</top><width>1160</width><height>104</height><texture colordiffuse="ink">common/white.png</texture></control>
+					<control type="image"><left>0</left><top>0</top><width>1160</width><height>104</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>
 					<control type="group">
 						<visible>!!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
-						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>
+						<control type="label"><left>20</left><top>0</top><width>50</width><height>104</height><aligny>center</aligny><font>mono_22</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
-						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
-						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label>
+						<control type="label"><left>84</left><top>14</top><width>146</width><height>48</height><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.quality)]</label></control>
+						<control type="label"><left>84</left><top>64</top><width>146</width><height>24</height><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.provider)]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
-						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
-						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label>
+						<control type="label"><left>234</left><top>14</top><width>470</width><height>36</height><aligny>center</aligny><font>body_24</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.name)]</label></control>
+						<control type="label"><left>720</left><top>14</top><width>412</width><height>36</height><align>right</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.size_label)]$INFO[ListItem.Property(tikiskins.source_type),  ·  ]$INFO[ListItem.Property(tikiskins.source_site),  ·  ]</label>
 						<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation></control>
 					<control type="group">
 						<left>234</left><top>62</top><width>142</width><height>26</height>
 						<visible>$EXP[PovBadge_visual_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>142</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>142</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_visual_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>142</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_visual_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_visual_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -763,12 +763,12 @@
 						<visible>$EXP[PovBadge_imax_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>112</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>112</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_imax_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>112</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_imax_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_imax_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -777,12 +777,12 @@
 						<visible>$EXP[PovBadge_source_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>96</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>96</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_source_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>96</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_source_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_source_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -791,12 +791,12 @@
 						<visible>$EXP[PovBadge_codec_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_codec_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_codec_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_codec_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -805,12 +805,12 @@
 						<visible>$EXP[PovBadge_audio_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>120</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>120</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_audio_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>120</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_audio_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_audio_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -819,12 +819,12 @@
 						<visible>$EXP[PovBadge_truehd_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>90</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>90</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_truehd_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>90</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_truehd_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_truehd_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -833,12 +833,12 @@
 						<visible>$EXP[PovBadge_channels_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>52</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>52</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_channels_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>52</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_channels_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_channels_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
@@ -847,19 +847,19 @@
 						<visible>$EXP[PovBadge_tenbit_Any]</visible>
 						<control type="group">
 							<visible>!Skin.HasSetting(pp.logobadges)</visible>
-							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="on_ink">pp/frame_1.png</texture></control>
-							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>on_ink</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
+							<control type="image"><left>0</left><top>0</top><width>72</width><height>26</height><texture border="2" colordiffuse="$VAR[C_on_ink]">pp/frame_1.png</texture></control>
+							<control type="label"><left>0</left><top>0</top><width>72</width><height>26</height><align>center</align><aligny>center</aligny><font>cap_16</font><textcolor>$VAR[C_on_ink]</textcolor><label>$VAR[PovBadge_tenbit_Text]</label></control>
 						</control>
 						<control type="image">
 							<left>0</left><top>2</top><width>72</width><height>22</height><aspectratio align="left" aligny="center">keep</aspectratio>
-							<texture colordiffuse="on_ink">$VAR[PovBadge_tenbit_Logo]</texture>
+							<texture colordiffuse="$VAR[C_on_ink]">$VAR[PovBadge_tenbit_Logo]</texture>
 							<visible>Skin.HasSetting(pp.logobadges)</visible>
 						</control>
 					</control>
 					</control>
 					<control type="label">
 						<left>84</left><top>0</top><width>1048</width><height>104</height><aligny>center</aligny>
-						<font>cap_20</font><textcolor>on_ink</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
+						<font>cap_20</font><textcolor>$VAR[C_on_ink]</textcolor><label>$INFO[ListItem.Property(tikiskins.start_full_scrape)]</label>
 						<visible>!String.IsEmpty(ListItem.Property(tikiskins.perform_full_search))</visible>
 					</control>
 			</focusedlayout>
@@ -870,15 +870,15 @@
 		</include>
 		</control>
 		<control type="label">
-			<left>640</left><top>968</top><width>800</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor>
+			<left>640</left><top>968</top><width>800</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>The catalogue</label>
 		</control>
 		<control type="label">
-			<left>640</left><top>998</top><width>800</width><height>28</height><font>cap_20</font><textcolor>ink</textcolor>
+			<left>640</left><top>998</top><width>800</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 			<label>Best first</label>
 		</control>
 		<control type="label">
-			<left>1300</left><top>990</top><width>500</width><height>36</height><align>right</align><font>mono_24</font><textcolor>ink2</textcolor>
+			<left>1300</left><top>990</top><width>500</width><height>36</height><align>right</align><font>mono_24</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>$INFO[Container(2000).CurrentItem]$INFO[Container(2000).NumItems, / ]</label>
 			<visible>Control.IsVisible(2000)</visible>
 		</control>

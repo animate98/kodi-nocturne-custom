@@ -10,13 +10,13 @@
 	     luminance/saturation from the Paper settings), else the neutral paper. -->
 	<variable name="PaperColor">
 		<value condition="$EXP[PP_HasArtPaper]">$INFO[Window(Home).Property(TMDbHelper.ListItem.Colors.Main)]</value>
-		<value>paper</value>
+		<value>$VAR[C_paper]</value>
 	</variable>
 	<!-- Baked shadows are neutral grey (G 62); multiplied by the paper they become a deep version of
 	     the paper's own hue (the mockups' shadow colours). -->
 	<variable name="ShadowColor">
 		<value condition="$EXP[PP_HasArtPaper]">$INFO[Window(Home).Property(TMDbHelper.ListItem.Colors.Main)]</value>
-		<value>paper</value>
+		<value>$VAR[C_paper]</value>
 	</variable>
 
 	<!-- paper for the playing item (now playing, OSD): its own colour once computed, else the page paper -->

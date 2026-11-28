@@ -25,21 +25,21 @@
 				<height>38</height>
 				<orientation>horizontal</orientation>
 				<itemgap>52</itemgap>
-				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor><label>$LOCALIZE[31130]</label></control>
-				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor><label>$LOCALIZE[31131]</label></control>
-				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor><label>$LOCALIZE[31132]</label></control>
+				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$LOCALIZE[31130]</label></control>
+				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$LOCALIZE[31131]</label></control>
+				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$LOCALIZE[31132]</label></control>
 				<control type="button">
 					<width>auto</width>
 					<height>37</height>
 					<font>cap_20</font>
-					<disabledcolor>ink</disabledcolor>
+					<disabledcolor>$VAR[C_ink]</disabledcolor>
 					<textoffsetx>0</textoffsetx>
 					<aligny>top</aligny>
-					<texturenofocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturenofocus>
-					<texturefocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturefocus>
+					<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturenofocus>
+					<texturefocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturefocus>
 					<label>$LOCALIZE[31133]</label>
 				</control>
-				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor><label>$LOCALIZE[31134]</label></control>
+				<control type="label"><width>auto</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$LOCALIZE[31134]</label></control>
 			</control>
 			<include>PP_Clock</include>
 		</control>

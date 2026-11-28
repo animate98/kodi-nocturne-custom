@@ -115,7 +115,7 @@
 				<width>324</width>
 				<height>20</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[31156]</label>
 			</control>
 			<include content="PP_Rule">
@@ -130,7 +130,7 @@
 				<width>324</width>
 				<height>549</height>  <!-- 19 lines exactly: no half-clipped line at the bottom -->
 				<font>body_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<autoscroll time="3000" delay="6000" repeat="6000">true</autoscroll>
 			</control>
 		</control>

@@ -80,7 +80,7 @@
 				<param name="top" value="784"/>
 				<param name="left" value="0"/>
 				<param name="width" value="1400"/>
-				<param name="color" value="rule_strong"/>
+				<param name="color" value="$VAR[C_rule_strong]"/>
 			</include>
 			<control type="label" id="412">
 				<description>path</description>
@@ -90,7 +90,7 @@
 				<height>40</height>
 				<haspath>true</haspath>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 			</control>
 		</control>
 	</controls>

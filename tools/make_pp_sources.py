@@ -106,8 +106,8 @@ def variables():
 
 def badge_strip(left, top, on):
     """One row's badge columns. on: the selected (ink) row, so the badges turn paper-coloured."""
-    ink = "on_ink" if on else "ink2"
-    edge = "on_ink" if on else "rule_strong"
+    ink = "$VAR[C_on_ink]" if on else "$VAR[C_ink2]"
+    edge = "$VAR[C_on_ink]" if on else "$VAR[C_rule_strong]"
     x, parts = left, []
     for name, w, _opts in BADGES:
         txt = f"$VAR[PovBadge_{name}_Text]"
@@ -121,7 +121,7 @@ def badge_strip(left, top, on):
 \t\t\t\t\t\t</control>
 \t\t\t\t\t\t<control type="image">
 \t\t\t\t\t\t\t<left>0</left><top>2</top><width>{w}</width><height>{BADGE_H - 4}</height><aspectratio align="left" aligny="center">keep</aspectratio>
-\t\t\t\t\t\t\t<texture colordiffuse="{'on_ink' if on else 'ink'}">$VAR[PovBadge_{name}_Logo]</texture>
+\t\t\t\t\t\t\t<texture colordiffuse="{'$VAR[C_on_ink]' if on else '$VAR[C_ink]'}">$VAR[PovBadge_{name}_Logo]</texture>
 \t\t\t\t\t\t\t<visible>Skin.HasSetting(pp.logobadges)</visible>
 \t\t\t\t\t\t</control>
 \t\t\t\t\t</control>""")
@@ -134,15 +134,15 @@ ROW_H, LIST_TOP, LIST_LEFT, LIST_W, ROWS = 104, 330, 640, 1160, 6
 
 
 def row(on):
-    num = "ink3" if not on else "on_ink"
-    ink = "on_ink" if on else "ink"
-    body = "on_ink" if on else "body"
-    soft = "on_ink" if on else "ink2"
+    num = "$VAR[C_ink3]" if not on else "$VAR[C_on_ink]"
+    ink = "$VAR[C_on_ink]" if on else "$VAR[C_ink]"
+    body = "$VAR[C_on_ink]" if on else "$VAR[C_body]"
+    soft = "$VAR[C_on_ink]" if on else "$VAR[C_ink2]"
     fade = '\n\t\t\t\t\t\t<animation effect="fade" start="100" end="62" time="0" condition="true">Conditional</animation>' if on else ""
     bg = (f'\t\t\t\t\t<control type="image"><left>0</left><top>0</top><width>{LIST_W}</width><height>{ROW_H}</height>'
-          f'<texture colordiffuse="ink">common/white.png</texture></control>\n') if on else (
+          f'<texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>\n') if on else (
           f'\t\t\t\t\t<control type="image"><left>0</left><top>{ROW_H - 1}</top><width>{LIST_W}</width><height>1</height>'
-          f'<texture colordiffuse="rule_row">common/white.png</texture></control>\n')
+          f'<texture colordiffuse="$VAR[C_rule_row]">common/white.png</texture></control>\n')
     return f"""{bg}\t\t\t\t\t<control type="group">
 \t\t\t\t\t\t<visible>!{FULL}</visible>
 \t\t\t\t\t\t<control type="label"><left>20</left><top>0</top><width>50</width><height>{ROW_H}</height><aligny>center</aligny><font>mono_22</font><textcolor>{num}</textcolor><label>$INFO[ListItem.Property(tikiskins.count)]</label>{fade}</control>
@@ -186,7 +186,7 @@ def page(crumb, title_label, meta_label, poster, plot=None, own=None):
     plot_xml = f"""
 \t\t<control type="textbox">
 \t\t\t<left>120</left><top>786</top><width>400</width><height>222</height>
-\t\t\t<font>body_22</font><textcolor>body</textcolor>
+\t\t\t<font>body_22</font><textcolor>$VAR[C_body]</textcolor>
 \t\t\t<!-- static: no autoscroll; a long description stops at the box -->
 \t\t\t<label>{plot}</label>
 \t\t</control>""" if plot else ""
@@ -195,7 +195,7 @@ def page(crumb, title_label, meta_label, poster, plot=None, own=None):
     return head + f"""\t\t<include>PP_Background</include>
 \t\t<control type="label">
 \t\t\t<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
-\t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>Films  /  [COLOR ink]{X(crumb)}[/COLOR]</label>
+\t\t\t<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>Films  /  [COLOR $VAR[C_ink]]{X(crumb)}[/COLOR]</label>
 \t\t</control>
 \t\t<include>PP_Clock</include>
 \t\t<include content="PP_Print">
@@ -207,13 +207,13 @@ def page(crumb, title_label, meta_label, poster, plot=None, own=None):
 \t\t</include>{plot_xml}
 \t\t<control type="label">
 \t\t\t<left>{LIST_LEFT}</left><top>128</top><width>{LIST_W}</width><height>96</height><aligny>center</aligny>
-\t\t\t<font>ttl_72</font><textcolor>ink</textcolor><label>{title_label}</label>
+\t\t\t<font>ttl_72</font><textcolor>$VAR[C_ink]</textcolor><label>{title_label}</label>
 \t\t</control>
 \t\t<control type="label">
 \t\t\t<left>{LIST_LEFT}</left><top>230</top><width>{LIST_W}</width><height>32</height><aligny>center</aligny>
-\t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>{meta_label}</label>
+\t\t\t<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>{meta_label}</label>
 \t\t</control>
-\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>""" + tail
+\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>""" + tail
 
 
 # ---- the hand-off from the wall label ---------------------------------------------------------------------------
@@ -251,21 +251,21 @@ def morph_includes():
 \t\t\t<animation effect="fade" start="100" end="0" time="160">Hidden</animation>
 \t\t\t<control type="label">
 \t\t\t\t<left>120</left><top>56</top><width>1200</width><height>44</height><aligny>center</aligny>
-\t\t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>Films  /  [COLOR ink]Looking for copies[/COLOR]</label>
+\t\t\t\t<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>Films  /  [COLOR $VAR[C_ink]]Looking for copies[/COLOR]</label>
 \t\t\t</control>
 \t\t\t<control type="textbox">
 \t\t\t\t<left>120</left><top>786</top><width>400</width><height>222</height>
-\t\t\t\t<font>body_22</font><textcolor>body</textcolor><label>$INFO[ListItem.Plot]</label>
+\t\t\t\t<font>body_22</font><textcolor>$VAR[C_body]</textcolor><label>$INFO[ListItem.Plot]</label>
 \t\t\t</control>
 \t\t\t<control type="label">
 \t\t\t\t<left>{LIST_LEFT}</left><top>128</top><width>{LIST_W}</width><height>96</height><aligny>center</aligny>
-\t\t\t\t<font>ttl_72</font><textcolor>ink</textcolor><label>$INFO[ListItem.Title]</label>
+\t\t\t\t<font>ttl_72</font><textcolor>$VAR[C_ink]</textcolor><label>$INFO[ListItem.Title]</label>
 \t\t\t</control>
 \t\t\t<control type="label">
 \t\t\t\t<left>{LIST_LEFT}</left><top>230</top><width>{LIST_W}</width><height>32</height><aligny>center</aligny>
-\t\t\t\t<font>cap_20</font><textcolor>ink2</textcolor><label>$INFO[ListItem.Year]$INFO[ListItem.Duration(mins),  ·  , min]</label>
+\t\t\t\t<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>$INFO[ListItem.Year]$INFO[ListItem.Duration(mins),  ·  , min]</label>
 \t\t\t</control>
-\t\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="ink">common/white.png</texture></control>
+\t\t\t<control type="image"><left>{LIST_LEFT}</left><top>288</top><width>54</width><height>2</height><texture colordiffuse="$VAR[C_ink]">common/white.png</texture></control>
 {loading_view("true")}
 \t\t</control>
 \t</include>"""
@@ -276,9 +276,9 @@ def loading_view(visible):
 \t\t\t\t<visible>{visible}</visible>
 \t\t\t\t<control type="label">
 \t\t\t\t\t<left>{LIST_LEFT}</left><top>350</top><width>{LIST_W}</width><height>60</height><aligny>center</aligny>
-\t\t\t\t\t<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
+\t\t\t\t\t<font>ttl_44</font><textcolor>$VAR[C_body]</textcolor><label>Looking for copies…</label>
 \t\t\t\t</control>
-\t\t\t\t<control type="image"><left>{LIST_LEFT}</left><top>440</top><width>{LIST_W}</width><height>4</height><texture colordiffuse="rule_track">common/white.png</texture></control>
+\t\t\t\t<control type="image"><left>{LIST_LEFT}</left><top>440</top><width>{LIST_W}</width><height>4</height><texture colordiffuse="$VAR[C_rule_track]">common/white.png</texture></control>
 \t\t\t</control>"""
 
 
@@ -295,7 +295,7 @@ def main():
 	<onunload>ClearProperty(pp.hold,home)</onunload>
 	<controls>
 {page("Choose a copy", f"$INFO[{W}(tikiskins.title)]",
-      f"[COLOR ink]$INFO[{W}(tikiskins.total_results)] copies[/COLOR]$INFO[{W}(tikiskins.scrape_time),  ·  found in , s]  ·  best first",
+      f"[COLOR $VAR[C_ink]]$INFO[{W}(tikiskins.total_results)] copies[/COLOR]$INFO[{W}(tikiskins.scrape_time),  ·  found in , s]  ·  best first",
       f"$INFO[{W}(tikiskins.poster)]", f"$INFO[{W}(tikiskins.plot)]")}
 \t\t<control type="group">
 \t\t\t<animation effect="fade" start="100" end="0" time="200" delay="300">WindowOpen</animation>
@@ -308,15 +308,15 @@ def main():
 {results_list(2002, "widelist")}
 \t\t</control>
 \t\t<control type="label">
-\t\t\t<left>{LIST_LEFT}</left><top>968</top><width>800</width><height>28</height><font>cap_20</font><textcolor>ink2</textcolor>
+\t\t\t<left>{LIST_LEFT}</left><top>968</top><width>800</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor>
 \t\t\t<label>The catalogue</label>
 \t\t</control>
 \t\t<control type="label">
-\t\t\t<left>{LIST_LEFT}</left><top>998</top><width>800</width><height>28</height><font>cap_20</font><textcolor>ink</textcolor>
+\t\t\t<left>{LIST_LEFT}</left><top>998</top><width>800</width><height>28</height><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 \t\t\t<label>Best first</label>
 \t\t</control>
 \t\t<control type="label">
-\t\t\t<left>1300</left><top>990</top><width>500</width><height>36</height><align>right</align><font>mono_24</font><textcolor>ink2</textcolor>
+\t\t\t<left>1300</left><top>990</top><width>500</width><height>36</height><align>right</align><font>mono_24</font><textcolor>$VAR[C_ink2]</textcolor>
 \t\t\t<label>$INFO[Container(2000).CurrentItem]$INFO[Container(2000).NumItems, / ]</label>
 \t\t\t<visible>Control.IsVisible(2000)</visible>
 \t\t</control>
@@ -346,20 +346,20 @@ def main():
 {page("Looking for copies", f"$INFO[{P}.title)]", f"$INFO[{P}.year)]", f"$INFO[{P}.poster)]", own="!$EXP[PovMorph]")}
 \t\t<control type="label">
 \t\t\t<left>{LIST_LEFT}</left><top>350</top><width>{LIST_W}</width><height>60</height><aligny>center</aligny>
-\t\t\t<font>ttl_44</font><textcolor>body</textcolor><label>Looking for copies…</label>
+\t\t\t<font>ttl_44</font><textcolor>$VAR[C_body]</textcolor><label>Looking for copies…</label>
 \t\t\t<visible>!String.IsEqual({P}.buttons),true) + !$EXP[PovMorph]</visible>
 \t\t</control>
 \t\t<control type="progress" id="5000">
 \t\t\t<left>{LIST_LEFT}</left><top>440</top><width>{LIST_W}</width><height>4</height>
-\t\t\t<texturebg colordiffuse="rule_track">common/white.png</texturebg>
-\t\t\t<midtexture colordiffuse="ink">common/white.png</midtexture>
+\t\t\t<texturebg colordiffuse="$VAR[C_rule_track]">common/white.png</texturebg>
+\t\t\t<midtexture colordiffuse="$VAR[C_ink]">common/white.png</midtexture>
 \t\t\t<visible>!String.IsEqual({P}.buttons),true)</visible>
 \t\t</control>
 \t\t<!-- POV's own text (totals by quality, who is still looking); its colours come from POV's dialog highlight
 \t\t     setting, set to the skin's ink -->
 \t\t<control type="textbox" id="2000">
 \t\t\t<left>{LIST_LEFT}</left><top>480</top><width>{LIST_W}</width><height>280</height>
-\t\t\t<font>body_26</font><textcolor>body</textcolor>
+\t\t\t<font>body_26</font><textcolor>$VAR[C_body]</textcolor>
 \t\t</control>
 {buttons}
 \t</controls>

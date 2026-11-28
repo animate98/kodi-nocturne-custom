@@ -36,7 +36,7 @@
 				<timeblocks>36</timeblocks>
 				<rulerunit>6</rulerunit>
 				<viewtype label="19069">list</viewtype>
-				<progresstexture border="0,0,2,0" colordiffuse="ink">misc/epg_now.png</progresstexture>
+				<progresstexture border="0,0,2,0" colordiffuse="$VAR[C_ink]">misc/epg_now.png</progresstexture>
 				<include>Misc_EPGLayouts</include>
 			</control>
 			<include content="Misc_EmptyStateButton">

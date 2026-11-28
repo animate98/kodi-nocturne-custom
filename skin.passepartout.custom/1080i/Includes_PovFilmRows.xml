@@ -69,7 +69,7 @@
 		<control type="group">
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>The exhibition</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>The exhibition</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="[String.IsEqual(Window(Home).Property(pp.row),0) | [String.IsEqual(Window(Home).Property(pp.row),1) + !Integer.IsGreater(Container(9701).NumItems,0)]]" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -84,7 +84,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Continue watching</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Continue watching</label>
 				<visible>Integer.IsGreater(Container(9701).NumItems,0)</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),1)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -104,7 +104,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Trending this week</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Trending this week</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),2)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -129,7 +129,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Trending</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Trending</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),3)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -154,7 +154,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Trending recent</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Trending recent</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),4)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -179,7 +179,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Most watched</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Most watched</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),5)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -204,7 +204,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Popular</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Popular</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),6)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -229,7 +229,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Premieres</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Premieres</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),7)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -254,7 +254,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Latest releases</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Latest releases</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),8)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -279,7 +279,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Upcoming</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Upcoming</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),9)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -304,7 +304,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Blockbusters</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Blockbusters</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),10)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -329,7 +329,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Oscar winners</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Oscar winners</label>
 				<visible>true</visible>
 				<animation type="Conditional" condition="String.IsEqual(Window(Home).Property(pp.row),11)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -354,7 +354,7 @@
 			</control>
 			<control type="label">
 				<left>1080</left><top>184</top><width>720</width><height>56</height><align>right</align><aligny>center</aligny>
-				<font>capw_30</font><textcolor>ink</textcolor><label>Watched</label>
+				<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>Watched</label>
 				<visible>Integer.IsGreater(Container(9712).NumItems,0)</visible>
 				<animation type="Conditional" condition="Integer.IsGreater(Window(Home).Property(pp.row),12)" reversible="true">
 					<effect type="zoom" start="100" end="67" center="1800,212" time="420" tween="sine" easing="inout"/>
@@ -417,13 +417,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -439,13 +439,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -504,13 +504,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -526,13 +526,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -590,13 +590,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -612,13 +612,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -676,13 +676,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -698,13 +698,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -762,13 +762,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -784,13 +784,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -848,13 +848,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -870,13 +870,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -934,13 +934,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -956,13 +956,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1020,13 +1020,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1042,13 +1042,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1106,13 +1106,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1128,13 +1128,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1192,13 +1192,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1214,13 +1214,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1279,13 +1279,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1301,13 +1301,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1365,13 +1365,13 @@
 				<control type="group"><visible>[String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
 					<control type="group">
 						<left>4</left><top>208</top><width>216</width><height>324</height>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>cap_20</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1387,13 +1387,13 @@
 						<left>4</left><top>70</top><width>400</width><height>600</height>
 						<include content="VidView_GrowIn"><param name="cx" value="204"/><param name="cy" value="370"/></include>
 						<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>
-						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+						<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 						<control type="label">
 							<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>ink</textcolor>
+							<align>center</align><aligny>center</aligny><font>ttl_40</font><textcolor>$VAR[C_ink]</textcolor>
 							<label>View all</label>
 						</control>
-						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+						<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 					</control>
 				</control>
 				<control type="group"><visible>![String.Contains(ListItem.FileNameAndPath,new_page) | String.StartsWith(ListItem.Label,Next Page)]</visible>
@@ -1417,11 +1417,11 @@
 			<visible>$EXP[Home_InFilmRows] + [String.Contains(Container.ListItem.FileNameAndPath,new_page) | String.StartsWith(Container.ListItem.Label,Next Page)]</visible>
 			<control type="label">
 				<left>504</left><top>866</top><width>1296</width><height>84</height><textoffsetx>16</textoffsetx>
-				<font>ttl_72</font><textcolor>ink</textcolor><label>View all</label>
+				<font>ttl_72</font><textcolor>$VAR[C_ink]</textcolor><label>View all</label>
 			</control>
 			<control type="label">
 				<left>520</left><top>962</top><width>1280</width><height>28</height>
-				<font>cap_20</font><textcolor>ink</textcolor><label>$VAR[PovRows_Cur]</label>
+				<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><label>$VAR[PovRows_Cur]</label>
 			</control>
 		</control>
 	</control>

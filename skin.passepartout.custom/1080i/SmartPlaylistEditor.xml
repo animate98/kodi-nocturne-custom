@@ -109,7 +109,7 @@
 				<width>600</width>
 				<height>89</height>  <!-- 3 lines exactly: no half-clipped line at the bottom -->
 				<font>body_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[31253]</label>
 			</control>
 			<control type="grouplist" id="9001">

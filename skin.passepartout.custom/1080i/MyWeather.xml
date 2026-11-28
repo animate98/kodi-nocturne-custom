@@ -48,14 +48,14 @@
 				<width>800</width>
 				<height>40</height>
 				<font>sans_28_med</font>
-				<textcolor>body</textcolor>
+				<textcolor>$VAR[C_body]</textcolor>
 				<label>$INFO[Weather.Conditions]</label>
 			</control>
 			<include content="PP_Rule">
 				<param name="left" value="0"/>
 				<param name="top" value="224"/>
 				<param name="width" value="800"/>
-				<param name="color" value="rule_strong"/>
+				<param name="color" value="$VAR[C_rule_strong]"/>
 			</include>
 			<control type="grouplist">
 				<left>0</left>
@@ -160,7 +160,7 @@
 						<width>300</width>
 						<height>40</height>
 						<font>sans_26_med</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
@@ -169,7 +169,7 @@
 						<width>560</width>
 						<height>30</height>
 						<font>body_20</font>
-						<textcolor>ink3</textcolor>
+						<textcolor>$VAR[C_ink3]</textcolor>
 						<label>$INFO[ListItem.Property(Outlook)]</label>
 					</control>
 					<control type="label">
@@ -179,7 +179,7 @@
 						<height>88</height>
 						<align>right</align>
 						<font>num_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="image">
@@ -187,7 +187,7 @@
 						<bottom>0</bottom>
 						<width>840</width>
 						<height>rule_h</height>
-						<texture colordiffuse="rule">common/hairline.png</texture>
+						<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout width="840" height="88">
@@ -196,7 +196,7 @@
 						<top>0</top>
 						<width>840</width>
 						<height>88</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Control.HasFocus(15100)</visible>
 					</control>
 					<control type="label">
@@ -224,7 +224,7 @@
 						<width>560</width>
 						<height>30</height>
 						<font>body_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$INFO[ListItem.Property(Outlook)]</label>
 						<visible>!Control.HasFocus(15100)</visible>
 					</control>
@@ -264,7 +264,7 @@
 						<bottom>0</bottom>
 						<width>840</width>
 						<height>rule_h</height>
-						<texture colordiffuse="rule">common/hairline.png</texture>
+						<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 					</control>
 				</focusedlayout>
 				<content>

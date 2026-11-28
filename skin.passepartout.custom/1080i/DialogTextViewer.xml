@@ -34,8 +34,8 @@
 				<top>dialog_content_top</top>
 				<width>2</width>
 				<height>704</height>
-				<texturesliderbackground colordiffuse="wash">common/white.png</texturesliderbackground>
-				<texturesliderbar colordiffuse="rule_strong">common/white.png</texturesliderbar>
+				<texturesliderbackground colordiffuse="$VAR[C_wash]">common/white.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="$VAR[C_rule_strong]">common/white.png</texturesliderbar>
 				<onup>3000</onup>
 				<ondown>3000</ondown>
 				<onleft>1000</onleft>
@@ -45,7 +45,7 @@
 				<param name="top" value="836"/>
 				<param name="left" value="0"/>
 				<param name="width" value="1440"/>
-				<param name="color" value="rule_strong"/>
+				<param name="color" value="$VAR[C_rule_strong]"/>
 			</include>
 			<control type="label">
 				<left>dialog_pad</left>
@@ -53,7 +53,7 @@
 				<width>1360</width>
 				<height>64</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[31014]</label>
 			</control>
 		</control>

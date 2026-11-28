@@ -75,7 +75,7 @@
 				<focusedcolor>$VAR[PaperColor]</focusedcolor>
 				<textoffsetx>16</textoffsetx>
 				<aligny>center</aligny>
-				<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 				<texturenofocus />
 				<label>$PARAM[label]</label>
 				<onclick>$PARAM[onclick]</onclick>
@@ -109,12 +109,12 @@
 				<width max="560">auto</width>
 				<height>34</height>
 				<font>cap_20</font>
-				<textcolor>ink</textcolor>
-				<disabledcolor>ink</disabledcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
+				<disabledcolor>$VAR[C_ink]</disabledcolor>
 				<textoffsetx>0</textoffsetx>
 				<aligny>top</aligny>
-				<texturefocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturefocus>
-				<texturenofocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturenofocus>
+				<texturefocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturefocus>
+				<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturenofocus>
 				<label>$VAR[VidView_Section]</label>
 				<enable>false</enable>
 			</control>
@@ -125,7 +125,7 @@
 			</control>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9324"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="$VAR[VidView_SortWord]"/>
 				<param name="onclick" value="SendClick(3)"/>
 				<param name="onclick2" value="noop"/>
@@ -133,7 +133,7 @@
 			</include>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9322"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="$VAR[VidView_FilterWord]"/>
 				<param name="onclick" value="SendClick(14)"/>
 				<param name="onclick2" value="noop"/>
@@ -141,7 +141,7 @@
 			</include>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9323"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="In progress"/>
 				<param name="onclick" value="Container.Update(videodb://inprogresstvshows/)"/>
 				<param name="onclick2" value="noop"/>
@@ -149,7 +149,7 @@
 			</include>
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9325"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="All series"/>
 				<param name="onclick" value="Action(ParentDir)"/>
 				<param name="onclick2" value="noop"/>
@@ -158,7 +158,7 @@
 			<!-- the view on show; opens the view picker (0.9.11: the footer's View words moved up here) -->
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9327"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="$VAR[PP_ViewName]"/>
 				<param name="onclick" value="ActivateWindow(1156)"/>
 				<param name="onclick2" value="noop"/>
@@ -169,13 +169,13 @@
 				<width>auto</width>
 				<height>44</height>
 				<font>num_22</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[VidView_CountLabel]</label>
 			</control>
 			<!-- the Library card (also Left / Right past the edges of every view) -->
 			<include content="VidView_HeaderWord">
 				<param name="id" value="9328"/>
-				<param name="color" value="ink2"/>
+				<param name="color" value="$VAR[C_ink2]"/>
 				<param name="label" value="Options"/>
 				<param name="onclick" value="ActivateWindow(1155)"/>
 				<param name="onclick2" value="noop"/>
@@ -212,7 +212,7 @@
 					<top>973</top>
 					<width>10</width>
 					<height>10</height>
-					<texture colordiffuse="ink">pp/dot.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 				</control>
 				<control type="label">
 					<left>144</left>
@@ -220,7 +220,7 @@
 					<width>400</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31197]</label>
 				</control>
 			</control>
@@ -294,7 +294,7 @@
 					<width>$PARAM[width]</width>
 					<height max="58">auto</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Cap]</label>
 				</control>
 				<control type="label">
@@ -302,9 +302,9 @@
 					<width>$PARAM[width]</width>
 					<height>34</height>
 					<font>body_24</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>left</align>
-					<label>$VAR[VidView_LineA][COLOR ink]$VAR[VidView_LineMono][/COLOR]$VAR[VidView_LineB]</label>
+					<label>$VAR[VidView_LineA][COLOR $VAR[C_ink]]$VAR[VidView_LineMono][/COLOR]$VAR[VidView_LineB]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -317,7 +317,7 @@
 					<width>$PARAM[width]</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_Cap]</label>
 				</control>
 				<control type="label">
@@ -326,9 +326,9 @@
 					<width>$PARAM[width]</width>
 					<height>34</height>
 					<font>body_24</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>left</align>
-					<label>$VAR[VidView_LineA][COLOR ink]$VAR[VidView_LineMono][/COLOR]$VAR[VidView_LineB]</label>
+					<label>$VAR[VidView_LineA][COLOR $VAR[C_ink]]$VAR[VidView_LineMono][/COLOR]$VAR[VidView_LineB]</label>
 				</control>
 			</control>
 		</definition>
@@ -365,7 +365,7 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="rule_strong" border="2">pp/frame_1.png</texture>
+					<texture colordiffuse="$VAR[C_rule_strong]" border="2">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -373,7 +373,7 @@
 					<right>0</right>
 					<bottom>0</bottom>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>center</align>
 					<label>$LOCALIZE[31196]</label>
 				</control>
@@ -534,7 +534,7 @@
 				<width>1100</width>
 				<height>50</height>
 				<font>ttl_40</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[VidView_Title]</label>
 			</control>
 			<control type="label">
@@ -543,7 +543,7 @@
 				<width>1100</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[VidView_Cap]</label>
 			</control>
 		</control>
@@ -692,7 +692,7 @@
 				<width>200</width>
 				<height>28</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31198]</label>
 				<visible>Integer.IsGreater(Container(9340).NumItems,0)</visible>
 			</control>
@@ -717,7 +717,7 @@
 						<width>150</width>
 						<height>44</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
@@ -727,7 +727,7 @@
 						<top>0</top>
 						<width>170</width>
 						<height>44</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Control.HasFocus(9340)</visible>
 					</control>
 					<control type="label">
@@ -750,7 +750,7 @@
 					<top>596</top>
 					<width>896</width>
 					<height>1</height>
-					<texture colordiffuse="rule">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>904</left>
@@ -758,7 +758,7 @@
 					<width>500</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31199]</label>
 				</control>
 				<control type="label">
@@ -767,7 +767,7 @@
 					<width>736</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Container(9350).ListItem.Season,Season ,]$INFO[Container(9350).ListItem.Episode, · Episode ,]</label>
 				</control>
 				<control type="label">
@@ -776,7 +776,7 @@
 					<width>736</width>
 					<height>54</height>
 					<font>ttl_44</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$INFO[Container(9350).ListItem.Title]</label>
 				</control>
 				<control type="label">
@@ -785,7 +785,7 @@
 					<width>736</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[Container(9350).ListItem.Duration(mins),, min]$VAR[VidView_NextAired]</label>
 				</control>
 				<control type="label">
@@ -794,9 +794,9 @@
 					<width>736</width>
 					<height>34</height>
 					<font>body_24</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>left</align>
-					<label>$LOCALIZE[31030] [COLOR ink]$INFO[Container(9350).ListItem.EndTime][/COLOR] if you start now</label>
+					<label>$LOCALIZE[31030] [COLOR $VAR[C_ink]]$INFO[Container(9350).ListItem.EndTime][/COLOR] if you start now</label>
 				</control>
 			</control>
 			<!-- the poster is the list itself, so its art loads (LESSONS 2); Select plays the episode -->
@@ -844,7 +844,7 @@
 			</control>
 		</control>
 	</include>
-	<variable name="PP_OnFocusText_9340"><value condition="Control.HasFocus(9340)">$VAR[PaperColor]</value><value>ink</value></variable>
+	<variable name="PP_OnFocusText_9340"><value condition="Control.HasFocus(9340)">$VAR[PaperColor]</value><value>$VAR[C_ink]</value></variable>
 
 	<!-- ================================================================== 503 episodes -->
 	<include name="VidView_503_Episodes">
@@ -874,7 +874,7 @@
 					<width>704</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[VidView_EpCode]</label>
 				</control>
 				<control type="group">
@@ -887,7 +887,7 @@
 						<width>704</width>
 						<height>110</height>
 						<font>ttl_44</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<label>$VAR[VidView_Title]</label>
 					</control>
 				</control>
@@ -903,7 +903,7 @@
 					<width>704</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[Container.ListItem.Duration(mins),, min]$VAR[VidView_EpAired]$INFO[Container.ListItem.Rating, · rated ,]</label>
 				</control>
 				<control type="label">
@@ -911,9 +911,9 @@
 					<width>704</width>
 					<height>34</height>
 					<font>body_24</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>left</align>
-					<label>$VAR[VidView_LineA][COLOR ink]$VAR[VidView_LineMono][/COLOR]$VAR[VidView_LineB]</label>
+					<label>$VAR[VidView_LineA][COLOR $VAR[C_ink]]$VAR[VidView_LineMono][/COLOR]$VAR[VidView_LineB]</label>
 				</control>
 			</control>
 			<!-- curator text, right column -->
@@ -922,7 +922,7 @@
 				<top>596</top>
 				<width>896</width>
 				<height>1</height>
-				<texture colordiffuse="rule">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 			</control>
 			<control type="textbox">
 				<left>904</left>
@@ -930,7 +930,7 @@
 				<width>896</width>
 				<height>320</height>
 				<font>body_26</font>
-				<textcolor>body</textcolor>
+				<textcolor>$VAR[C_body]</textcolor>
 				<label>$INFO[Container.ListItem.Plot]</label>
 				<autoscroll delay="8000" time="3000" repeat="10000">true</autoscroll>
 			</control>
@@ -1001,7 +1001,7 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="wash_strong">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture>
 				</control>
 				<control type="textbox">
 					<left>20</left>
@@ -1009,7 +1009,7 @@
 					<width>312</width>
 					<height>166</height>
 					<font>ttl_40</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>!$EXP[VidView_HasOwnThumb]</visible>
@@ -1020,7 +1020,7 @@
 					<width>184</width>
 					<height>166</height>
 					<font>body_26</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>$EXP[VidView_HasOwnThumb]</visible>
@@ -1044,7 +1044,7 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="rule_strong" border="2">pp/frame_1.png</texture>
+					<texture colordiffuse="$VAR[C_rule_strong]" border="2">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -1052,7 +1052,7 @@
 					<right>0</right>
 					<bottom>0</bottom>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>center</align>
 					<label>$LOCALIZE[31196]</label>
 				</control>
@@ -1067,7 +1067,7 @@
 				<width>352</width>
 				<height>30</height>
 				<font>body_22</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[VidView_PrintRoomTitle]</label>
 				<visible>!$EXP[VidView_IsNameNode] | ListItem.IsParentFolder</visible>
 			</control>
@@ -1077,7 +1077,7 @@
 				<width>352</width>
 				<height>26</height>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$VAR[VidView_PrintRoomCap]</label>
 			</control>
 		</definition>
@@ -1157,7 +1157,7 @@
 				<width>1680</width>
 				<height>84</height>
 				<font>ttl_72</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31178]</label>
 			</control>
@@ -1167,7 +1167,7 @@
 				<width>1680</width>
 				<height>34</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31200]</label>
 				<visible>!System.Setting(hidewatched)</visible>
@@ -1178,7 +1178,7 @@
 				<width>1680</width>
 				<height>34</height>
 				<font>body_24</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<align>center</align>
 				<label>$LOCALIZE[31201]</label>
 				<visible>System.Setting(hidewatched)</visible>
@@ -1195,7 +1195,7 @@
 				<top>0</top>
 				<right>0</right>
 				<bottom>0</bottom>
-				<texture colordiffuse="wash_strong">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture>
 			</control>
 		</definition>
 	</include>

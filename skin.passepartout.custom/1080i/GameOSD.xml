@@ -145,7 +145,7 @@
 							<width>680</width>
 							<height>89</height>  <!-- 3 lines exactly: no half-clipped line at the bottom -->
 							<font>body_20</font>
-							<textcolor>ink2</textcolor>
+							<textcolor>$VAR[C_ink2]</textcolor>
 							<label>$LOCALIZE[35236]</label>
 						</control>
 						<control type="label">
@@ -154,7 +154,7 @@
 							<width>680</width>
 							<height>36</height>
 							<font>cap_20</font>
-							<textcolor>ink3</textcolor>
+							<textcolor>$VAR[C_ink3]</textcolor>
 							<label>$LOCALIZE[31175]</label>
 						</control>
 					</control>

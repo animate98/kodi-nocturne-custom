@@ -128,13 +128,13 @@ def view_all_card(left, top, w, h, font, focused):
             '\n\t\t\t\t\t\t<include content="PP_Lift"><param name="anim" value="VidView_LiftIn"/></include>') if focused else ""
     return f"""\t\t\t\t\t<control type="group">
 \t\t\t\t\t\t<left>{left}</left><top>{top}</top><width>{w}</width><height>{h}</height>{lift}
-\t\t\t\t\t\t<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="wash_strong">common/white.png</texture></control>
+\t\t\t\t\t\t<control type="image"><left>0</left><top>0</top><right>0</right><bottom>0</bottom><texture colordiffuse="$VAR[C_wash_strong]">common/white.png</texture></control>
 \t\t\t\t\t\t<control type="label">
 \t\t\t\t\t\t\t<left>16</left><top>0</top><right>16</right><bottom>0</bottom>
-\t\t\t\t\t\t\t<align>center</align><aligny>center</aligny><font>{font}</font><textcolor>ink</textcolor>
+\t\t\t\t\t\t\t<align>center</align><aligny>center</aligny><font>{font}</font><textcolor>$VAR[C_ink]</textcolor>
 \t\t\t\t\t\t\t<label>View all</label>
 \t\t\t\t\t\t</control>
-\t\t\t\t\t\t<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16">pp/bevel.png</texture></control>
+\t\t\t\t\t\t<control type="image"><left>-5</left><top>-5</top><right>-5</right><bottom>-5</bottom><texture border="16" colordiffuse="$VAR[C_bevel]">pp/bevel.png</texture></control>
 \t\t\t\t\t</control>"""
 
 
@@ -268,7 +268,7 @@ def wheel():
         out.append(f'\t\t\t<control type="label">')
         out.append(f'\t\t\t\t<left>{WHEEL_X}</left><top>{WHEEL_Y}</top><width>{WHEEL_W}</width><height>56</height>'
                    f'<align>right</align><aligny>center</aligny>')
-        out.append(f'\t\t\t\t<font>capw_30</font><textcolor>ink</textcolor><label>{X(name)}</label>')
+        out.append(f'\t\t\t\t<font>capw_30</font><textcolor>$VAR[C_ink]</textcolor><label>{X(name)}</label>')
         out.append(f'\t\t\t\t<visible>{vis}</visible>')
         block = ""
         if above:
@@ -316,11 +316,11 @@ def main():
 \t\t\t<visible>$EXP[Home_InFilmRows] + {NEXTPAGE.replace('ListItem.', 'Container.ListItem.')}</visible>
 \t\t\t<control type="label">
 \t\t\t\t<left>504</left><top>{CAPTION_TOP}</top><width>1296</width><height>84</height><textoffsetx>16</textoffsetx>
-\t\t\t\t<font>ttl_72</font><textcolor>ink</textcolor><label>View all</label>
+\t\t\t\t<font>ttl_72</font><textcolor>$VAR[C_ink]</textcolor><label>View all</label>
 \t\t\t</control>
 \t\t\t<control type="label">
 \t\t\t\t<left>520</left><top>{CAPTION_TOP + 96}</top><width>1280</width><height>28</height>
-\t\t\t\t<font>cap_20</font><textcolor>ink</textcolor><label>$VAR[PovRows_Cur]</label>
+\t\t\t\t<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><label>$VAR[PovRows_Cur]</label>
 \t\t\t</control>
 \t\t</control>
 \t</control>

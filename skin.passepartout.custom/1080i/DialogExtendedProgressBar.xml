@@ -33,7 +33,7 @@
 				<height>22</height>
 				<align>right</align>
 				<font>num_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$INFO[Control.GetLabel(32),,%]</label>
 			</control>
 			<control type="label" id="31">

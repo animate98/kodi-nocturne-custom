@@ -32,7 +32,7 @@
 			<height>30</height>
 			<align>right</align>
 			<font>cap_20</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
 		</control>
 
@@ -82,7 +82,7 @@
 			<width>page_width</width>
 			<height>40</height>
 			<font>body_22</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<label>$LOCALIZE[31257]</label>
 			<visible>Integer.IsEqual(Container(11).NumItems,0)</visible>
 		</control>
@@ -100,12 +100,12 @@
 			<scrolltime tween="cubic" easing="out">200</scrolltime>
 			<itemlayout width="344" height="290">
 				<include content="OSD_BookmarkItem">
-					<param name="label_color" value="ink2"/>
+					<param name="label_color" value="$VAR[C_ink2]"/>
 				</include>
 			</itemlayout>
 			<focusedlayout width="344" height="290">
 				<include content="OSD_BookmarkItem">
-					<param name="label_color" value="ink"/>
+					<param name="label_color" value="$VAR[C_ink]"/>
 				</include>
 				<control type="group">
 					<left>8</left>
@@ -124,7 +124,7 @@
 			<width>page_width</width>
 			<height>24</height>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$LOCALIZE[31258]</label>
 		</control>
 	</controls>

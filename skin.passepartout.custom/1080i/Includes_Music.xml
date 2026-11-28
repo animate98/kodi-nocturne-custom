@@ -99,20 +99,20 @@
 
 	<!-- Header tabs -->
 	<variable name="Music_TabText_Albums">
-		<value condition="$EXP[Music_TabAlbums]">ink</value>
-		<value>ink2</value>
+		<value condition="$EXP[Music_TabAlbums]">$VAR[C_ink]</value>
+		<value>$VAR[C_ink2]</value>
 	</variable>
 	<variable name="Music_TabText_Artists">
-		<value condition="$EXP[Music_TabArtists]">ink</value>
-		<value>ink2</value>
+		<value condition="$EXP[Music_TabArtists]">$VAR[C_ink]</value>
+		<value>$VAR[C_ink2]</value>
 	</variable>
 	<variable name="Music_TabText_Songs">
-		<value condition="$EXP[Music_TabSongs]">ink</value>
-		<value>ink2</value>
+		<value condition="$EXP[Music_TabSongs]">$VAR[C_ink]</value>
+		<value>$VAR[C_ink2]</value>
 	</variable>
 	<variable name="Music_TabText_Genres">
-		<value condition="$EXP[Music_TabGenres]">ink</value>
-		<value>ink2</value>
+		<value condition="$EXP[Music_TabGenres]">$VAR[C_ink]</value>
+		<value>$VAR[C_ink2]</value>
 	</variable>
 	<!-- Now playing kicker -->
 	<variable name="Music_NPKicker">
@@ -226,7 +226,7 @@
 				<top>0</top>
 				<right>0</right>
 				<bottom>0</bottom>
-				<texture colordiffuse="wash">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_wash]">common/white.png</texture>
 			</control>
 			<control type="textbox">
 				<left>16</left>
@@ -234,7 +234,7 @@
 				<right>16</right>
 				<height>52</height>
 				<font>sans_20_med</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$PARAM[title]</label>
 			</control>
 			<control type="image">
@@ -279,14 +279,14 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture border="2" colordiffuse="rule_strong">$VAR[ButtonOutline]</texture>
+					<texture border="2" colordiffuse="$VAR[C_rule_strong]">$VAR[ButtonOutline]</texture>
 				</control>
 				<control type="image">
 					<centerleft>50%</centerleft>
 					<centertop>50%</centertop>
 					<width>$PARAM[icon]</width>
 					<height>$PARAM[icon]</height>
-					<texture colordiffuse="ink2">icons/back.png</texture>
+					<texture colordiffuse="$VAR[C_ink2]">icons/back.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -295,7 +295,7 @@
 					<height>22</height>
 					<align>center</align>
 					<font>cap_20</font>
-					<textcolor>ink3</textcolor>
+					<textcolor>$VAR[C_ink3]</textcolor>
 					<label>$LOCALIZE[31183]</label>
 					<visible>$PARAM[caption_visible]</visible>
 				</control>
@@ -321,14 +321,14 @@
 					<top>0</top>
 					<width>screen_w</width>
 					<height>music_np_h</height>
-					<texture colordiffuse="paper">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 				</control>
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
 					<width>screen_w</width>
 					<height>rule_h</height>
-					<texture colordiffuse="rule_strong">common/hairline.png</texture>
+					<texture colordiffuse="$VAR[C_rule_strong]">common/hairline.png</texture>
 				</control>
 				<control type="group">
 					<left>page_margin</left>
@@ -347,7 +347,7 @@
 					<width>420</width>
 					<height>20</height>
 					<font>cap_20</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Music_NPKicker]</label>
 				</control>
 				<control type="grouplist">
@@ -362,14 +362,14 @@
 						<width max="300">auto</width>
 						<height>32</height>
 						<font>sans_22_med</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<label>$INFO[MusicPlayer.Title]</label>
 					</control>
 					<control type="label">
 						<width max="400">auto</width>
 						<height>32</height>
 						<font>sans_22_med</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$INFO[MusicPlayer.Artist,  ·  ,]</label>
 					</control>
 				</control>
@@ -378,8 +378,8 @@
 					<top>47</top>
 					<width>1014</width>
 					<height>2</height>
-					<texturebg colordiffuse="rule_strong">common/white.png</texturebg>
-					<midtexture colordiffuse="ink">common/white.png</midtexture>
+					<texturebg colordiffuse="$VAR[C_rule_strong]">common/white.png</texturebg>
+					<midtexture colordiffuse="$VAR[C_ink]">common/white.png</midtexture>
 					<info>Player.Progress</info>
 				</control>
 				<control type="label">
@@ -389,7 +389,7 @@
 					<height>30</height>
 					<align>right</align>
 					<font>num_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
 				</control>
 			</control>
@@ -449,7 +449,7 @@
 					<top>14</top>
 					<width>1</width>
 					<height>56</height>
-					<texture colordiffuse="rule_strong">common/hairline_v.png</texture>
+					<texture colordiffuse="$VAR[C_rule_strong]">common/hairline_v.png</texture>
 					<visible>!$PARAM[first]</visible>
 				</control>
 				<control type="label">
@@ -458,7 +458,7 @@
 					<right>16</right>
 					<height>20</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$PARAM[label]</label>
 				</control>
 				<control type="label">
@@ -467,7 +467,7 @@
 					<right>16</right>
 					<height>40</height>
 					<font>ttl_34</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$PARAM[value]</label>
 				</control>
 			</control>
@@ -484,8 +484,8 @@
 				<width>44</width>
 				<height>56</height>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
-				<selectedcolor>ink3</selectedcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
+				<selectedcolor>$VAR[C_ink3]</selectedcolor>
 				<label>$INFO[ListItem.TrackNumber]</label>
 				<visible>!$PARAM[focused] + String.IsEqual(ListItem.DBType,song)</visible>
 			</control>
@@ -506,8 +506,8 @@
 				<right>120</right>
 				<height>56</height>
 				<font>body_22</font>
-				<textcolor>ink2</textcolor>
-				<selectedcolor>ink2</selectedcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
+				<selectedcolor>$VAR[C_ink2]</selectedcolor>
 				<label>$INFO[ListItem.Title]</label>
 				<visible>!$PARAM[focused] + String.IsEqual(ListItem.DBType,song) + !String.IsEmpty(ListItem.Title)</visible>
 			</control>
@@ -529,8 +529,8 @@
 				<right>120</right>
 				<height>56</height>
 				<font>body_22</font>
-				<textcolor>ink2</textcolor>
-				<selectedcolor>ink2</selectedcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
+				<selectedcolor>$VAR[C_ink2]</selectedcolor>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>!$PARAM[focused] + [!String.IsEqual(ListItem.DBType,song) | String.IsEmpty(ListItem.Title)]</visible>
 			</control>
@@ -553,8 +553,8 @@
 				<height>56</height>
 				<align>right</align>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
-				<selectedcolor>ink3</selectedcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
+				<selectedcolor>$VAR[C_ink3]</selectedcolor>
 				<label>$INFO[ListItem.Duration]</label>
 				<visible>!$PARAM[focused] + String.IsEqual(ListItem.DBType,song)</visible>
 			</control>
@@ -577,8 +577,8 @@
 				<height>56</height>
 				<align>right</align>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
-				<selectedcolor>ink3</selectedcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
+				<selectedcolor>$VAR[C_ink3]</selectedcolor>
 				<label>$INFO[ListItem.Label2]</label>
 				<visible>!$PARAM[focused] + !String.IsEqual(ListItem.DBType,song)</visible>
 			</control>
@@ -599,7 +599,7 @@
 				<bottom>0</bottom>
 				<right>0</right>
 				<height>rule_h</height>
-				<texture colordiffuse="rule">common/hairline.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 			</control>
 		</definition>
 	</include>
@@ -619,8 +619,8 @@
 					<right>200</right>
 					<height>66</height>
 					<font>sans_26_med</font>
-					<textcolor>ink2</textcolor>
-					<selectedcolor>ink2</selectedcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
+					<selectedcolor>$VAR[C_ink2]</selectedcolor>
 					<label>$VAR[Music_ItemLabel]</label>
 				</control>
 				<control type="label">
@@ -630,8 +630,8 @@
 					<height>66</height>
 					<align>right</align>
 					<font>num_20</font>
-					<textcolor>ink3</textcolor>
-					<selectedcolor>ink3</selectedcolor>
+					<textcolor>$VAR[C_ink3]</textcolor>
+					<selectedcolor>$VAR[C_ink3]</selectedcolor>
 					<label>$INFO[ListItem.Label2]</label>
 				</control>
 				<control type="image">
@@ -639,7 +639,7 @@
 					<bottom>0</bottom>
 					<width>$PARAM[width]</width>
 					<height>rule_h</height>
-					<texture colordiffuse="rule">common/hairline.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 				</control>
 			</itemlayout>
 			<focusedlayout width="$PARAM[width]" height="66" condition="$PARAM[condition]">
@@ -648,7 +648,7 @@
 					<top>0</top>
 					<width>$PARAM[width]</width>
 					<height>66</height>
-					<texture colordiffuse="ink">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 					<visible>Control.HasFocus($PARAM[list_id])</visible>
 				</control>
 				<control type="label">
@@ -657,8 +657,8 @@
 					<right>200</right>
 					<height>66</height>
 					<font>sans_26_med</font>
-					<textcolor>ink</textcolor>
-					<selectedcolor>ink</selectedcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
+					<selectedcolor>$VAR[C_ink]</selectedcolor>
 					<scroll>true</scroll>
 					<label>$VAR[Music_ItemLabel]</label>
 					<visible>!Control.HasFocus($PARAM[list_id])</visible>
@@ -682,8 +682,8 @@
 					<height>66</height>
 					<align>right</align>
 					<font>num_20</font>
-					<textcolor>ink2</textcolor>
-					<selectedcolor>ink2</selectedcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
+					<selectedcolor>$VAR[C_ink2]</selectedcolor>
 					<label>$INFO[ListItem.Label2]</label>
 					<visible>!Control.HasFocus($PARAM[list_id])</visible>
 				</control>
@@ -704,7 +704,7 @@
 					<bottom>0</bottom>
 					<width>$PARAM[width]</width>
 					<height>rule_h</height>
-					<texture colordiffuse="rule">common/hairline.png</texture>
+					<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 				</control>
 			</focusedlayout>
 		</definition>
@@ -723,7 +723,7 @@
 					<param name="width" value="$PARAM[width]"/>
 					<param name="number" value="$PARAM[number]"/>
 					<param name="title_font" value="sans_26_med"/>
-					<param name="title_color" value="ink2"/>
+					<param name="title_color" value="$VAR[C_ink2]"/>
 					<param name="scroll" value="false"/>
 				</include>
 			</itemlayout>
@@ -733,7 +733,7 @@
 					<top>0</top>
 					<width>$PARAM[width]</width>
 					<height>66</height>
-					<texture colordiffuse="ink">common/white.png</texture>
+					<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 					<visible>Control.HasFocus($PARAM[list_id])</visible>
 				</control>
 				<!-- list unfocused: the selected row stays on the paper, title in ink -->
@@ -743,7 +743,7 @@
 						<param name="width" value="$PARAM[width]"/>
 						<param name="number" value="$PARAM[number]"/>
 						<param name="title_font" value="sans_26_med"/>
-						<param name="title_color" value="ink"/>
+						<param name="title_color" value="$VAR[C_ink]"/>
 						<param name="scroll" value="true"/>
 					</include>
 				</control>
@@ -767,9 +767,9 @@
 		<param name="width">1080</param>
 		<param name="number">$INFO[ListItem.TrackNumber]</param>
 		<param name="title_font">sans_26_med</param>
-		<param name="title_color">ink2</param>
-		<param name="meta_color">ink3</param>
-		<param name="mark_color">ink</param>
+		<param name="title_color">$VAR[C_ink2]</param>
+		<param name="meta_color">$VAR[C_ink3]</param>
+		<param name="mark_color">$VAR[C_ink]</param>
 		<param name="scroll">false</param>
 		<definition>
 			<control type="label">
@@ -844,7 +844,7 @@
 				<bottom>0</bottom>
 				<width>$PARAM[width]</width>
 				<height>rule_h</height>
-				<texture colordiffuse="rule">common/hairline.png</texture>
+				<texture colordiffuse="$VAR[C_rule]">common/hairline.png</texture>
 			</control>
 		</definition>
 	</include>
@@ -872,7 +872,7 @@
 					<width>music_panel_art</width>
 					<height>36</height>
 					<font>sans_22_med</font>
-					<textcolor>ink</textcolor>
+					<textcolor>$VAR[C_ink]</textcolor>
 					<label>$VAR[Music_ItemLabel]</label>
 				</control>
 				<control type="label">
@@ -881,7 +881,7 @@
 					<width>music_panel_art</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Artist]$INFO[ListItem.Album,  ·  ,]$INFO[ListItem.Year,  ·  ,]</label>
 				</control>
 				<control type="label">
@@ -890,7 +890,7 @@
 					<width>music_panel_art</width>
 					<height>28</height>
 					<font>cap_20</font>
-					<textcolor>ink3</textcolor>
+					<textcolor>$VAR[C_ink3]</textcolor>
 					<label>$INFO[ListItem.Genre]</label>
 				</control>
 			</control>

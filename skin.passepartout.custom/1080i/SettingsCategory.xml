@@ -60,7 +60,7 @@
 			<width>1040</width>
 			<height>68</height>
 			<font>body_24</font>
-			<textcolor>ink2</textcolor>
+			<textcolor>$VAR[C_ink2]</textcolor>
 			<autoscroll time="3000" delay="6000" repeat="6000">true</autoscroll>
 		</control>
 		<control type="image">
@@ -68,7 +68,7 @@
 			<top>339</top>
 			<width>1120</width>
 			<height>1</height>
-			<texture colordiffuse="rule">common/white.png</texture>
+			<texture colordiffuse="$VAR[C_rule]">common/white.png</texture>
 		</control>
 		<control type="grouplist" id="5">
 			<description>control area</description>

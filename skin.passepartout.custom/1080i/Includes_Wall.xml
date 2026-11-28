@@ -20,15 +20,15 @@
 	</variable>
 	<variable name="Wall_ToGo">
 		<value condition="Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0)"> · all seen</value>
-		<value condition="!String.IsEmpty(ListItem.Property(UnWatchedEpisodes))"> · [COLOR ink]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR] to go</value>
+		<value condition="!String.IsEmpty(ListItem.Property(UnWatchedEpisodes))"> · [COLOR $VAR[C_ink]]$INFO[ListItem.Property(UnWatchedEpisodes)][/COLOR] to go</value>
 	</variable>
 	<variable name="Wall_Status">
 		<value condition="String.IsEqual(ListItem.DBType,set)">$INFO[ListItem.Property(Watched),, of ]$INFO[ListItem.Property(Total),, seen]</value>
 		<value condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[PP_SeasonsN_L] · $VAR[PP_EpisodesN_L]$VAR[Wall_ToGo]</value>
 		<value condition="String.IsEqual(ListItem.DBType,season)">$VAR[PP_EpisodesN_L]$VAR[Wall_ToGo]</value>
-		<value condition="ListItem.IsResumable">In progress, $INFO[ListItem.PercentPlayed]% · ends [COLOR ink]$INFO[ListItem.EndTime(Resume)][/COLOR]</value>
-		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">Watched · ends [COLOR ink]$INFO[ListItem.EndTime][/COLOR]</value>
-		<value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)">Unwatched · ends [COLOR ink]$INFO[ListItem.EndTime][/COLOR]</value>
+		<value condition="ListItem.IsResumable">In progress, $INFO[ListItem.PercentPlayed]% · ends [COLOR $VAR[C_ink]]$INFO[ListItem.EndTime(Resume)][/COLOR]</value>
+		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">Watched · ends [COLOR $VAR[C_ink]]$INFO[ListItem.EndTime][/COLOR]</value>
+		<value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)">Unwatched · ends [COLOR $VAR[C_ink]]$INFO[ListItem.EndTime][/COLOR]</value>
 	</variable>
 
 	<variable name="Wall_PicTitle"><value condition="$EXP[VidView_IsNameNode]"></value><value>$INFO[ListItem.Label]</value></variable>
@@ -55,7 +55,7 @@
 						<right>8</right>
 						<height>26</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[VidView_PrintRoomCap]</label>
 					</control>
 					<control type="textbox">
@@ -64,7 +64,7 @@
 						<right>8</right>
 						<bottom>12</bottom>
 						<font>$PARAM[namefont]</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
@@ -80,7 +80,7 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="rule_strong" border="2">pp/frame_1.png</texture>
+					<texture colordiffuse="$VAR[C_rule_strong]" border="2">pp/frame_1.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -88,7 +88,7 @@
 					<right>0</right>
 					<bottom>0</bottom>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<align>center</align>
 					<label>$LOCALIZE[31196]</label>
 				</control>
@@ -320,7 +320,7 @@
 						<bottom>-19</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>$EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -346,7 +346,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -360,7 +360,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9601), else 40, rolling if still too long -->
 					<control type="label">
@@ -369,7 +369,7 @@
 						<width>676</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9601).NumPages,1)</visible>
@@ -380,7 +380,7 @@
 						<width>676</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -392,7 +392,7 @@
 						<width>676</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -402,7 +402,7 @@
 						<width>676</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 					</control>
@@ -412,7 +412,7 @@
 						<width>676</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -437,7 +437,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -451,7 +451,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9601), else 40, rolling if still too long -->
 					<control type="label">
@@ -460,7 +460,7 @@
 						<width>676</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9601).NumPages,1)</visible>
@@ -471,7 +471,7 @@
 						<width>676</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -483,7 +483,7 @@
 						<width>676</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -493,7 +493,7 @@
 						<width>676</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 					</control>
@@ -503,7 +503,7 @@
 						<width>676</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -552,7 +552,7 @@
 							<top>-19</top>
 							<right>-19</right>
 							<bottom>-19</bottom>
-							<texture colordiffuse="rule_mat">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>-18</left>
@@ -566,7 +566,7 @@
 							<top>-18</top>
 							<right>-18</right>
 							<bottom>-18</bottom>
-							<texture colordiffuse="card_lift">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 						</control>
 					</control>
 					<include content="Wall_PrintBody">
@@ -579,7 +579,7 @@
 						<bottom>-14</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>!Skin.HasSetting(passepartout.wall.nomat) + $EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -619,7 +619,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -633,7 +633,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9602), else 40, rolling if still too long -->
 					<control type="label">
@@ -642,7 +642,7 @@
 						<width>667</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9602).NumPages,1)</visible>
@@ -653,7 +653,7 @@
 						<width>667</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -665,7 +665,7 @@
 						<width>667</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -675,7 +675,7 @@
 						<width>667</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 					</control>
@@ -684,7 +684,7 @@
 						<top>186</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>true</visible>
 					</control>
 					<control type="label">
@@ -693,7 +693,7 @@
 						<width>667</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -718,7 +718,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -732,7 +732,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9603), else 40, rolling if still too long -->
 					<control type="label">
@@ -741,7 +741,7 @@
 						<width>687</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9603).NumPages,1)</visible>
@@ -752,7 +752,7 @@
 						<width>687</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -764,7 +764,7 @@
 						<width>687</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -774,7 +774,7 @@
 						<width>687</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 					</control>
@@ -783,7 +783,7 @@
 						<top>186</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>true</visible>
 					</control>
 					<control type="label">
@@ -792,7 +792,7 @@
 						<width>687</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -817,7 +817,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -831,7 +831,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9602), else 40, rolling if still too long -->
 					<control type="label">
@@ -840,7 +840,7 @@
 						<width>667</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9602).NumPages,1)</visible>
@@ -851,7 +851,7 @@
 						<width>667</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -863,7 +863,7 @@
 						<width>667</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -873,7 +873,7 @@
 						<width>667</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 					</control>
@@ -882,7 +882,7 @@
 						<top>186</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>true</visible>
 					</control>
 					<control type="label">
@@ -891,7 +891,7 @@
 						<width>667</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -916,7 +916,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -930,7 +930,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9603), else 40, rolling if still too long -->
 					<control type="label">
@@ -939,7 +939,7 @@
 						<width>687</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9603).NumPages,1)</visible>
@@ -950,7 +950,7 @@
 						<width>687</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -962,7 +962,7 @@
 						<width>687</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -972,7 +972,7 @@
 						<width>687</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 					</control>
@@ -981,7 +981,7 @@
 						<top>186</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>true</visible>
 					</control>
 					<control type="label">
@@ -990,7 +990,7 @@
 						<width>687</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -1039,7 +1039,7 @@
 							<top>-19</top>
 							<right>-19</right>
 							<bottom>-19</bottom>
-							<texture colordiffuse="rule_mat">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>-18</left>
@@ -1053,7 +1053,7 @@
 							<top>-18</top>
 							<right>-18</right>
 							<bottom>-18</bottom>
-							<texture colordiffuse="card_lift">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 						</control>
 					</control>
 					<include content="Wall_PrintBody">
@@ -1066,7 +1066,7 @@
 						<bottom>-14</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>!Skin.HasSetting(passepartout.wall.nomat) + $EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -1088,7 +1088,7 @@
 						<bottom>-25</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>$EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -1114,7 +1114,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1128,7 +1128,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9604), else 40, rolling if still too long -->
 					<control type="label">
@@ -1137,7 +1137,7 @@
 						<width>600</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9604).NumPages,1)</visible>
@@ -1148,7 +1148,7 @@
 						<width>600</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -1160,7 +1160,7 @@
 						<width>600</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -1170,7 +1170,7 @@
 						<width>600</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9624).NumPages,1)</visible>
@@ -1181,7 +1181,7 @@
 						<width>600</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9624).NumPages,1)</visible>
 					</control>
@@ -1190,7 +1190,7 @@
 						<top>193</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9624).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -1198,7 +1198,7 @@
 						<top>221</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9624).NumPages,1)</visible>
 					</control>
 					<control type="label">
@@ -1207,7 +1207,7 @@
 						<width>600</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -1232,7 +1232,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1246,7 +1246,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9604), else 40, rolling if still too long -->
 					<control type="label">
@@ -1255,7 +1255,7 @@
 						<width>600</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9604).NumPages,1)</visible>
@@ -1266,7 +1266,7 @@
 						<width>600</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -1278,7 +1278,7 @@
 						<width>600</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -1288,7 +1288,7 @@
 						<width>600</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9624).NumPages,1)</visible>
@@ -1299,7 +1299,7 @@
 						<width>600</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9624).NumPages,1)</visible>
 					</control>
@@ -1308,7 +1308,7 @@
 						<top>193</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9624).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -1316,7 +1316,7 @@
 						<top>221</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9624).NumPages,1)</visible>
 					</control>
 					<control type="label">
@@ -1325,7 +1325,7 @@
 						<width>600</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -1374,7 +1374,7 @@
 							<top>-25</top>
 							<right>-25</right>
 							<bottom>-25</bottom>
-							<texture colordiffuse="rule_mat">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>-24</left>
@@ -1388,7 +1388,7 @@
 							<top>-24</top>
 							<right>-24</right>
 							<bottom>-24</bottom>
-							<texture colordiffuse="card_lift">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 						</control>
 					</control>
 					<include content="Wall_PrintBody">
@@ -1401,7 +1401,7 @@
 						<bottom>-17</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>!Skin.HasSetting(passepartout.wall.nomat) + $EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -1441,7 +1441,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1455,7 +1455,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9605), else 40, rolling if still too long -->
 					<control type="label">
@@ -1464,7 +1464,7 @@
 						<width>601</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9605).NumPages,1)</visible>
@@ -1475,7 +1475,7 @@
 						<width>601</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -1487,7 +1487,7 @@
 						<width>601</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -1497,7 +1497,7 @@
 						<width>601</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9625).NumPages,1)</visible>
@@ -1508,7 +1508,7 @@
 						<width>601</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
@@ -1517,7 +1517,7 @@
 						<top>188</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -1525,7 +1525,7 @@
 						<top>216</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -1534,7 +1534,7 @@
 						<width>601</width>
 						<height>78</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
@@ -1544,7 +1544,7 @@
 						<width>601</width>
 						<height>42</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
@@ -1554,7 +1554,7 @@
 						<width>601</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -1579,7 +1579,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1593,7 +1593,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9606), else 40, rolling if still too long -->
 					<control type="label">
@@ -1602,7 +1602,7 @@
 						<width>628</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9606).NumPages,1)</visible>
@@ -1613,7 +1613,7 @@
 						<width>628</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -1625,7 +1625,7 @@
 						<width>628</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -1635,7 +1635,7 @@
 						<width>628</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9626).NumPages,1)</visible>
@@ -1646,7 +1646,7 @@
 						<width>628</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
@@ -1655,7 +1655,7 @@
 						<top>188</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -1663,7 +1663,7 @@
 						<top>216</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -1672,7 +1672,7 @@
 						<width>628</width>
 						<height>78</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
@@ -1682,7 +1682,7 @@
 						<width>628</width>
 						<height>42</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
@@ -1692,7 +1692,7 @@
 						<width>628</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -1717,7 +1717,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1731,7 +1731,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9605), else 40, rolling if still too long -->
 					<control type="label">
@@ -1740,7 +1740,7 @@
 						<width>601</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9605).NumPages,1)</visible>
@@ -1751,7 +1751,7 @@
 						<width>601</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -1763,7 +1763,7 @@
 						<width>601</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -1773,7 +1773,7 @@
 						<width>601</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9625).NumPages,1)</visible>
@@ -1784,7 +1784,7 @@
 						<width>601</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
@@ -1793,7 +1793,7 @@
 						<top>188</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -1801,7 +1801,7 @@
 						<top>216</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -1810,7 +1810,7 @@
 						<width>601</width>
 						<height>78</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
@@ -1820,7 +1820,7 @@
 						<width>601</width>
 						<height>42</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9625).NumPages,1)</visible>
 					</control>
@@ -1830,7 +1830,7 @@
 						<width>601</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -1855,7 +1855,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1869,7 +1869,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9606), else 40, rolling if still too long -->
 					<control type="label">
@@ -1878,7 +1878,7 @@
 						<width>628</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9606).NumPages,1)</visible>
@@ -1889,7 +1889,7 @@
 						<width>628</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -1901,7 +1901,7 @@
 						<width>628</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -1911,7 +1911,7 @@
 						<width>628</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9626).NumPages,1)</visible>
@@ -1922,7 +1922,7 @@
 						<width>628</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
@@ -1931,7 +1931,7 @@
 						<top>188</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -1939,7 +1939,7 @@
 						<top>216</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -1948,7 +1948,7 @@
 						<width>628</width>
 						<height>78</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
@@ -1958,7 +1958,7 @@
 						<width>628</width>
 						<height>42</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9626).NumPages,1)</visible>
 					</control>
@@ -1968,7 +1968,7 @@
 						<width>628</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -2017,7 +2017,7 @@
 							<top>-25</top>
 							<right>-25</right>
 							<bottom>-25</bottom>
-							<texture colordiffuse="rule_mat">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>-24</left>
@@ -2031,7 +2031,7 @@
 							<top>-24</top>
 							<right>-24</right>
 							<bottom>-24</bottom>
-							<texture colordiffuse="card_lift">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 						</control>
 					</control>
 					<include content="Wall_PrintBody">
@@ -2044,7 +2044,7 @@
 						<bottom>-17</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>!Skin.HasSetting(passepartout.wall.nomat) + $EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -2066,7 +2066,7 @@
 						<bottom>-29</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>$EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -2092,7 +2092,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2106,7 +2106,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9607), else 40, rolling if still too long -->
 					<control type="label">
@@ -2115,7 +2115,7 @@
 						<width>504</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9607).NumPages,1)</visible>
@@ -2126,7 +2126,7 @@
 						<width>504</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -2138,7 +2138,7 @@
 						<width>504</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -2148,7 +2148,7 @@
 						<width>504</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9627).NumPages,1)</visible>
@@ -2159,7 +2159,7 @@
 						<width>504</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
@@ -2168,7 +2168,7 @@
 						<top>199</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -2176,7 +2176,7 @@
 						<top>227</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -2185,7 +2185,7 @@
 						<width>504</width>
 						<height>114</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
@@ -2195,7 +2195,7 @@
 						<width>504</width>
 						<height>78</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
@@ -2205,7 +2205,7 @@
 						<width>504</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -2230,7 +2230,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2244,7 +2244,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9607), else 40, rolling if still too long -->
 					<control type="label">
@@ -2253,7 +2253,7 @@
 						<width>504</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9607).NumPages,1)</visible>
@@ -2264,7 +2264,7 @@
 						<width>504</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -2276,7 +2276,7 @@
 						<width>504</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -2286,7 +2286,7 @@
 						<width>504</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9627).NumPages,1)</visible>
@@ -2297,7 +2297,7 @@
 						<width>504</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
@@ -2306,7 +2306,7 @@
 						<top>199</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -2314,7 +2314,7 @@
 						<top>227</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -2323,7 +2323,7 @@
 						<width>504</width>
 						<height>114</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
@@ -2333,7 +2333,7 @@
 						<width>504</width>
 						<height>78</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9627).NumPages,1)</visible>
 					</control>
@@ -2343,7 +2343,7 @@
 						<width>504</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -2392,7 +2392,7 @@
 							<top>-29</top>
 							<right>-29</right>
 							<bottom>-29</bottom>
-							<texture colordiffuse="rule_mat">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>-28</left>
@@ -2406,7 +2406,7 @@
 							<top>-28</top>
 							<right>-28</right>
 							<bottom>-28</bottom>
-							<texture colordiffuse="card_lift">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 						</control>
 					</control>
 					<include content="Wall_PrintBody">
@@ -2419,7 +2419,7 @@
 						<bottom>-19</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>!Skin.HasSetting(passepartout.wall.nomat) + $EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -2459,7 +2459,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2473,7 +2473,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9608), else 40, rolling if still too long -->
 					<control type="label">
@@ -2482,7 +2482,7 @@
 						<width>508</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9608).NumPages,1)</visible>
@@ -2493,7 +2493,7 @@
 						<width>508</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -2505,7 +2505,7 @@
 						<width>508</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -2515,7 +2515,7 @@
 						<width>508</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9628).NumPages,1)</visible>
@@ -2526,7 +2526,7 @@
 						<width>508</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
@@ -2535,7 +2535,7 @@
 						<top>194</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -2543,7 +2543,7 @@
 						<top>222</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -2552,7 +2552,7 @@
 						<width>508</width>
 						<height>150</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
@@ -2562,7 +2562,7 @@
 						<width>508</width>
 						<height>114</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
@@ -2572,7 +2572,7 @@
 						<width>508</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -2597,7 +2597,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2611,7 +2611,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9609), else 40, rolling if still too long -->
 					<control type="label">
@@ -2620,7 +2620,7 @@
 						<width>538</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9609).NumPages,1)</visible>
@@ -2631,7 +2631,7 @@
 						<width>538</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -2643,7 +2643,7 @@
 						<width>538</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -2653,7 +2653,7 @@
 						<width>538</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9629).NumPages,1)</visible>
@@ -2664,7 +2664,7 @@
 						<width>538</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
@@ -2673,7 +2673,7 @@
 						<top>194</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -2681,7 +2681,7 @@
 						<top>222</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -2690,7 +2690,7 @@
 						<width>538</width>
 						<height>150</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
@@ -2700,7 +2700,7 @@
 						<width>538</width>
 						<height>114</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
@@ -2710,7 +2710,7 @@
 						<width>538</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -2735,7 +2735,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2749,7 +2749,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9608), else 40, rolling if still too long -->
 					<control type="label">
@@ -2758,7 +2758,7 @@
 						<width>508</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9608).NumPages,1)</visible>
@@ -2769,7 +2769,7 @@
 						<width>508</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -2781,7 +2781,7 @@
 						<width>508</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -2791,7 +2791,7 @@
 						<width>508</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9628).NumPages,1)</visible>
@@ -2802,7 +2802,7 @@
 						<width>508</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
@@ -2811,7 +2811,7 @@
 						<top>194</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -2819,7 +2819,7 @@
 						<top>222</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -2828,7 +2828,7 @@
 						<width>508</width>
 						<height>150</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
@@ -2838,7 +2838,7 @@
 						<width>508</width>
 						<height>114</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9628).NumPages,1)</visible>
 					</control>
@@ -2848,7 +2848,7 @@
 						<width>508</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -2873,7 +2873,7 @@
 						<top>-1</top>
 						<right>-1</right>
 						<bottom>-1</bottom>
-						<texture colordiffuse="rule_card">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2887,7 +2887,7 @@
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
-						<texture colordiffuse="card_lift">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 					</control>
 					<!-- title: Geist Light 56 when it fits on one line (probe 9609), else 40, rolling if still too long -->
 					<control type="label">
@@ -2896,7 +2896,7 @@
 						<width>538</width>
 						<height>66</height>
 						<font>ttl_56</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!Integer.IsGreater(Container(9609).NumPages,1)</visible>
@@ -2907,7 +2907,7 @@
 						<width>538</width>
 						<height>66</height>
 						<font>ttl_40</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
 						<label>$INFO[ListItem.Label]</label>
@@ -2919,7 +2919,7 @@
 						<width>538</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink</textcolor>
+						<textcolor>$VAR[C_ink]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line1]</label>
 					</control>
@@ -2929,7 +2929,7 @@
 						<width>538</width>
 						<height>28</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>!Integer.IsGreater(Container(9629).NumPages,1)</visible>
@@ -2940,7 +2940,7 @@
 						<width>538</width>
 						<height>60</height>
 						<font>cap_20</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<label>$VAR[Wall_Line2]</label>
 						<visible>Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
@@ -2949,7 +2949,7 @@
 						<top>194</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>!Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
 					<control type="image">
@@ -2957,7 +2957,7 @@
 						<top>222</top>
 						<width>64</width>
 						<height>1</height>
-						<texture colordiffuse="ink">common/white.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 						<visible>Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
 					<control type="textbox">
@@ -2966,7 +2966,7 @@
 						<width>538</width>
 						<height>150</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>!Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
@@ -2976,7 +2976,7 @@
 						<width>538</width>
 						<height>114</height>
 						<font>body_24_loose</font>
-						<textcolor>body</textcolor>
+						<textcolor>$VAR[C_body]</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 						<visible>Integer.IsGreater(Container(9629).NumPages,1)</visible>
 					</control>
@@ -2986,7 +2986,7 @@
 						<width>538</width>
 						<height>34</height>
 						<font>body_24</font>
-						<textcolor>ink2</textcolor>
+						<textcolor>$VAR[C_ink2]</textcolor>
 						<scroll>true</scroll>
 						<label>$VAR[Wall_Status]</label>
 					</control>
@@ -3035,7 +3035,7 @@
 							<top>-29</top>
 							<right>-29</right>
 							<bottom>-29</bottom>
-							<texture colordiffuse="rule_mat">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_rule_mat]">common/white.png</texture>
 						</control>
 						<control type="image">
 							<left>-28</left>
@@ -3049,7 +3049,7 @@
 							<top>-28</top>
 							<right>-28</right>
 							<bottom>-28</bottom>
-							<texture colordiffuse="card_lift">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 						</control>
 					</control>
 					<include content="Wall_PrintBody">
@@ -3062,7 +3062,7 @@
 						<bottom>-19</bottom>
 						<width>10</width>
 						<height>10</height>
-						<texture colordiffuse="ink">pp/dot.png</texture>
+						<texture colordiffuse="$VAR[C_ink]">pp/dot.png</texture>
 						<visible>!Skin.HasSetting(passepartout.wall.nomat) + $EXP[ShowWatchedMarkers] + $EXP[ListItemWatched] + !ListItem.IsParentFolder</visible>
 					</control>
 				</control>
@@ -3079,7 +3079,7 @@
 				<top>0</top>
 				<width>1920</width>
 				<height>140</height>
-				<texture colordiffuse="paper">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_paper]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -3105,7 +3105,7 @@
 				<top>-1</top>
 				<right>-1</right>
 				<bottom>-1</bottom>
-				<texture colordiffuse="rule_card">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_rule_card]">common/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>
@@ -3119,7 +3119,7 @@
 				<top>0</top>
 				<right>0</right>
 				<bottom>0</bottom>
-				<texture colordiffuse="card_lift">common/white.png</texture>
+				<texture colordiffuse="$VAR[C_card_lift]">common/white.png</texture>
 			</control>
 			<control type="label">
 				<left>20</left>
@@ -3129,7 +3129,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>cap_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>$LOCALIZE[31272]</label>
 			</control>
 		</control>

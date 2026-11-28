@@ -131,7 +131,7 @@
 				<width>misc_col_w</width>
 				<height>40</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$LOCALIZE[12398]</label>
 			</control>
 		</control>
@@ -139,7 +139,7 @@
 		<!-- ====== footer: memory / CPU / build -->
 		<include content="PP_Rule">
 			<param name="top" value="800"/>
-			<param name="color" value="rule"/>
+			<param name="color" value="$VAR[C_rule]"/>
 		</include>
 		<control type="group">
 			<left>page_margin</left>
@@ -151,7 +151,7 @@
 				<width>misc_menu_w</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>Memory  $INFO[System.Memory(used.percent)]</label>
 			</control>
 			<control type="progress">
@@ -167,7 +167,7 @@
 				<width>misc_menu_w</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>CPU  $INFO[System.CPUUsage]</label>
 				<visible>System.SupportsCPUUsage</visible>
 			</control>
@@ -190,14 +190,14 @@
 				<width>misc_col_w</width>
 				<height>40</height>
 				<font>num_20</font>
-				<textcolor>ink2</textcolor>
+				<textcolor>$VAR[C_ink2]</textcolor>
 				<label>Kodi $INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode,  (,)]</label>
 			</control>
 			<control type="label">
 				<width>misc_col_w</width>
 				<height>40</height>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[System.BuildVersionGit,Git  ,]</label>
 			</control>
 			<control type="label" id="53">
@@ -205,7 +205,7 @@
 				<width>misc_col_w</width>
 				<height>40</height>
 				<font>num_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 			</control>
 		</control>
 	</controls>

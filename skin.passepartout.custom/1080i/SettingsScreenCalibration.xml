@@ -19,8 +19,8 @@
 			<top>0</top>
 			<width>128</width>
 			<height>128</height>
-			<texturefocus colordiffuse="ink">misc/cal_tl.png</texturefocus>
-			<texturenofocus colordiffuse="ink3">misc/cal_tl.png</texturenofocus>
+			<texturefocus colordiffuse="$VAR[C_ink]">misc/cal_tl.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[C_ink3]">misc/cal_tl.png</texturenofocus>
 			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 				<eventconfig type="up"/>
 				<eventconfig type="down"/>
@@ -34,8 +34,8 @@
 			<top>500</top>
 			<width>128</width>
 			<height>128</height>
-			<texturefocus colordiffuse="ink">misc/cal_br.png</texturefocus>
-			<texturenofocus colordiffuse="ink3">misc/cal_br.png</texturenofocus>
+			<texturefocus colordiffuse="$VAR[C_ink]">misc/cal_br.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[C_ink3]">misc/cal_br.png</texturenofocus>
 			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 				<eventconfig type="up"/>
 				<eventconfig type="down"/>
@@ -49,8 +49,8 @@
 			<top>390</top>
 			<width>500</width>
 			<height>500</height>
-			<texturefocus colordiffuse="ink">misc/cal_ratio.png</texturefocus>
-			<texturenofocus colordiffuse="ink3">misc/cal_ratio.png</texturenofocus>
+			<texturefocus colordiffuse="$VAR[C_ink]">misc/cal_ratio.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[C_ink3]">misc/cal_ratio.png</texturenofocus>
 			<movingspeed acceleration="140" maxvelocity="300" resettimeout="180" delta="1">
 				<eventconfig type="left"/>
 				<eventconfig type="right"/>
@@ -62,8 +62,8 @@
 			<top>500</top>
 			<width>380</width>
 			<height>90</height>
-			<texturefocus colordiffuse="ink">misc/cal_sub.png</texturefocus>
-			<texturenofocus colordiffuse="ink3">misc/cal_sub.png</texturenofocus>
+			<texturefocus colordiffuse="$VAR[C_ink]">misc/cal_sub.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[C_ink3]">misc/cal_sub.png</texturenofocus>
 			<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 				<eventconfig type="up"/>
 				<eventconfig type="down"/>
@@ -75,8 +75,8 @@
 			<top>900</top>
 			<width>100</width>
 			<height>100</height>
-			<texturefocus colordiffuse="ink">misc/cal_reset.png</texturefocus>
-			<texturenofocus colordiffuse="ink3">misc/cal_reset.png</texturenofocus>
+			<texturefocus colordiffuse="$VAR[C_ink]">misc/cal_reset.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[C_ink3]">misc/cal_reset.png</texturenofocus>
 		</control>
 		<control type="label">
 			<description>window title</description>
@@ -105,7 +105,7 @@
 			<height>50</height>
 			<align>center</align>
 			<font>body_26</font>
-			<textcolor>body</textcolor>
+			<textcolor>$VAR[C_body]</textcolor>
 		</control>
 		<control type="label" id="4">
 			<description>calibration value</description>

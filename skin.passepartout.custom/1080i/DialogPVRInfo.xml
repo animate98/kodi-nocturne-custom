@@ -43,7 +43,7 @@
 				<width>1160</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$VAR[Misc_PVRMeta]$INFO[ListItem.Rating,  ·  , / 10]$INFO[ListItem.ParentalRatingCode,  ·  ,]</label>
 			</control>
 			<control type="textbox">

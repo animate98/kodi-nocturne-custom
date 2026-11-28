@@ -58,7 +58,7 @@
 					<width>420</width>
 					<height>20</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$LOCALIZE[31159]</label>
 				</control>
 				<include content="PP_Rule">
@@ -87,7 +87,7 @@
 					<width>420</width>
 					<height>24</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$VAR[Music_AddedLabel]</label>
 					<visible>!String.IsEmpty(ListItem.DateAdded)</visible>
 				</control>
@@ -95,7 +95,7 @@
 					<width>420</width>
 					<height>24</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$VAR[Music_PlayedLabel]</label>
 					<visible>!String.IsEmpty(ListItem.LastPlayed)</visible>
 				</control>
@@ -103,7 +103,7 @@
 					<width>420</width>
 					<height>24</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Property(Album_Label),Label  ,]</label>
 					<visible>!String.IsEmpty(ListItem.Property(Album_Label))</visible>
 				</control>
@@ -111,7 +111,7 @@
 					<width>420</width>
 					<height>24</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$INFO[ListItem.Property(Album_Mood),Mood  ,]$INFO[ListItem.Property(Artist_Mood),Mood  ,]</label>
 					<visible>!String.IsEmpty(ListItem.Property(Album_Mood)) | !String.IsEmpty(ListItem.Property(Artist_Mood))</visible>
 				</control>
@@ -137,7 +137,7 @@
 				<width>1248</width>
 				<height>157</height>  <!-- 2 lines of display_72 = 69 + 72 asc + 16 desc (140 cut line 2's descenders) -->
 				<font>ttl_64</font>
-				<textcolor>ink</textcolor>
+				<textcolor>$VAR[C_ink]</textcolor>
 				<label>$VAR[Music_InfoTitle]</label>
 			</control>
 			<control type="label">
@@ -154,13 +154,13 @@
 				<param name="top" value="244"/>
 				<param name="left" value="0"/>
 				<param name="width" value="1248"/>
-				<param name="color" value="rule_strong"/>
+				<param name="color" value="$VAR[C_rule_strong]"/>
 			</include>
 			<include content="PP_Rule">
 				<param name="top" value="330"/>
 				<param name="left" value="0"/>
 				<param name="width" value="1248"/>
-				<param name="color" value="rule_strong"/>
+				<param name="color" value="$VAR[C_rule_strong]"/>
 			</include>
 			<control type="grouplist">
 				<left>-20</left>
@@ -290,7 +290,7 @@
 					<width>1248</width>
 					<height>22</height>
 					<font>cap_20</font>
-					<textcolor>ink2</textcolor>
+					<textcolor>$VAR[C_ink2]</textcolor>
 					<label>$VAR[Music_InfoListCaption]</label>
 				</control>
 				<include content="PP_Rule">
@@ -320,7 +320,7 @@
 							<top>0</top>
 							<width>612</width>
 							<height>56</height>
-							<texture colordiffuse="ink">common/white.png</texture>
+							<texture colordiffuse="$VAR[C_ink]">common/white.png</texture>
 							<visible>Control.HasFocus(50)</visible>
 						</control>
 						<control type="group">

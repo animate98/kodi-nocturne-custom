@@ -24,7 +24,7 @@
 			<height>subnav_h</height>
 			<haspath>true</haspath>
 			<font>num_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 		</control>
 		<control type="label">
 			<left>page_margin</left>
@@ -33,7 +33,7 @@
 			<height>subnav_h</height>
 			<align>right</align>
 			<font>num_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$INFO[Container(20).CurrentItem]$INFO[Container(20).NumItems, / ,]</label>
 		</control>
 		<control type="list" id="20">
@@ -67,7 +67,7 @@
 			<top>list_top</top>
 			<width>rule_h</width>
 			<height>858</height>
-			<texture colordiffuse="rule">common/hairline_v.png</texture>
+			<texture colordiffuse="$VAR[C_rule]">common/hairline_v.png</texture>
 		</control>
 		<!-- ====== right -->
 		<control type="label" id="102">
@@ -78,7 +78,7 @@
 			<height>subnav_h</height>
 			<haspath>true</haspath>
 			<font>num_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 		</control>
 		<control type="label">
 			<left>984</left>
@@ -87,7 +87,7 @@
 			<height>subnav_h</height>
 			<align>right</align>
 			<font>num_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$INFO[Container(21).CurrentItem]$INFO[Container(21).NumItems, / ,]</label>
 		</control>
 		<control type="list" id="21">

@@ -21,19 +21,19 @@
 			<ondown condition="[String.IsEqual(Window(Home).Property(pp.grid.page),2) | String.IsEqual(Window(Home).Property(pp.grid.page),5) | String.IsEqual(Window(Home).Property(pp.grid.page),8) | String.IsEqual(Window(Home).Property(pp.grid.page),11) | String.IsEqual(Window(Home).Property(pp.grid.page),14) | String.IsEqual(Window(Home).Property(pp.grid.page),17) | String.IsEqual(Window(Home).Property(pp.grid.page),20) | String.IsEqual(Window(Home).Property(pp.grid.page),23) | String.IsEqual(Window(Home).Property(pp.grid.page),26) | String.IsEqual(Window(Home).Property(pp.grid.page),29) | String.IsEqual(Window(Home).Property(pp.grid.page),32) | String.IsEqual(Window(Home).Property(pp.grid.page),35) | String.IsEqual(Window(Home).Property(pp.grid.page),38) | String.IsEqual(Window(Home).Property(pp.grid.page),41) | String.IsEqual(Window(Home).Property(pp.grid.page),44) | String.IsEqual(Window(Home).Property(pp.grid.page),47) | String.IsEqual(Window(Home).Property(pp.grid.page),50) | String.IsEqual(Window(Home).Property(pp.grid.page),53) | String.IsEqual(Window(Home).Property(pp.grid.page),56) | String.IsEqual(Window(Home).Property(pp.grid.page),59)]">9782</ondown>
 			<control type="button">
 				<top>10</top><width max="560">auto</width><height>34</height>
-				<font>cap_20</font><textcolor>ink</textcolor><disabledcolor>ink</disabledcolor>
+				<font>cap_20</font><textcolor>$VAR[C_ink]</textcolor><disabledcolor>$VAR[C_ink]</disabledcolor>
 				<textoffsetx>0</textoffsetx><aligny>top</aligny>
-				<texturefocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturefocus>
-				<texturenofocus border="0,0,0,2" colordiffuse="ink">pp/underline.png</texturenofocus>
+				<texturefocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturefocus>
+				<texturenofocus border="0,0,0,2" colordiffuse="$VAR[C_ink]">pp/underline.png</texturenofocus>
 				<label>POV</label>
 				<enable>false</enable>
 			</control>
 			<control type="image"><width>16</width><height>44</height><texture/></control>
 			<control type="button" id="9771">
 				<width>auto</width><height>44</height>
-				<font>cap_20</font><textcolor>ink2</textcolor><focusedcolor>$VAR[PaperColor]</focusedcolor>
+				<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><focusedcolor>$VAR[PaperColor]</focusedcolor>
 				<textoffsetx>16</textoffsetx><aligny>center</aligny>
-				<texturefocus colordiffuse="ink">common/white.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[C_ink]">common/white.png</texturefocus>
 				<texturenofocus/>
 				<label>Options</label>
 				<onclick condition="[String.IsEqual(Window(Home).Property(pp.grid.page),3) | String.IsEqual(Window(Home).Property(pp.grid.page),6) | String.IsEqual(Window(Home).Property(pp.grid.page),9) | String.IsEqual(Window(Home).Property(pp.grid.page),12) | String.IsEqual(Window(Home).Property(pp.grid.page),15) | String.IsEqual(Window(Home).Property(pp.grid.page),18) | String.IsEqual(Window(Home).Property(pp.grid.page),21) | String.IsEqual(Window(Home).Property(pp.grid.page),24) | String.IsEqual(Window(Home).Property(pp.grid.page),27) | String.IsEqual(Window(Home).Property(pp.grid.page),30) | String.IsEqual(Window(Home).Property(pp.grid.page),33) | String.IsEqual(Window(Home).Property(pp.grid.page),36) | String.IsEqual(Window(Home).Property(pp.grid.page),39) | String.IsEqual(Window(Home).Property(pp.grid.page),42) | String.IsEqual(Window(Home).Property(pp.grid.page),45) | String.IsEqual(Window(Home).Property(pp.grid.page),48) | String.IsEqual(Window(Home).Property(pp.grid.page),51) | String.IsEqual(Window(Home).Property(pp.grid.page),54) | String.IsEqual(Window(Home).Property(pp.grid.page),57) | String.IsEqual(Window(Home).Property(pp.grid.page),60)]">SetFocus(9780)</onclick>
@@ -47,12 +47,12 @@
 		<!-- the list name and the page -->
 		<control type="label">
 			<left>120</left><top>190</top><width>1200</width><height>48</height><aligny>center</aligny>
-			<font>capw_30</font><textcolor>ink2</textcolor>
+			<font>capw_30</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>$INFO[Window(Home).Property(pp.grid.title)]</label>
 		</control>
 		<control type="label">
 			<left>1200</left><top>190</top><width>600</width><height>48</height><align>right</align><aligny>center</aligny>
-			<font>body_28</font><textcolor>ink2</textcolor>
+			<font>body_28</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>Page $INFO[Window(Home).Property(pp.grid.page)]</label>
 		</control>
 
@@ -61,13 +61,13 @@
 		<control type="image">
 			<left>-4</left><top>480</top><width>120</width><height>120</height>
 			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="ink2">custom/chevron_left.png</texture>
+			<texture colordiffuse="$VAR[C_ink2]">custom/chevron_left.png</texture>
 			<visible>!String.IsEqual(Window(Home).Property(pp.grid.page),1) + !String.IsEmpty(Window(Home).Property(pp.grid.page))</visible>
 		</control>
 		<control type="image">
 			<left>1804</left><top>480</top><width>120</width><height>120</height>
 			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="ink2">custom/chevron_right.png</texture>
+			<texture colordiffuse="$VAR[C_ink2]">custom/chevron_right.png</texture>
 			<visible>[[[String.IsEqual(Window(Home).Property(pp.grid.page),3) | String.IsEqual(Window(Home).Property(pp.grid.page),6) | String.IsEqual(Window(Home).Property(pp.grid.page),9) | String.IsEqual(Window(Home).Property(pp.grid.page),12) | String.IsEqual(Window(Home).Property(pp.grid.page),15) | String.IsEqual(Window(Home).Property(pp.grid.page),18) | String.IsEqual(Window(Home).Property(pp.grid.page),21) | String.IsEqual(Window(Home).Property(pp.grid.page),24) | String.IsEqual(Window(Home).Property(pp.grid.page),27) | String.IsEqual(Window(Home).Property(pp.grid.page),30) | String.IsEqual(Window(Home).Property(pp.grid.page),33) | String.IsEqual(Window(Home).Property(pp.grid.page),36) | String.IsEqual(Window(Home).Property(pp.grid.page),39) | String.IsEqual(Window(Home).Property(pp.grid.page),42) | String.IsEqual(Window(Home).Property(pp.grid.page),45) | String.IsEqual(Window(Home).Property(pp.grid.page),48) | String.IsEqual(Window(Home).Property(pp.grid.page),51) | String.IsEqual(Window(Home).Property(pp.grid.page),54) | String.IsEqual(Window(Home).Property(pp.grid.page),57) | String.IsEqual(Window(Home).Property(pp.grid.page),60)] + Integer.IsGreater(Container(9780).NumItems,19)] | [[String.IsEqual(Window(Home).Property(pp.grid.page),1) | String.IsEqual(Window(Home).Property(pp.grid.page),4) | String.IsEqual(Window(Home).Property(pp.grid.page),7) | String.IsEqual(Window(Home).Property(pp.grid.page),10) | String.IsEqual(Window(Home).Property(pp.grid.page),13) | String.IsEqual(Window(Home).Property(pp.grid.page),16) | String.IsEqual(Window(Home).Property(pp.grid.page),19) | String.IsEqual(Window(Home).Property(pp.grid.page),22) | String.IsEqual(Window(Home).Property(pp.grid.page),25) | String.IsEqual(Window(Home).Property(pp.grid.page),28) | String.IsEqual(Window(Home).Property(pp.grid.page),31) | String.IsEqual(Window(Home).Property(pp.grid.page),34) | String.IsEqual(Window(Home).Property(pp.grid.page),37) | String.IsEqual(Window(Home).Property(pp.grid.page),40) | String.IsEqual(Window(Home).Property(pp.grid.page),43) | String.IsEqual(Window(Home).Property(pp.grid.page),46) | String.IsEqual(Window(Home).Property(pp.grid.page),49) | String.IsEqual(Window(Home).Property(pp.grid.page),52) | String.IsEqual(Window(Home).Property(pp.grid.page),55) | String.IsEqual(Window(Home).Property(pp.grid.page),58)] + Integer.IsGreater(Container(9781).NumItems,19)] | [[String.IsEqual(Window(Home).Property(pp.grid.page),2) | String.IsEqual(Window(Home).Property(pp.grid.page),5) | String.IsEqual(Window(Home).Property(pp.grid.page),8) | String.IsEqual(Window(Home).Property(pp.grid.page),11) | String.IsEqual(Window(Home).Property(pp.grid.page),14) | String.IsEqual(Window(Home).Property(pp.grid.page),17) | String.IsEqual(Window(Home).Property(pp.grid.page),20) | String.IsEqual(Window(Home).Property(pp.grid.page),23) | String.IsEqual(Window(Home).Property(pp.grid.page),26) | String.IsEqual(Window(Home).Property(pp.grid.page),29) | String.IsEqual(Window(Home).Property(pp.grid.page),32) | String.IsEqual(Window(Home).Property(pp.grid.page),35) | String.IsEqual(Window(Home).Property(pp.grid.page),38) | String.IsEqual(Window(Home).Property(pp.grid.page),41) | String.IsEqual(Window(Home).Property(pp.grid.page),44) | String.IsEqual(Window(Home).Property(pp.grid.page),47) | String.IsEqual(Window(Home).Property(pp.grid.page),50) | String.IsEqual(Window(Home).Property(pp.grid.page),53) | String.IsEqual(Window(Home).Property(pp.grid.page),56) | String.IsEqual(Window(Home).Property(pp.grid.page),59)] + Integer.IsGreater(Container(9782).NumItems,19)]]</visible>
 		</control>
 
@@ -363,20 +363,20 @@
 		</control>
 		<control type="label">
 			<left>120</left><top>480</top><width>1680</width><height>60</height><align>center</align><aligny>center</aligny>
-			<font>cap_20</font><textcolor>ink2</textcolor><label>Hanging…</label>
+			<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor><label>Hanging…</label>
 			<visible>[[[String.IsEqual(Window(Home).Property(pp.grid.page),3) | String.IsEqual(Window(Home).Property(pp.grid.page),6) | String.IsEqual(Window(Home).Property(pp.grid.page),9) | String.IsEqual(Window(Home).Property(pp.grid.page),12) | String.IsEqual(Window(Home).Property(pp.grid.page),15) | String.IsEqual(Window(Home).Property(pp.grid.page),18) | String.IsEqual(Window(Home).Property(pp.grid.page),21) | String.IsEqual(Window(Home).Property(pp.grid.page),24) | String.IsEqual(Window(Home).Property(pp.grid.page),27) | String.IsEqual(Window(Home).Property(pp.grid.page),30) | String.IsEqual(Window(Home).Property(pp.grid.page),33) | String.IsEqual(Window(Home).Property(pp.grid.page),36) | String.IsEqual(Window(Home).Property(pp.grid.page),39) | String.IsEqual(Window(Home).Property(pp.grid.page),42) | String.IsEqual(Window(Home).Property(pp.grid.page),45) | String.IsEqual(Window(Home).Property(pp.grid.page),48) | String.IsEqual(Window(Home).Property(pp.grid.page),51) | String.IsEqual(Window(Home).Property(pp.grid.page),54) | String.IsEqual(Window(Home).Property(pp.grid.page),57) | String.IsEqual(Window(Home).Property(pp.grid.page),60)] + [Container(9780).IsUpdating | !Integer.IsGreater(Container(9780).NumItems,0)]] | [[String.IsEqual(Window(Home).Property(pp.grid.page),1) | String.IsEqual(Window(Home).Property(pp.grid.page),4) | String.IsEqual(Window(Home).Property(pp.grid.page),7) | String.IsEqual(Window(Home).Property(pp.grid.page),10) | String.IsEqual(Window(Home).Property(pp.grid.page),13) | String.IsEqual(Window(Home).Property(pp.grid.page),16) | String.IsEqual(Window(Home).Property(pp.grid.page),19) | String.IsEqual(Window(Home).Property(pp.grid.page),22) | String.IsEqual(Window(Home).Property(pp.grid.page),25) | String.IsEqual(Window(Home).Property(pp.grid.page),28) | String.IsEqual(Window(Home).Property(pp.grid.page),31) | String.IsEqual(Window(Home).Property(pp.grid.page),34) | String.IsEqual(Window(Home).Property(pp.grid.page),37) | String.IsEqual(Window(Home).Property(pp.grid.page),40) | String.IsEqual(Window(Home).Property(pp.grid.page),43) | String.IsEqual(Window(Home).Property(pp.grid.page),46) | String.IsEqual(Window(Home).Property(pp.grid.page),49) | String.IsEqual(Window(Home).Property(pp.grid.page),52) | String.IsEqual(Window(Home).Property(pp.grid.page),55) | String.IsEqual(Window(Home).Property(pp.grid.page),58)] + [Container(9781).IsUpdating | !Integer.IsGreater(Container(9781).NumItems,0)]] | [[String.IsEqual(Window(Home).Property(pp.grid.page),2) | String.IsEqual(Window(Home).Property(pp.grid.page),5) | String.IsEqual(Window(Home).Property(pp.grid.page),8) | String.IsEqual(Window(Home).Property(pp.grid.page),11) | String.IsEqual(Window(Home).Property(pp.grid.page),14) | String.IsEqual(Window(Home).Property(pp.grid.page),17) | String.IsEqual(Window(Home).Property(pp.grid.page),20) | String.IsEqual(Window(Home).Property(pp.grid.page),23) | String.IsEqual(Window(Home).Property(pp.grid.page),26) | String.IsEqual(Window(Home).Property(pp.grid.page),29) | String.IsEqual(Window(Home).Property(pp.grid.page),32) | String.IsEqual(Window(Home).Property(pp.grid.page),35) | String.IsEqual(Window(Home).Property(pp.grid.page),38) | String.IsEqual(Window(Home).Property(pp.grid.page),41) | String.IsEqual(Window(Home).Property(pp.grid.page),44) | String.IsEqual(Window(Home).Property(pp.grid.page),47) | String.IsEqual(Window(Home).Property(pp.grid.page),50) | String.IsEqual(Window(Home).Property(pp.grid.page),53) | String.IsEqual(Window(Home).Property(pp.grid.page),56) | String.IsEqual(Window(Home).Property(pp.grid.page),59)] + [Container(9782).IsUpdating | !Integer.IsGreater(Container(9782).NumItems,0)]]] + !String.IsEmpty(Window(Home).Property(pp.grid.base))</visible>
 		</control>
 
 		<!-- caption of the print in focus -->
 		<control type="label">
 			<left>120</left><top>924</top><width>1680</width><height>60</height>
-			<font>ttl_44</font><textcolor>ink</textcolor>
+			<font>ttl_44</font><textcolor>$VAR[C_ink]</textcolor>
 			<label>$INFO[Container.ListItem.Label]</label>
 			<visible>[Control.HasFocus(9780) | Control.HasFocus(9781) | Control.HasFocus(9782)]</visible>
 		</control>
 		<control type="label">
 			<left>120</left><top>990</top><width>1680</width><height>30</height>
-			<font>cap_20</font><textcolor>ink2</textcolor>
+			<font>cap_20</font><textcolor>$VAR[C_ink2]</textcolor>
 			<label>$VAR[VidView_Cap]</label>
 			<visible>[Control.HasFocus(9780) | Control.HasFocus(9781) | Control.HasFocus(9782)]</visible>
 		</control>

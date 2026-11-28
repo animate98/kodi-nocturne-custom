@@ -68,7 +68,7 @@
 				<width>1100</width>
 				<height>30</height>
 				<font>cap_20</font>
-				<textcolor>ink3</textcolor>
+				<textcolor>$VAR[C_ink3]</textcolor>
 				<label>$INFO[Container(50).ListItem.FileNameAndPath]</label>
 			</control>
 			<control type="grouplist" id="101">

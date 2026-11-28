@@ -26,7 +26,7 @@
 			<width>list_panel_w</width>
 			<height>28</height>
 			<font>cap_20</font>
-			<textcolor>ink3</textcolor>
+			<textcolor>$VAR[C_ink3]</textcolor>
 			<label>$INFO[PVR.NextTimer]</label>
 		</control>
 	</controls>
